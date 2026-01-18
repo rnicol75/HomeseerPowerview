@@ -6,7 +6,9 @@ using HomeSeer.PluginSdk;
 using HomeSeer.PluginSdk.Devices;
 using HomeSeer.PluginSdk.Devices.Controls;
 using HomeSeer.PluginSdk.Logging;
-using Newtonsoft.Json.Linq;
+using HomeSeer.PluginSdk.Features;
+using HomeSeer.PluginSdk.Devices.Identification;
+using HomeSeer.Jui.Views;
 
 namespace HSPI_PowerView
 {
@@ -52,35 +54,6 @@ namespace HSPI_PowerView
         protected override void BeforeReturnStatus()
         {
             // Called before returning status
-        }
-
-        protected override bool OnSettingChange(string pageId, AbstractView currentView, AbstractView changedView)
-        {
-            WriteLog(ELogType.Debug, $"Setting changed on page {pageId}");
-
-            // Handle settings page changes
-            if (pageId == "settings")
-            {
-                var views = currentView.GetViewsByType<LabelView>();
-                foreach (var view in views)
-                {
-                    if (view.Id == SETTING_HUB_IP)
-                    {
-                        var newIp = view.Value;
-                        SaveSetting(SETTING_HUB_IP, newIp);
-                        _powerViewClient = new PowerViewClient(newIp);
-                        WriteLog(ELogType.Info, $"PowerView Hub IP updated to {newIp}");
-                        
-                        // Restart polling with new settings
-                        StopPolling();
-                        StartPolling();
-                        
-                        return true;
-                    }
-                }
-            }
-
-            return true;
         }
 
         public override void SetIOMulti(List<ControlEvent> colSend)
@@ -338,13 +311,10 @@ namespace HSPI_PowerView
             }
         }
 
-        protected override void Dispose(bool disposing)
+        protected override bool OnSettingChange(string pageId, AbstractView currentView, AbstractView changedView)
         {
-            if (disposing)
-            {
-                StopPolling();
-            }
-            base.Dispose(disposing);
+            // Settings change handler
+            return true;
         }
     }
 }
