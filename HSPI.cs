@@ -35,11 +35,23 @@ namespace HSPI_PowerView
                 _powerViewClient = new PowerViewClient(hubIp);
                 HomeSeerSystem.WriteLog(ELogType.Info, $"PowerView Hub configured at {hubIp}", Name);
 
-                // Start polling for shade status updates
-                StartPolling();
-
-                // Initial discovery of shades
-                Task.Run(async () => await DiscoverShadesAsync());
+                // Test connection to hub
+                Task.Run(async () => 
+                {
+                    var connected = await _powerViewClient.TestConnectionAsync();
+                    if (connected)
+                    {
+                        HomeSeerSystem.WriteLog(ELogType.Info, "Successfully connected to PowerView Hub", Name);
+                        // Start polling for shade status updates
+                        StartPolling();
+                        // Initial discovery of shades
+                        await DiscoverShadesAsync();
+                    }
+                    else
+                    {
+                        HomeSeerSystem.WriteLog(ELogType.Warning, "Failed to connect to PowerView Hub", Name);
+                    }
+                });
             }
             else
             {
@@ -311,7 +323,44 @@ namespace HSPI_PowerView
 
         protected override bool OnSettingChange(string pageId, AbstractView currentView, AbstractView changedView)
         {
-            // Settings change handler
+            try
+            {
+                // Handle PowerView Hub IP configuration change
+                if (pageId == "settings")
+                {
+                    // Settings have been updated, reload configuration
+                    var hubIp = GetSetting(SETTING_HUB_IP);
+                    
+                    if (!string.IsNullOrEmpty(hubIp))
+                    {
+                        // Reinitialize client with hub IP (may have changed)
+                        _powerViewClient = new PowerViewClient(hubIp);
+                        HomeSeerSystem.WriteLog(ELogType.Info, $"PowerView Hub configuration: {hubIp}", Name);
+                        
+                        // Test connection and discover shades
+                        Task.Run(async () =>
+                        {
+                            var connected = await _powerViewClient.TestConnectionAsync();
+                            if (connected)
+                            {
+                                HomeSeerSystem.WriteLog(ELogType.Info, "Connected to PowerView Hub", Name);
+                                StartPolling();
+                                await DiscoverShadesAsync();
+                            }
+                            else
+                            {
+                                HomeSeerSystem.WriteLog(ELogType.Error, "Failed to connect to PowerView Hub at " + hubIp, Name);
+                            }
+                        });
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                HomeSeerSystem.WriteLog(ELogType.Error, $"Error in OnSettingChange: {ex.Message}", Name);
+                return false;
+            }
+            
             return true;
         }
     }
