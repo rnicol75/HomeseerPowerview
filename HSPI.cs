@@ -1,13 +1,11 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using HomeSeer.PluginSdk;
 using HomeSeer.PluginSdk.Devices;
 using HomeSeer.PluginSdk.Devices.Controls;
-using HomeSeer.PluginSdk.Logging;
-using HomeSeer.PluginSdk.Features;
 using HomeSeer.PluginSdk.Devices.Identification;
+using HomeSeer.PluginSdk.Logging;
 using HomeSeer.Jui.Views;
 
 namespace HSPI_PowerView
@@ -22,19 +20,20 @@ namespace HSPI_PowerView
         private const int POLL_INTERVAL_SECONDS = 30;
         private const string SETTING_HUB_IP = "HubIP";
 
-        public override string Id => "PowerView";
-        public override string Name => "PowerView";
+        public override string Id { get; } = "PowerView";
+        public override string Name { get; } = "PowerView";
+        protected override string SettingsFileName { get; } = "PowerView.ini";
 
         protected override void Initialize()
         {
-            WriteLog(ELogType.Info, "Initializing PowerView Plugin...");
+            HomeSeerSystem.WriteLog(ELogType.Info, "Initializing PowerView Plugin...", Name);
 
             // Load settings
             var hubIp = GetSetting(SETTING_HUB_IP);
             if (!string.IsNullOrEmpty(hubIp))
             {
                 _powerViewClient = new PowerViewClient(hubIp);
-                WriteLog(ELogType.Info, $"PowerView Hub configured at {hubIp}");
+                HomeSeerSystem.WriteLog(ELogType.Info, $"PowerView Hub configured at {hubIp}", Name);
 
                 // Start polling for shade status updates
                 StartPolling();
@@ -44,11 +43,11 @@ namespace HSPI_PowerView
             }
             else
             {
-                WriteLog(ELogType.Warning, "PowerView Hub IP not configured. Please configure in settings.");
+                HomeSeerSystem.WriteLog(ELogType.Warning, "PowerView Hub IP not configured. Please configure in settings.", Name);
             }
 
             Status = PluginStatus.Ok();
-            WriteLog(ELogType.Info, "PowerView Plugin initialized successfully.");
+            HomeSeerSystem.WriteLog(ELogType.Info, "PowerView Plugin initialized successfully.", Name);
         }
 
         protected override void BeforeReturnStatus()
@@ -71,21 +70,21 @@ namespace HSPI_PowerView
                 var device = HomeSeerSystem.GetDeviceByRef(controlEvent.TargetRef);
                 if (device == null)
                 {
-                    WriteLog(ELogType.Warning, $"Device not found for ref {controlEvent.TargetRef}");
+                    HomeSeerSystem.WriteLog(ELogType.Warning, $"Device not found for ref {controlEvent.TargetRef}", Name);
                     return;
                 }
 
                 var plugExtraData = device.PlugExtraData;
                 if (!plugExtraData.ContainsNamed("ShadeId"))
                 {
-                    WriteLog(ELogType.Warning, $"Device {device.Name} does not have ShadeId");
+                    HomeSeerSystem.WriteLog(ELogType.Warning, $"Device {device.Name} does not have ShadeId", Name);
                     return;
                 }
 
                 var shadeId = int.Parse(plugExtraData["ShadeId"].ToString());
                 var controlValue = controlEvent.ControlValue;
 
-                WriteLog(ELogType.Info, $"Setting shade {shadeId} to position {controlValue}");
+                HomeSeerSystem.WriteLog(ELogType.Info, $"Setting shade {shadeId} to position {controlValue}", Name);
 
                 // Convert from percentage (0-100) to PowerView position (0-65535)
                 var position = (int)((controlValue / 100.0) * 65535);
@@ -94,16 +93,16 @@ namespace HSPI_PowerView
                 if (success)
                 {
                     HomeSeerSystem.UpdatePropertyByRef(controlEvent.TargetRef, EProperty.Value, controlValue);
-                    WriteLog(ELogType.Info, $"Shade {shadeId} position updated successfully");
+                    HomeSeerSystem.WriteLog(ELogType.Info, $"Shade {shadeId} position updated successfully", Name);
                 }
                 else
                 {
-                    WriteLog(ELogType.Error, $"Failed to update shade {shadeId} position");
+                    HomeSeerSystem.WriteLog(ELogType.Error, $"Failed to update shade {shadeId} position", Name);
                 }
             }
             catch (Exception ex)
             {
-                WriteLog(ELogType.Error, $"Error handling control event: {ex.Message}");
+                HomeSeerSystem.WriteLog(ELogType.Error, $"Error handling control event: {ex.Message}", Name);
             }
         }
 
@@ -111,15 +110,15 @@ namespace HSPI_PowerView
         {
             try
             {
-                WriteLog(ELogType.Info, "Discovering PowerView shades...");
+                HomeSeerSystem.WriteLog(ELogType.Info, "Discovering PowerView shades...", Name);
 
                 var shades = await _powerViewClient.GetShadesAsync();
-                WriteLog(ELogType.Info, $"Found {shades.Count} shades");
+                HomeSeerSystem.WriteLog(ELogType.Info, $"Found {shades.Count} shades", Name);
 
                 foreach (var shade in shades)
                 {
                     var shadeName = PowerViewClient.DecodeName(shade.Name);
-                    WriteLog(ELogType.Info, $"Processing shade: {shadeName} (ID: {shade.Id})");
+                    HomeSeerSystem.WriteLog(ELogType.Info, $"Processing shade: {shadeName} (ID: {shade.Id})", Name);
 
                     // Check if device already exists
                     var existingDevice = FindDeviceByShadeId(shade.Id);
@@ -135,24 +134,34 @@ namespace HSPI_PowerView
             }
             catch (Exception ex)
             {
-                WriteLog(ELogType.Error, $"Error discovering shades: {ex.Message}");
+                HomeSeerSystem.WriteLog(ELogType.Error, $"Error discovering shades: {ex.Message}", Name);
             }
         }
 
         private HsDevice FindDeviceByShadeId(int shadeId)
         {
-            var devices = HomeSeerSystem.GetDevicesByInterface(Id);
-            foreach (var deviceRef in devices)
+            try
             {
-                var device = HomeSeerSystem.GetDeviceByRef(deviceRef);
-                if (device != null && device.PlugExtraData.ContainsNamed("ShadeId"))
+                // Search all devices by ref, starting from 1
+                for (int ref_num = 1; ref_num < 10000; ref_num++)
                 {
-                    var storedShadeId = int.Parse(device.PlugExtraData["ShadeId"].ToString());
-                    if (storedShadeId == shadeId)
+                    var device = HomeSeerSystem.GetDeviceByRef(ref_num);
+                    if (device == null)
+                        continue;
+
+                    if (device.Interface == Id && device.PlugExtraData.ContainsNamed("ShadeId"))
                     {
-                        return device;
+                        var storedShadeId = int.Parse(device.PlugExtraData["ShadeId"].ToString());
+                        if (storedShadeId == shadeId)
+                        {
+                            return device;
+                        }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                HomeSeerSystem.WriteLog(ELogType.Error, $"Error finding device by shade ID: {ex.Message}", Name);
             }
             return null;
         }
@@ -162,49 +171,38 @@ namespace HSPI_PowerView
             try
             {
                 var shadeName = PowerViewClient.DecodeName(shade.Name);
-                WriteLog(ELogType.Info, $"Creating device for shade: {shadeName}");
+                HomeSeerSystem.WriteLog(ELogType.Info, $"Creating device for shade: {shadeName}", Name);
 
-                var deviceData = DeviceFactory.CreateDevice(Id);
-                deviceData.Name = shadeName;
-                deviceData.Location = "PowerView";
-                deviceData.Location2 = "Shades";
-                deviceData.Device = DeviceTypeEnum.Generic;
+                // Use DeviceFactory to create the device
+                var df = DeviceFactory.CreateDevice(Id);
+                df = df.WithName(shadeName)
+                       .WithLocation("PowerView")
+                       .WithLocation2("Shades");
 
-                // Store shade ID in PlugExtraData
-                deviceData.PlugExtraData.AddNamed("ShadeId", shade.Id.ToString());
+                // Create a generic dimmable control feature (0-100%)
+                var ff = FeatureFactory.CreateGenericBinaryControl(Id, "Shade Control", "Open", "Close", 100, 0)
+                    .WithLocation("PowerView")
+                    .WithLocation2("Shades");
+                df.WithFeature(ff);
 
-                // Add status graphics
-                deviceData.StatusGraphics.Add(new StatusGraphic("/images/HomeSeer/status/off.gif", 0));
-                deviceData.StatusGraphics.Add(new StatusGraphic("/images/HomeSeer/status/on.gif", 100));
+                // Get the NewDeviceData
+                var deviceData = df.PrepareForHs();
 
-                // Add status controls for shade position
-                var statusControl = new StatusControl(EControlType.TextBoxNumber)
-                {
-                    Label = "Position",
-                    ControlUse = EControlUse.OnAlternate,
-                    TargetRange = new ValueRange(0, 100)
-                };
-                deviceData.StatusControls.Add(statusControl);
-
-                // Add control for opening
-                var openControl = new StatusControl(EControlType.Button)
-                {
-                    Label = "Open",
-                    ControlUse = EControlUse.On,
-                    TargetValue = 100
-                };
-                deviceData.StatusControls.Add(openControl);
-
-                // Add control for closing
-                var closeControl = new StatusControl(EControlType.Button)
-                {
-                    Label = "Close",
-                    ControlUse = EControlUse.Off,
-                    TargetValue = 0
-                };
-                deviceData.StatusControls.Add(closeControl);
-
+                // Create the device and get its reference
                 var devRef = HomeSeerSystem.CreateDevice(deviceData);
+                
+                // After creation, update with extra data
+                var extraData = HomeSeerSystem.GetPropertyByRef(devRef, EProperty.PlugExtraData);
+                if (extraData == null)
+                {
+                    extraData = new PlugExtraData();
+                }
+                var extraDataObj = extraData as PlugExtraData;
+                if (extraDataObj != null)
+                {
+                    extraDataObj.AddNamed("ShadeId", shade.Id.ToString());
+                    HomeSeerSystem.UpdatePropertyByRef(devRef, EProperty.PlugExtraData, extraDataObj);
+                }
                 
                 // Set initial position
                 if (shade.Positions?.Position1 != null)
@@ -213,11 +211,11 @@ namespace HSPI_PowerView
                     HomeSeerSystem.UpdatePropertyByRef(devRef, EProperty.Value, percentage);
                 }
 
-                WriteLog(ELogType.Info, $"Created device {shadeName} with ref {devRef}");
+                HomeSeerSystem.WriteLog(ELogType.Info, $"Created device {shadeName} with ref {devRef}", Name);
             }
             catch (Exception ex)
             {
-                WriteLog(ELogType.Error, $"Error creating shade device: {ex.Message}");
+                HomeSeerSystem.WriteLog(ELogType.Error, $"Error creating shade device: {ex.Message}", Name);
             }
         }
 
@@ -239,7 +237,7 @@ namespace HSPI_PowerView
             }
             catch (Exception ex)
             {
-                WriteLog(ELogType.Error, $"Error updating shade device: {ex.Message}");
+                HomeSeerSystem.WriteLog(ELogType.Error, $"Error updating shade device: {ex.Message}", Name);
             }
         }
 
@@ -253,7 +251,7 @@ namespace HSPI_PowerView
                     TimeSpan.FromSeconds(POLL_INTERVAL_SECONDS),
                     TimeSpan.FromSeconds(POLL_INTERVAL_SECONDS)
                 );
-                WriteLog(ELogType.Info, $"Started polling every {POLL_INTERVAL_SECONDS} seconds");
+                HomeSeerSystem.WriteLog(ELogType.Info, $"Started polling every {POLL_INTERVAL_SECONDS} seconds", Name);
             }
         }
 
@@ -263,7 +261,7 @@ namespace HSPI_PowerView
             {
                 _pollTimer.Dispose();
                 _pollTimer = null;
-                WriteLog(ELogType.Info, "Stopped polling");
+                HomeSeerSystem.WriteLog(ELogType.Info, "Stopped polling", Name);
             }
         }
 
@@ -283,7 +281,7 @@ namespace HSPI_PowerView
             }
             catch (Exception ex)
             {
-                WriteLog(ELogType.Error, $"Error polling shades: {ex.Message}");
+                HomeSeerSystem.WriteLog(ELogType.Error, $"Error polling shades: {ex.Message}", Name);
             }
         }
 
@@ -307,7 +305,7 @@ namespace HSPI_PowerView
             }
             catch (Exception ex)
             {
-                WriteLog(ELogType.Error, $"Error saving setting {key}: {ex.Message}");
+                HomeSeerSystem.WriteLog(ELogType.Error, $"Error saving setting {key}: {ex.Message}", Name);
             }
         }
 
