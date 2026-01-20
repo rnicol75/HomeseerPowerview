@@ -1568,16 +1568,25 @@ namespace HSPI_PowerView
             try
             {
                 var sceneName = string.IsNullOrWhiteSpace(scene.PtName) ? scene.Name : scene.PtName;
-                HomeSeerSystem.WriteLog(ELogType.Info, $"Creating scene device: {sceneName} (ID: {scene.Id})", Name);
+                
+                // Extract room name from scene name for Floor organization
+                // E.g., "Dining Room Open" → "Dining Room"
+                var roomLocation = ExtractRoomFromSceneName(sceneName);
+                if (string.IsNullOrEmpty(roomLocation))
+                {
+                    roomLocation = "PowerView"; // Fallback if extraction fails
+                }
+                
+                HomeSeerSystem.WriteLog(ELogType.Info, $"Creating scene device: {sceneName} (ID: {scene.Id}, Room: {roomLocation})", Name);
 
                 var df = DeviceFactory.CreateDevice(Id);
                 df = df.WithName(sceneName)
-                       .WithLocation("PowerView")
+                       .WithLocation(roomLocation)
                        .WithLocation2("Scenes");
 
                 // Single control to activate the scene
                 var ff = FeatureFactory.CreateGenericBinaryControl(Id, "Activate", "Run", "Idle", 100, 0)
-                    .WithLocation("PowerView")
+                    .WithLocation(roomLocation)
                     .WithLocation2("Scenes");
                 df.WithFeature(ff);
 
@@ -1592,12 +1601,37 @@ namespace HSPI_PowerView
 
                 // Save INI mapping
                 HomeSeerSystem.SaveINISetting("Scenes", $"{hubIp}:{scene.Id}", devRef.ToString(), Id + ".ini");
-                HomeSeerSystem.WriteLog(ELogType.Info, $"Scene device created: ref {devRef}, Scene ID {scene.Id}", Name);
+                HomeSeerSystem.WriteLog(ELogType.Info, $"Scene device created: ref {devRef}, Location='{roomLocation}', Scene ID {scene.Id}", Name);
             }
             catch (Exception ex)
             {
                 HomeSeerSystem.WriteLog(ELogType.Error, $"Error creating scene device {scene.Id}: {ex.Message}", Name);
             }
+        }
+
+        private string ExtractRoomFromSceneName(string sceneName)
+        {
+            if (string.IsNullOrWhiteSpace(sceneName))
+                return null;
+
+            // Keywords to remove (case-insensitive, longest first to avoid partial matches)
+            var keywords = new[] { " privacy", " open", " close", " on", " off", " raise", " lower", " stop" };
+            var name = sceneName.Trim();
+
+            foreach (var keyword in keywords)
+            {
+                if (name.EndsWith(keyword, StringComparison.OrdinalIgnoreCase))
+                {
+                    var extracted = name.Substring(0, name.Length - keyword.Length).Trim();
+                    if (!string.IsNullOrEmpty(extracted))
+                    {
+                        return extracted;
+                    }
+                }
+            }
+
+            // If no keywords matched, return the whole name
+            return string.IsNullOrEmpty(name) ? null : name;
         }
 
         private void CleanupObsoleteScenes(List<PowerViewScene> discoveredScenes, string hubIp)
