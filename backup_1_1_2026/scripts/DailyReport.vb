@@ -178,7 +178,7 @@ Function GetStatusText(devRef As Integer, value As Double) As String
         End If
         
     Catch ex As Exception
-        hs.WriteLog("DailyReport", "ERROR in GetStatusText for ref " & devRef & ": " & ex.Message)
+        hs.WriteLog("DailyReport", "ERROR in GetStatusText: " & ex.Message)
     End Try
     
     ' Fall back to numeric value

@@ -45,8 +45,7 @@ namespace HSPI_PowerView
 
         protected override void Initialize()
         {
-            HomeSeerSystem.WriteLog(ELogType.Info, "===== PowerView Plugin v1.0.1-DEBUG Initializing =====", Name);
-            HomeSeerSystem.WriteLog(ELogType.Info, "Initializing PowerView Plugin...", Name);
+            HomeSeerSystem.WriteLog(ELogType.Info, "PowerView Plugin v1.0.1 Initializing", Name);
 
             // Optional verbose logging flag
             var verboseFlag = HomeSeerSystem.GetINISetting("Settings", "VerboseLogging", "false", SettingsFileName);
@@ -96,9 +95,7 @@ namespace HSPI_PowerView
                         
                         try
                         {
-                            HomeSeerSystem.WriteLog(ELogType.Info, "===== INITIAL DISCOVERY STARTING =====", Name);
-                            HomeSeerSystem.WriteLog(ELogType.Info, $"DEBUG: _primaryClient is {(_primaryClient == null ? "NULL" : "initialized")}", Name);
-                            HomeSeerSystem.WriteLog(ELogType.Info, $"DEBUG: _primaryHubIp is '{_primaryHubIp}'", Name);
+                            HomeSeerSystem.WriteLog(ELogType.Info, "Starting initial discovery", Name);
                             
                             if (_primaryClient == null)
                             {
@@ -107,37 +104,30 @@ namespace HSPI_PowerView
                             }
                             
                             // Discover shades first (creates status devices)
-                            HomeSeerSystem.WriteLog(ELogType.Info, "Step 1: Discovering shades...", Name);
                             await DiscoverShadesAsync(_primaryClient, _primaryHubIp);
-                            HomeSeerSystem.WriteLog(ELogType.Info, "Step 1 complete: Shades discovered", Name);
-                            HomeSeerSystem.WriteLog(ELogType.Info, "DEBUG: About to call SyncScenesAsync for hub {_primaryHubIp}", Name);
+                            HomeSeerSystem.WriteLog(ELogType.Info, "Shades discovered", Name);
                             
                             // Sync scenes - this should discover ALL scenes, not just per-shade
-                            HomeSeerSystem.WriteLog(ELogType.Info, "Step 2: Starting scene sync...", Name);
                             try
                             {
                                 await SyncScenesAsync(_primaryClient, _primaryHubIp);
                                 _lastSceneSync[_primaryHubIp] = DateTime.UtcNow;
-                                HomeSeerSystem.WriteLog(ELogType.Info, "Step 2 complete: Scenes synced", Name);
+                                HomeSeerSystem.WriteLog(ELogType.Info, "Scenes synced", Name);
                             }
                             catch (Exception sceneEx)
                             {
-                                HomeSeerSystem.WriteLog(ELogType.Error, $"Step 2 FAILED: {sceneEx.Message}\n{sceneEx.StackTrace}", Name);
+                                HomeSeerSystem.WriteLog(ELogType.Error, $"Scene sync failed: {sceneEx.Message}", Name);
                             }
                             
                             // Clean up duplicates AFTER discovery creates devices
                             await Task.Delay(2000); // Give devices time to be created
-                            HomeSeerSystem.WriteLog(ELogType.Info, "Step 3: Running cleanup after initial discovery...", Name);
                             GlobalCleanupStatusDevices();
-                            HomeSeerSystem.WriteLog(ELogType.Info, "Step 3 complete: Cleanup finished", Name);
                             
-                            // Step 4: Re-link scenes to existing shades
-                            HomeSeerSystem.WriteLog(ELogType.Info, "Step 4: Re-linking scenes to existing shades...", Name);
+                            // Re-link scenes to existing shades
                             await RelinkScenesToExistingShades(_primaryHubIp);
-                            HomeSeerSystem.WriteLog(ELogType.Info, "Step 4 complete: Scenes re-linked", Name);
                             
                             _initialDiscoveryDone = true;
-                            HomeSeerSystem.WriteLog(ELogType.Info, "===== INITIAL DISCOVERY COMPLETE =====", Name);
+                            HomeSeerSystem.WriteLog(ELogType.Info, "Initial discovery complete", Name);
                         }
                         catch (Exception ex)
                         {
@@ -890,7 +880,6 @@ namespace HSPI_PowerView
                 HomeSeerSystem.WriteLog(ELogType.Info, $"Discovering PowerView shades on hub {hubIp}...", Name);
 
                 var shades = await client.GetShadesAsync();
-                HomeSeerSystem.WriteLog(ELogType.Info, $"DEBUG: GetShadesAsync returned {shades.Count} shades", Name);
 
                 // Verify no duplicates in the returned list
                 var shadeIds = new HashSet<int>();
@@ -905,13 +894,11 @@ namespace HSPI_PowerView
 
                 // Clean up duplicate devices using the freshly discovered shade list
                 CleanupDuplicateDevices(shades);
-                HomeSeerSystem.WriteLog(ELogType.Info, $"DEBUG: CleanupDuplicateDevices complete", Name);
 
                 foreach (var shade in shades)
                 {
                     var shadeName = FormatShadeName(shade.Id, PowerViewClient.DecodeName(shade.Name));
                     var targetHubIp = string.IsNullOrEmpty(shade.GatewayIp) ? hubIp : shade.GatewayIp;
-                    HomeSeerSystem.WriteLog(ELogType.Info, $"DEBUG: Processing shade {shade.Id} ({shadeName})", Name);
 
                     // Check if device already exists - if so, skip creation but link scenes
                     var existingDevice = FindDeviceByShadeId(shade.Id, targetHubIp, shadeName);
@@ -927,7 +914,6 @@ namespace HSPI_PowerView
                         await CreateShadeDevice(shade, targetHubIp);
                     }
                 }
-                HomeSeerSystem.WriteLog(ELogType.Info, $"DEBUG: DiscoverShadesAsync loop complete, exiting method", Name);
             }
             catch (Exception ex)
             {
@@ -1028,11 +1014,9 @@ namespace HSPI_PowerView
         {
             try
             {
-                HomeSeerSystem.WriteLog(ELogType.Info, $"DEBUG: FindDeviceByShadeId searching for shade {shadeId} on hub {hubIp}", Name);
                 
                 // First, check INI mapping to avoid duplicate creations across restarts
                 var mappedRefStr = HomeSeerSystem.GetINISetting("Devices", $"{hubIp}:{shadeId}", string.Empty, Id + ".ini");
-                HomeSeerSystem.WriteLog(ELogType.Info, $"DEBUG: INI mapping for {hubIp}:{shadeId} = '{mappedRefStr}'", Name);
                 
                 if (!string.IsNullOrEmpty(mappedRefStr) && int.TryParse(mappedRefStr, out int mappedRef))
                 {
@@ -1799,7 +1783,6 @@ namespace HSPI_PowerView
         {
             try
             {
-                HomeSeerSystem.WriteLog(ELogType.Info, $"DEBUG: CleanupObsoleteScenes START", Name);
                 var valid = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
                 foreach (var s in discoveredScenes)
                 {
@@ -1810,7 +1793,6 @@ namespace HSPI_PowerView
 
                 var toDelete = new List<HsDevice>();
                 var keepers = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
-                HomeSeerSystem.WriteLog(ELogType.Info, $"DEBUG: Starting device scan for cleanup", Name);
                 for (int ref_num = 1; ref_num < 20000; ref_num++)
                 {
                     var device = HomeSeerSystem.GetDeviceByRef(ref_num);
@@ -1853,10 +1835,8 @@ namespace HSPI_PowerView
                         HomeSeerSystem.WriteLog(ELogType.Error, $"ERROR in scene device scan at ref {ref_num}: {ex.Message}", Name);
                     }
                 }
-                HomeSeerSystem.WriteLog(ELogType.Info, $"DEBUG: Device scan complete, found {toDelete.Count} devices to delete", Name);
 
                 // Remove any stray Scene devices (location "Scenes") that lack SceneId and ShadeId metadata
-                HomeSeerSystem.WriteLog(ELogType.Info, $"DEBUG: Scanning for stray scene devices", Name);
                 for (int ref_num = 1; ref_num < 20000; ref_num++)
                 {
                     var device = HomeSeerSystem.GetDeviceByRef(ref_num);
@@ -1872,7 +1852,6 @@ namespace HSPI_PowerView
                         toDelete.Add(device);
                     }
                 }
-                HomeSeerSystem.WriteLog(ELogType.Info, $"DEBUG: Stray device scan complete, total to delete: {toDelete.Count}", Name);
 
                 HomeSeerSystem.WriteLog(ELogType.Info, $"Cleanup: Deleting {toDelete.Count} obsolete/duplicate scene devices", Name);
 
@@ -1880,7 +1859,6 @@ namespace HSPI_PowerView
                 {
                     try
                     {
-                        HomeSeerSystem.WriteLog(ELogType.Info, $"DEBUG: Deleting scene device ref {d.Ref} ({d.Name})", Name);
                         HomeSeerSystem.DeleteDevice(d.Ref);
                         LogVerbose($"Deleted scene device '{d.Name}' ref {d.Ref}");
                     }
@@ -1889,7 +1867,6 @@ namespace HSPI_PowerView
                         HomeSeerSystem.WriteLog(ELogType.Error, $"Error deleting scene device ref {d.Ref}: {ex.Message}", Name);
                     }
                 }
-                HomeSeerSystem.WriteLog(ELogType.Info, $"DEBUG: CleanupObsoleteScenes END - all deletions complete", Name);
             }
             catch (Exception ex)
             {
@@ -1900,7 +1877,6 @@ namespace HSPI_PowerView
 
         private async Task SyncScenesAsync(PowerViewClient client, string hubIp)
         {
-            HomeSeerSystem.WriteLog(ELogType.Info, $"DEBUG: SyncScenesAsync START for hub {hubIp}", Name);
             try
             {
                 var scenes = await client.GetScenesAsync();
@@ -1918,17 +1894,13 @@ namespace HSPI_PowerView
                 // cleanup first
                 HomeSeerSystem.WriteLog(ELogType.Info, $"Cleaning up obsolete scenes...", Name);
                 CleanupObsoleteScenes(scenes, hubIp);
-                HomeSeerSystem.WriteLog(ELogType.Info, $"DEBUG: CleanupObsoleteScenes returned successfully", Name);
-                HomeSeerSystem.WriteLog(ELogType.Info, $"DEBUG: CleanupObsoleteScenes returned successfully", Name);
 
                 var created = 0;
                 var skipped = 0;
-                HomeSeerSystem.WriteLog(ELogType.Info, $"DEBUG: Starting scene creation loop for {scenes.Count} scenes", Name);
                 foreach (var scene in scenes)
                 {
                     try
                     {
-                        HomeSeerSystem.WriteLog(ELogType.Info, $"DEBUG: Scene {created + skipped + 1}/{scenes.Count}: Processing scene {scene.Id} ({scene.PtName ?? scene.Name})", Name);
                         // During initial discovery, skip expensive device scan since all scenes are new
                         var existing = FindDeviceBySceneId(scene.Id, hubIp, scene.PtName ?? scene.Name, skipDeviceScan: true);
                         if (existing == null)
@@ -1936,7 +1908,6 @@ namespace HSPI_PowerView
                             HomeSeerSystem.WriteLog(ELogType.Info, $"Creating new scene device: {scene.PtName ?? scene.Name} (ID {scene.Id})", Name);
                             CreateSceneDevice(scene, hubIp);
                             created++;
-                            HomeSeerSystem.WriteLog(ELogType.Info, $"DEBUG: Created scene device #{created} for {scene.Id}", Name);
                         }
                         else
                         {
@@ -1957,7 +1928,6 @@ namespace HSPI_PowerView
                         // Continue to next scene instead of breaking
                     }
                 }
-                HomeSeerSystem.WriteLog(ELogType.Info, $"DEBUG: Scene loop complete - processed {created + skipped} total scenes", Name);
                 HomeSeerSystem.WriteLog(ELogType.Info, $"Scene sync complete: {created} created, {skipped} already existed. Total scenes: {scenes.Count}", Name);
                 
                 // After scenes are synced, update all existing shade devices with scene links
