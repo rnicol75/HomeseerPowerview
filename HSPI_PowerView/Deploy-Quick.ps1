@@ -47,16 +47,24 @@ $files = @(
     "bin\Release\HSPI_PowerView.exe.config"
 )
 
+# Stop HomeSeer service first to release DLL locks
+Write-Host "Stopping HomeSeer service..." -ForegroundColor Yellow
+Invoke-Command -Session $session -ScriptBlock { 
+    Stop-Service HomeSeerService -Force -ErrorAction SilentlyContinue 
+    Start-Sleep -Seconds 3  # Wait for service to fully stop
+}
+
 foreach ($file in $files) {
     if (Test-Path $file) {
-        Copy-Item $file -Destination "C:\ProgramData\HomeSeer\Plugins\" -ToSession $session -Force
+        Copy-Item $file -Destination "C:\Program Files (x86)\HomeSeer HS4\" -ToSession $session -Force
         Write-Host "  Copied $(Split-Path $file -Leaf)" -ForegroundColor Gray
     }
 }
 
-# Restart HomeSeer service
+# Start HomeSeer service
+Write-Host "Starting HomeSeer service..." -ForegroundColor Yellow
 Invoke-Command -Session $session -ScriptBlock { 
-    Restart-Service HomeSeer -Force -ErrorAction SilentlyContinue 
+    Start-Service HomeSeerService -ErrorAction SilentlyContinue 
 }
 
 Write-Host "Deployed successfully!" -ForegroundColor Green

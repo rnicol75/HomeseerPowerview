@@ -45,6 +45,7 @@ namespace HSPI_PowerView
 
         protected override void Initialize()
         {
+            HomeSeerSystem.WriteLog(ELogType.Info, "===== PowerView Plugin v1.0.1-DEBUG Initializing =====", Name);
             HomeSeerSystem.WriteLog(ELogType.Info, "Initializing PowerView Plugin...", Name);
 
             // Optional verbose logging flag
@@ -129,6 +130,11 @@ namespace HSPI_PowerView
                             HomeSeerSystem.WriteLog(ELogType.Info, "Step 3: Running cleanup after initial discovery...", Name);
                             GlobalCleanupStatusDevices();
                             HomeSeerSystem.WriteLog(ELogType.Info, "Step 3 complete: Cleanup finished", Name);
+                            
+                            // Step 4: Re-link scenes to existing shades
+                            HomeSeerSystem.WriteLog(ELogType.Info, "Step 4: Re-linking scenes to existing shades...", Name);
+                            await RelinkScenesToExistingShades(_primaryHubIp);
+                            HomeSeerSystem.WriteLog(ELogType.Info, "Step 4 complete: Scenes re-linked", Name);
                             
                             _initialDiscoveryDone = true;
                             HomeSeerSystem.WriteLog(ELogType.Info, "===== INITIAL DISCOVERY COMPLETE =====", Name);
@@ -531,6 +537,7 @@ namespace HSPI_PowerView
                 }
                 if (!plugExtraData.ContainsNamed("ShadeId"))
                 {
+                    HomeSeerSystem.WriteLog(ELogType.Warning, $"ShadeId missing from parent device {parentDevice.Name} (ref {parentDevice.Ref}), attempting INI recovery...", Name);
                     // Try to recover from INI (reverse lookup by device ref)
                     if (TryPopulateShadeFromIni(parentDevice.Ref, plugExtraData, out var recoveredShadeId, out var recoveredHubIp))
                     {
@@ -543,6 +550,10 @@ namespace HSPI_PowerView
                         featurePed.AddNamed("HubIp", recoveredHubIp);
                         HomeSeerSystem.UpdatePropertyByRef(device.Ref, EProperty.PlugExtraData, featurePed);
                         HomeSeerSystem.WriteLog(ELogType.Info, $"Populated feature {device.Name} (ref {device.Ref}) with ShadeId={recoveredShadeId}, HubIp={recoveredHubIp}", Name);
+                    }
+                    else
+                    {
+                        HomeSeerSystem.WriteLog(ELogType.Warning, $"INI recovery failed for parent device ref {parentDevice.Ref}", Name);
                     }
                 }
                 if (!plugExtraData.ContainsNamed("ShadeId"))
@@ -770,7 +781,7 @@ namespace HSPI_PowerView
             try
             {
                 var iniPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, SettingsFileName);
-                LogVerbose($"TryPopulateShadeFromIni: Looking in {iniPath} (exists: {File.Exists(iniPath)})");
+                HomeSeerSystem.WriteLog(ELogType.Info, $"TryPopulateShadeFromIni: Looking for ref {deviceRef} in {iniPath} (exists: {File.Exists(iniPath)})", Name);
                 
                 if (!File.Exists(iniPath))
                 {
@@ -781,6 +792,8 @@ namespace HSPI_PowerView
                 var lines = File.ReadAllLines(iniPath);
                 var inDevices = false;
                 var allDeviceLines = new List<string>();
+                int linesChecked = 0;
+                var sectionsFound = new List<string>();
                 
                 foreach (var raw in lines)
                 {
@@ -789,13 +802,16 @@ namespace HSPI_PowerView
                         continue;
                     if (line.StartsWith("["))
                     {
+                        sectionsFound.Add(line);
                         inDevices = line.Equals("[Devices]", StringComparison.OrdinalIgnoreCase);
+                        if (inDevices) HomeSeerSystem.WriteLog(ELogType.Info, $"Found [Devices] section in INI", Name);
                         continue;
                     }
                     if (!inDevices)
                         continue;
 
                     allDeviceLines.Add(line);
+                    linesChecked++;
                     
                     var parts = line.Split(new[] { '=' }, 2);
                     if (parts.Length != 2)
@@ -806,16 +822,29 @@ namespace HSPI_PowerView
                     // Parse ref from value (format: ref:openSceneId:closeSceneId:privacySceneId)
                     var valueParts = value.Split(':');
                     if (!int.TryParse(valueParts[0], out int mappedRef))
+                    {
+                        HomeSeerSystem.WriteLog(ELogType.Warning, $"Line {linesChecked}: Could not parse ref from '{valueParts[0]}' in value '{value}'", Name);
                         continue;
+                    }
+                    
+                    HomeSeerSystem.WriteLog(ELogType.Info, $"Line {linesChecked}: Checking '{key}={value}' (mappedRef={mappedRef} vs deviceRef={deviceRef})", Name);
+                    
                     if (mappedRef != deviceRef)
                         continue;
 
+                    HomeSeerSystem.WriteLog(ELogType.Info, $"Found matching INI entry: key='{key}', value='{value}'", Name);
                     var keyParts = key.Split(':');
                     if (keyParts.Length != 2)
+                    {
+                        HomeSeerSystem.WriteLog(ELogType.Warning, $"INI key '{key}' doesn't have 2 parts (expected hubIp:shadeId)", Name);
                         continue;
+                    }
                     hubIp = keyParts[0];
                     if (!int.TryParse(keyParts[1], out shadeId))
+                    {
+                        HomeSeerSystem.WriteLog(ELogType.Warning, $"Could not parse shadeId from '{keyParts[1]}'", Name);
                         continue;
+                    }
 
                     if (!ped.ContainsNamed("ShadeId")) ped.AddNamed("ShadeId", shadeId.ToString());
                     if (!ped.ContainsNamed("HubIp") && !string.IsNullOrWhiteSpace(hubIp)) ped.AddNamed("HubIp", hubIp);
@@ -834,9 +863,11 @@ namespace HSPI_PowerView
                         ped.AddNamed("ScenePrivacyId", privacySceneId.ToString());
                     }
                     
-                    LogVerbose($"Found INI mapping for ref {deviceRef}: ShadeId={shadeId}, HubIp={hubIp}, Scenes=Open:{(valueParts.Length > 1 ? valueParts[1] : "?")}/Close:{(valueParts.Length > 2 ? valueParts[2] : "?")}/Privacy:{(valueParts.Length > 3 ? valueParts[3] : "?")}");
+                    HomeSeerSystem.WriteLog(ELogType.Info, $"Successfully recovered from INI: ShadeId={shadeId}, HubIp={hubIp}", Name);
                     return true;
                 }
+                
+                HomeSeerSystem.WriteLog(ELogType.Warning, $"No matching entry found in INI for ref {deviceRef} (checked {linesChecked} lines in [Devices] section). Sections found: {string.Join(", ", sectionsFound)}", Name);
                 
                 // If no exact match found, log what we have
                 LogVerbose($"No INI mapping found for device ref {deviceRef}. [Devices] section has {allDeviceLines.Count} entries.");
@@ -882,26 +913,19 @@ namespace HSPI_PowerView
                     var targetHubIp = string.IsNullOrEmpty(shade.GatewayIp) ? hubIp : shade.GatewayIp;
                     HomeSeerSystem.WriteLog(ELogType.Info, $"DEBUG: Processing shade {shade.Id} ({shadeName})", Name);
 
-                    // Check if device already exists - DELETE and RECREATE to ensure scene IDs are linked
+                    // Check if device already exists - if so, skip creation but link scenes
                     var existingDevice = FindDeviceByShadeId(shade.Id, targetHubIp, shadeName);
                     if (existingDevice != null)
                     {
-                        HomeSeerSystem.WriteLog(ELogType.Info, $"Deleting existing shade device {shade.Id} (ref {existingDevice.Ref}) to recreate with scene linking", Name);
-                        
-                        // Delete the parent device and all its child features
-                        var result = HomeSeerSystem.DeleteDevice(existingDevice.Ref);
-                        if (result)
-                        {
-                            HomeSeerSystem.WriteLog(ELogType.Info, $"Successfully deleted shade device {shade.Id}", Name);
-                        }
-                        else
-                        {
-                            HomeSeerSystem.WriteLog(ELogType.Warning, $"Failed to delete shade device {shade.Id}, will try to create anyway", Name);
-                        }
+                        HomeSeerSystem.WriteLog(ELogType.Info, $"Shade device {shade.Id} already exists (ref {existingDevice.Ref}), ensuring controls and linking scenes...", Name);
+                        EnsureShadeControlsExist(existingDevice.Ref, shade.Id, targetHubIp);
+                        await LinkScenesToShade(existingDevice.Ref, shade.Id, targetHubIp);
                     }
-                    
-                    HomeSeerSystem.WriteLog(ELogType.Info, $"Creating shade device for {shade.Id}", Name);
-                    await CreateShadeDevice(shade, targetHubIp);
+                    else
+                    {
+                        HomeSeerSystem.WriteLog(ELogType.Info, $"Shade device {shade.Id} NOT FOUND, creating new device...", Name);
+                        await CreateShadeDevice(shade, targetHubIp);
+                    }
                 }
                 HomeSeerSystem.WriteLog(ELogType.Info, $"DEBUG: DiscoverShadesAsync loop complete, exiting method", Name);
             }
@@ -1004,14 +1028,18 @@ namespace HSPI_PowerView
         {
             try
             {
+                HomeSeerSystem.WriteLog(ELogType.Info, $"DEBUG: FindDeviceByShadeId searching for shade {shadeId} on hub {hubIp}", Name);
+                
                 // First, check INI mapping to avoid duplicate creations across restarts
                 var mappedRefStr = HomeSeerSystem.GetINISetting("Devices", $"{hubIp}:{shadeId}", string.Empty, Id + ".ini");
+                HomeSeerSystem.WriteLog(ELogType.Info, $"DEBUG: INI mapping for {hubIp}:{shadeId} = '{mappedRefStr}'", Name);
+                
                 if (!string.IsNullOrEmpty(mappedRefStr) && int.TryParse(mappedRefStr, out int mappedRef))
                 {
                     var mappedDevice = HomeSeerSystem.GetDeviceByRef(mappedRef);
                     if (mappedDevice != null)
                     {
-                        LogVerbose($"Found shade {shadeId} via INI mapping (ref {mappedRef})");
+                        HomeSeerSystem.WriteLog(ELogType.Info, $"Found shade {shadeId} via INI mapping (ref {mappedRef})", Name);
                         return mappedDevice;
                     }
                     else
@@ -1103,6 +1131,70 @@ namespace HSPI_PowerView
                 HomeSeerSystem.WriteLog(ELogType.Error, $"Error finding device by shade ID: {ex.Message}", Name);
             }
             return null;
+        }
+
+        private void EnsureShadeControlsExist(int deviceRef, int shadeId, string hubIp)
+        {
+            try
+            {
+                var device = HomeSeerSystem.GetDeviceByRef(deviceRef);
+                if (device == null)
+                {
+                    HomeSeerSystem.WriteLog(ELogType.Warning, $"Cannot ensure controls - device ref {deviceRef} not found", Name);
+                    return;
+                }
+
+                // Ensure PlugExtraData exists on parent device
+                var extraData = HomeSeerSystem.GetPropertyByRef(deviceRef, EProperty.PlugExtraData) as PlugExtraData ?? new PlugExtraData();
+                if (!extraData.ContainsNamed("ShadeId"))
+                {
+                    extraData.AddNamed("ShadeId", shadeId.ToString());
+                    extraData.AddNamed("HubIp", hubIp);
+                    HomeSeerSystem.UpdatePropertyByRef(deviceRef, EProperty.PlugExtraData, extraData);
+                    HomeSeerSystem.WriteLog(ELogType.Info, $"Added missing ShadeId={shadeId}, HubIp={hubIp} to device {deviceRef}", Name);
+                }
+
+                // Find the "Shade Control" feature
+                var childRefs = device.AssociatedDevices ?? new HashSet<int>();
+                foreach (var childRef in childRefs)
+                {
+                    var child = HomeSeerSystem.GetDeviceByRef(childRef);
+                    if (child == null) continue;
+
+                    if (string.Equals(child.Name, "Shade Control", StringComparison.OrdinalIgnoreCase))
+                    {
+                        // Ensure PlugExtraData exists on control feature
+                        var childExtra = HomeSeerSystem.GetPropertyByRef(childRef, EProperty.PlugExtraData) as PlugExtraData ?? new PlugExtraData();
+                        if (!childExtra.ContainsNamed("ShadeId"))
+                        {
+                            childExtra.AddNamed("ShadeId", shadeId.ToString());
+                            childExtra.AddNamed("HubIp", hubIp);
+                            HomeSeerSystem.UpdatePropertyByRef(childRef, EProperty.PlugExtraData, childExtra);
+                            HomeSeerSystem.WriteLog(ELogType.Info, $"Added ShadeId={shadeId}, HubIp={hubIp} to Shade Control feature {childRef}", Name);
+                        }
+
+                        // Always ensure controls exist (HomeSeer will handle duplicates)
+                        var svgClose = new StatusGraphic("/images/HomeSeer/status/down.png", 0, "Close");
+                        svgClose.IsRange = false;
+                        svgClose.TargetRange = new ValueRange(0, 0);
+                        svgClose.ControlUse = EControlUse.On;
+                        HomeSeerSystem.AddStatusGraphicToFeature(childRef, svgClose);
+
+                        var svgOpen = new StatusGraphic("/images/HomeSeer/status/up.png", 100, "Open");
+                        svgOpen.IsRange = false;
+                        svgOpen.TargetRange = new ValueRange(100, 100);
+                        svgOpen.ControlUse = EControlUse.Off;
+                        HomeSeerSystem.AddStatusGraphicToFeature(childRef, svgOpen);
+
+                        HomeSeerSystem.WriteLog(ELogType.Info, $"Ensured controls exist for Shade Control feature {childRef}", Name);
+                        break;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                HomeSeerSystem.WriteLog(ELogType.Error, $"Error ensuring controls exist: {ex.Message}", Name);
+            }
         }
 
         private async Task CreateShadeDevice(PowerViewShade shade, string hubIp)
@@ -2015,18 +2107,44 @@ namespace HSPI_PowerView
                 int? closeSceneId = null;
                 int? privacySceneId = null;
 
+                // Get the shade device to extract its name for matching
+                var shadeDevice = HomeSeerSystem.GetDeviceByRef(shadeDeviceRef);
+                string shadeName = shadeDevice?.Name ?? "";
+
                 foreach (var scene in scenes)
                 {
                     // Check if this scene controls this shade
                     if (scene.ShadeIds != null && scene.ShadeIds.Contains(shadeId))
                     {
-                        // Identify scene type by NetworkNumber: 45057=Open, 45058=Close, 45060=Privacy
+                        var sceneName = (scene.PtName ?? scene.Name ?? "").ToLowerInvariant();
+                        
+                        HomeSeerSystem.WriteLog(ELogType.Info, $"Checking scene '{scene.PtName ?? scene.Name}' (ID: {scene.Id}, NetworkNumber: {scene.NetworkNumber}) for shade {shadeId}", Name);
+                        
+                        // First try NetworkNumber identification (for standard PowerView scenes)
                         if (scene.NetworkNumber == 45057)
                             openSceneId = scene.Id;
                         else if (scene.NetworkNumber == 45058)
                             closeSceneId = scene.Id;
                         else if (scene.NetworkNumber == 45060)
                             privacySceneId = scene.Id;
+                        
+                        // Also try name-based matching (for custom scenes)
+                        // Look for keywords: "open", "up", "raise" vs "close", "down", "lower"
+                        if (!openSceneId.HasValue && (sceneName.Contains("open") || sceneName.Contains("up") || sceneName.Contains("raise")))
+                        {
+                            openSceneId = scene.Id;
+                            HomeSeerSystem.WriteLog(ELogType.Info, $"Matched Open scene by name: '{scene.PtName ?? scene.Name}' (ID: {scene.Id})", Name);
+                        }
+                        else if (!closeSceneId.HasValue && (sceneName.Contains("close") || sceneName.Contains("down") || sceneName.Contains("lower")))
+                        {
+                            closeSceneId = scene.Id;
+                            HomeSeerSystem.WriteLog(ELogType.Info, $"Matched Close scene by name: '{scene.PtName ?? scene.Name}' (ID: {scene.Id})", Name);
+                        }
+                        else if (!privacySceneId.HasValue && sceneName.Contains("privacy"))
+                        {
+                            privacySceneId = scene.Id;
+                            HomeSeerSystem.WriteLog(ELogType.Info, $"Matched Privacy scene by name: '{scene.PtName ?? scene.Name}' (ID: {scene.Id})", Name);
+                        }
                     }
                 }
 
@@ -2050,6 +2168,75 @@ namespace HSPI_PowerView
                         HomeSeerSystem.WriteLog(ELogType.Info, $"Linked Privacy scene {privacySceneId.Value} to shade {shadeId}", Name);
                     }
                     HomeSeerSystem.UpdatePropertyByRef(shadeDeviceRef, EProperty.PlugExtraData, ped);
+                    
+                    // Update INI with scene IDs for recovery later
+                    var iniValue = $"{shadeDeviceRef}:{openSceneId?.ToString() ?? ""}:{closeSceneId?.ToString() ?? ""}:{privacySceneId?.ToString() ?? ""}";
+                    try
+                    {
+                        // Use direct file IO since HomeSeer's SaveINISetting doesn't seem to work for [Devices] section
+                        var iniPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, SettingsFileName);
+                        var iniKey = $"{hubIp}:{shadeId}";
+                        
+                        // Read existing file
+                        var lines = new List<string>();
+                        if (File.Exists(iniPath))
+                        {
+                            lines.AddRange(File.ReadAllLines(iniPath));
+                        }
+                        
+                        // Find or create [Devices] section
+                        int devicesIndex = -1;
+                        int nextSectionIndex = -1;
+                        for (int i = 0; i < lines.Count; i++)
+                        {
+                            if (lines[i].Trim().Equals("[Devices]", StringComparison.OrdinalIgnoreCase))
+                            {
+                                devicesIndex = i;
+                            }
+                            else if (devicesIndex >= 0 && lines[i].Trim().StartsWith("["))
+                            {
+                                nextSectionIndex = i;
+                                break;
+                            }
+                        }
+                        
+                        // If [Devices] section doesn't exist, create it
+                        if (devicesIndex == -1)
+                        {
+                            lines.Add("");
+                            lines.Add("[Devices]");
+                            devicesIndex = lines.Count - 1;
+                        }
+                        
+                        // Update or add the entry
+                        bool found = false;
+                        int searchStart = devicesIndex + 1;
+                        int searchEnd = nextSectionIndex > 0 ? nextSectionIndex : lines.Count;
+                        
+                        for (int i = searchStart; i < searchEnd; i++)
+                        {
+                            if (lines[i].StartsWith(iniKey + "=", StringComparison.OrdinalIgnoreCase))
+                            {
+                                lines[i] = $"{iniKey}={iniValue}";
+                                found = true;
+                                break;
+                            }
+                        }
+                        
+                        if (!found)
+                        {
+                            // Insert after [Devices] header
+                            lines.Insert(devicesIndex + 1, $"{iniKey}={iniValue}");
+                        }
+                        
+                        // Write back
+                        File.WriteAllLines(iniPath, lines);
+                        HomeSeerSystem.WriteLog(ELogType.Info, $"Updated INI directly: [{iniKey}] = {iniValue}", Name);
+                    }
+                    catch (Exception ex)
+                    {
+                        HomeSeerSystem.WriteLog(ELogType.Error, $"Failed to update INI: {ex.Message}", Name);
+                    }
                 }
             }
             catch (Exception ex)
@@ -2474,6 +2661,51 @@ namespace HSPI_PowerView
             catch (Exception ex)
             {
                 HomeSeerSystem.WriteLog(ELogType.Error, $"Error initializing cloud API: {ex.Message}", Name);
+            }
+        }
+
+        /// <summary>
+        /// Re-link scenes to existing shade devices on plugin startup
+        /// </summary>
+        private async Task RelinkScenesToExistingShades(string hubIp)
+        {
+            try
+            {
+                HomeSeerSystem.WriteLog(ELogType.Info, $"Re-linking scenes for hub {hubIp}...", Name);
+                
+                // Get all devices from HomeSeer
+                var allDeviceRefs = HomeSeerSystem.GetRefsByInterface(Id, true);
+                
+                // Filter to shade devices (parent devices with ShadeId in PlugExtraData)
+                foreach (var deviceRef in allDeviceRefs)
+                {
+                    var device = HomeSeerSystem.GetDeviceByRef(deviceRef);
+                    if (device == null || device.Relationship != ERelationship.Device)
+                        continue;
+                    
+                    var ped = HomeSeerSystem.GetPropertyByRef(deviceRef, EProperty.PlugExtraData) as PlugExtraData;
+                    if (ped == null || !ped.ContainsNamed("ShadeId"))
+                        continue;
+                    
+                    // Check if this device belongs to the specified hub
+                    if (ped.ContainsNamed("HubIp"))
+                    {
+                        var deviceHubIp = ped["HubIp"]?.ToString();
+                        if (!string.Equals(deviceHubIp, hubIp, StringComparison.OrdinalIgnoreCase))
+                            continue;
+                    }
+                    
+                    // This is a shade device for this hub - re-link its scenes
+                    var shadeId = int.Parse(ped["ShadeId"].ToString());
+                    HomeSeerSystem.WriteLog(ELogType.Info, $"Re-linking scenes for shade {shadeId} ({device.Name})...", Name);
+                    await LinkScenesToShade(deviceRef, shadeId, hubIp);
+                }
+                
+                HomeSeerSystem.WriteLog(ELogType.Info, $"Finished re-linking scenes for hub {hubIp}", Name);
+            }
+            catch (Exception ex)
+            {
+                HomeSeerSystem.WriteLog(ELogType.Error, $"Error re-linking scenes: {ex.Message}", Name);
             }
         }
     }
