@@ -1,0 +1,526 @@
+Version=2
+US-Alabama,Birmingham,-86.82,33.52
+US-Alabama,Mobile,-88.05,30.7
+US-Alabama,Montgomery,-86.32,32.38
+US-Alaska,Anchorage,-149.98,61.17
+US-Alaska,Fairbanks,-147.85,64.8
+US-Alaska,Juneau,-134.42,58.3
+US-Alaska,Nome,-165.42,64.5
+US-Arizona,Flagstaff,-111.65,35.2
+US-Arizona,Phoenix,-112.07,33.45
+US-Arizona,Tucson,-110.97,32.22
+US-Arizona,Yuma,-114.62,32.72
+US-Arkansas,Fort Smith,-94.43,35.38
+US-Arkansas,Hot Springs,-93.05,34.52
+US-Arkansas,Little Rock,-92.28,34.75
+US-California,Bakersfield,-119.02,35.38
+US-California,Eureka,-124.13,40.8
+US-California,Fresno,-119.78,36.73
+US-California,Long Beach,-118.18,33.77
+US-California,Los Angeles,-118.23,34.05
+US-California,Oakland,-122.27,37.8
+US-California,Sacramento,-121.5,38.58
+US-California,San Diego,-117.15,32.72
+US-California,San Francisco,-122.42,37.78
+US-California,San Jose,-121.88,37.33
+US-California,Santa Barbara,-119.7,34.42
+US-California,Stockton,-121.28,37.97
+US-Colorado,Colorado Springs,-104.82,38.83
+US-Colorado,Denver,-104.98,39.75
+US-Colorado,Grand Junction,-108.57,39.07
+US-Colorado,Pueblo,-104.62,38.27
+US-Connecticut,Bridgeport,-73.18,41.18
+US-Connecticut,Hartford,-72.68,41.77
+US-Connecticut,New Haven,-72.93,41.3
+US-Delaware,Wilmington,-75.55,39.75
+US-Florida,Daytona Beach,-81.02,29.22
+US-Florida,Jacksonville,-81.67,30.33
+US-Florida,Key West,-81.8,24.57
+US-Florida,Miami,-80.2,25.78
+US-Florida,Orlando,-81.38,28.55
+US-Florida,Pensacola,-87.22,30.42
+US-Florida,St. Petersburg,-82.63,27.77
+US-Florida,Tallahassee,-84.28,30.45
+US-Florida,Tampa,-82.45,27.95
+US-Florida,West Palm Beach,-80.05,26.72
+US-Georgia,Atlanta,-84.4,33.75
+US-Georgia,Augusta,-81.97,33.47
+US-Georgia,Columbus,-84.98,32.47
+US-Georgia,Macon,-83.63,32.83
+US-Georgia,Savannah,-81.1,32.08
+US-Hawaii,Hilo,-155.08,19.73
+US-Hawaii,Honolulu,-157.87,21.3
+US-Idaho,Boise,-116.2,43.62
+US-Idaho,Idaho Falls,-112.02,43.5
+US-Idaho,Pocatello,-112.45,42.87
+US-Illinois,Champaign,-88.25,40.12
+US-Illinois,Chicago,-87.63,41.87
+US-Illinois,Decatur,-88.95,39.85
+US-Illinois,Peoria,-89.6,40.7
+US-Illinois,Rockford,-89.1,42.27
+US-Illinois,Springfield,-89.65,39.8
+US-Indiana,Evansville,-87.57,37.97
+US-Indiana,Fort Wayne,-85.13,41.07
+US-Indiana,Indianapolis,-86.17,39.77
+US-Indiana,Lafayette,-86.9,40.42
+US-Indiana,Muncie,-85.38,40.18
+US-Indiana,South Bend,-86.25,41.68
+US-Indiana,Terre Haute,-87.4,39.47
+US-Iowa,Cedar Rapids,-91.67,41.97
+US-Iowa,Davenport,-90.58,41.52
+US-Iowa,Des Moines,-93.62,41.58
+US-Iowa,Dubuque,-90.67,42.5
+US-Iowa,Iowa City,-91.53,41.67
+US-Iowa,Sioux City,-96.42,42.5
+US-Iowa,Waterloo,-92.33,42.5
+US-Kansas,Dodge City,-100.02,37.75
+US-Kansas,Topeka,-95.67,39.05
+US-Kansas,Wichita,-97.33,37.7
+US-Kentucky,Bowling Green,-86.45,37
+US-Kentucky,Lexington,-84.5,38.05
+US-Kentucky,Louisville,-85.77,38.25
+US-Kentucky,Paducah,-88.6,37.08
+US-Louisiana,Baton Rouge,-91.18,30.45
+US-Louisiana,New Orleans,-90.07,29.95
+US-Louisiana,Shreveport,-93.75,32.52
+US-Maine,Augusta,-69.77,44.32
+US-Maine,Bangor,-68.77,44.8
+US-Maine,Eastport,-67,44.9
+US-Maine,Portland,-70.25,43.67
+US-Maryland,Baltimore,-76.62,39.28
+US-Maryland,Clarksville,-76.96,39.21
+US-Massachusetts,Boston,-71.05,42.35
+US-Massachusetts,New Bedford,-70.93,41.63
+US-Massachusetts,Springfield,-72.6,42.1
+US-Massachusetts,Worcester,-71.8,42.27
+US-Michigan,Ann Arbor,-83.75,42.28
+US-Michigan,Battle Creek,-85.18,42.32
+US-Michigan,Detroit,-83.05,42.33
+US-Michigan,Flint,-83.7,43.02
+US-Michigan,Grand Rapids,-85.67,42.97
+US-Michigan,Jackson,-84.4,42.25
+US-Michigan,Kalamazoo,-85.58,42.28
+US-Michigan,Lansing,-84.55,42.73
+US-Michigan,Saginaw,-83.93,43.43
+US-Minnesota,Duluth,-92.1,46.78
+US-Minnesota,Rochester,-92.47,44.02
+US-Minnesota,St. Cloud,-94.17,45.57
+US-Minnesota,St. Paul,-93.1,44.95
+US-Mississippi,Gulfport,-89.1,30.37
+US-Mississippi,Jackson,-90.18,32.3
+US-Mississippi,Natchez,-91.4,31.57
+US-Missouri,Joplin,-94.5,37.08
+US-Missouri,Kansas City,-94.58,39.08
+US-Missouri,Springfield,-93.3,37.22
+US-Missouri,St. Louis,-90.2,38.63
+US-Montana,Billings,-108.5,45.78
+US-Montana,Butte,-112.53,46.02
+US-Montana,Great Falls,-111.3,47.5
+US-Montana,Helena,-112.03,46.6
+US-Nebraska,Lincoln,-96.7,40.82
+US-Nebraska,Omaha,-95.93,41.25
+US-Nevada,Carson City,-119.77,39.17
+US-Nevada,Las Vegas,-115.15,36.17
+US-Nevada,Reno,-119.82,39.52
+US-New Hampshire,Concord,-71.53,43.2
+US-New Hampshire,Manchester,-71.47,42.98
+US-New Jersey,Atlantic City,-74.43,39.37
+US-New Jersey,Newark,-74.17,40.73
+US-New Jersey,Trenton,-74.77,40.22
+US-New Mexico,Albuquerque,-106.65,35.08
+US-New Mexico,Carlsbad,-104.25,32.43
+US-New Mexico,Gallup,-108.75,35.53
+US-New Mexico,Santa Fe,-105.93,35.68
+US-New York,Albany,-73.75,42.65
+US-New York,Binghamton,-75.92,42.1
+US-New York,Buffalo,-78.87,42.88
+US-New York,Niagara Falls,-79.05,43.1
+US-New York,Rochester,-77.6,43.17
+US-New York,Syracuse,-76.15,43.05
+US-New York,Utica,-75.23,43.1
+US-New York,White Plains,-73.77,41.03
+US-North Carolina,Asheville,-82.55,35.6
+US-North Carolina,Charlotte,-80.85,35.23
+US-North Carolina,Greensboro,-79.78,36.07
+US-North Carolina,Raleigh,-78.63,35.78
+US-North Carolina,Wilmington,-77.95,34.23
+US-North Carolina,Winston-Salem,-80.25,36.1
+US-North Dakota,Fargo,-96.78,46.88
+US-North Dakota,Minot,-101.3,48.23
+US-Ohio,Akron,-81.52,41.08
+US-Ohio,Cincinnati,-84.52,39.1
+US-Ohio,Cleveland,-81.7,41.5
+US-Ohio,Columbus,-83,40
+US-Ohio,Dayton,-84.2,39.77
+US-Ohio,Lima,-84.1,40.75
+US-Ohio,Toledo,-83.55,41.65
+US-Ohio,Youngstown,-80.65,41.1
+US-Oklahoma,Oklahoma City,-97.52,35.47
+US-Oklahoma,Tulsa,-96,36.15
+US-Oregon,Eugene,-123.1,44.05
+US-Oregon,Portland,-122.68,45.52
+US-Oregon,Salem,-123.03,44.93
+US-Pennsylvania,Allentown,-75.47,40.6
+US-Pennsylvania,Altoona,-78.4,40.52
+US-Pennsylvania,Erie,-80.08,42.12
+US-Pennsylvania,Harrisburg,-76.88,40.27
+US-Pennsylvania,Philadelphia,-75.15,39.95
+US-Pennsylvania,Pittsburgh,-80,40.43
+US-Pennsylvania,Scranton,-75.67,41.42
+US-Pennsylvania,York,-76.73,39.97
+US-Puerto Rico,San Juan,-66.07,18.45
+US-Rhode Island,Providence,-71.42,41.83
+US-South Carolina,Charleston,-79.93,32.78
+US-South Carolina,Columbia,-81.03,34
+US-South Carolina,Greenville,-82.4,34.85
+US-South Dakota,Pierre,-100.35,44.37
+US-South Dakota,Rapid City,-103.22,44.08
+US-South Dakota,Sioux Falls,-96.73,43.55
+US-Tennessee,Chattanooga,-85.32,35.05
+US-Tennessee,Knoxville,-83.92,35.97
+US-Tennessee,Memphis,-90.05,35.15
+US-Tennessee,Nashville,-86.78,36.17
+US-Texas,Abilene,-99.73,32.45
+US-Texas,Amarillo,-101.83,35.2
+US-Texas,Austin,-97.75,30.27
+US-Texas,Beaumont,-94.1,30.08
+US-Texas,Brownsville,-97.5,25.9
+US-Texas,Corpus Christi,-97.4,27.8
+US-Texas,Dallas,-96.8,32.78
+US-Texas,El Paso,-106.48,31.77
+US-Texas,Fort Worth,-97.33,32.75
+US-Texas,Galveston,-94.8,29.3
+US-Texas,Houston,-95.37,29.75
+US-Texas,Laredo,-99.52,27.5
+US-Texas,Lubbock,-101.85,33.58
+US-Texas,San Angelo,-100.43,31.47
+US-Texas,San Antonio,-98.48,29.43
+US-Texas,Waco,-97.13,31.55
+US-Texas,Wichita Falls,-98.48,33.92
+US-Utah,Salt Lake City,-111.88,40.75
+US-Vermont,Burlington,-73.22,44.48
+US-Vermont,Montpelier,-72.58,44.27
+US-Virgin Islands,Charlotte Amalie,-64.93,18.35
+US-Virginia,Norfolk,-76.28,36.85
+US-Virginia,Richmond,-77.43,37.53
+US-Virginia,Roanoke,-79.95,37.27
+US-Virginia,Virginia Beach,-75.97,36.85
+US-Washington,Seattle,-122.33,47.62
+US-Washington,Spokane,-117.43,47.67
+US-Washington,Tacoma,-122.43,47.25
+US-Washington,Walla Walla,-118.33,46.07
+US-Washington,Yakima,-120.52,46.6
+US-West Virginia,Charleston,-81.63,38.35
+US-West Virginia,Huntington,-82.45,38.42
+US-West Virginia,Wheeling,-80.72,40.07
+US-Wisconsin,Eau Claire,-91.5,44.82
+US-Wisconsin,Green Bay,-88.02,44.52
+US-Wisconsin,Madison,-89.38,43.07
+US-Wisconsin,Milwaukee,-87.9,43.03
+US-Wisconsin,Racine,-87.78,42.73
+US-Wisconsin,Sheboygan,-87.72,43.75
+US-Wyoming,Cheyenne,-104.82,41.13
+US-Wyoming,Sheridan,-106.95,44.8
+Afghanistan,Kabul,69.18,34.47
+Albania,Tirane,19.82,41.3
+Algeria,Algiers,3.13,36.7
+American Samoa,Pago Pago,-170.72,-14.27
+Andorra,Andorra la Vella,1.53,42.52
+Angola,Luanda,13.25,-8.83
+Antigua and Barbuda,W. Indies,-61.8,17.33
+Argentina,Buenos Aires,-58.5,-34.33
+Armenia,Yerevan,44.52,40.17
+Aruba,Oranjestad,-70.03,12.53
+Australia,Adelaide,138.54,-34.77
+Australia,Ayers Rock,131.08,-25.38
+Australia,Brisbane,153.17,-27.5
+Australia,Canberra,149.13,-35.25
+Australia,Darwin,130.85,-12.47
+Australia,Melbourne,144.97,-37.78
+Australia,Perth,115.87,-31.95
+Australia,Sydney,151.2,-33.87
+Austria,Vienna,16.37,48.2
+Azerbaijan,Baku,49.93,40.48
+Bahamas,Nassau,-77.33,25.08
+Bahrain,Manama,50.5,26.17
+Bangladesh,Dhaka,90.43,23.72
+Barbados,Bridgetown,-59.5,13.08
+Belarus,Minsk,27.5,53.87
+Belgium,Brussels,4.35,50.85
+Belize,Belmopan,-88.5,17.3
+Benin,Porto-Novo,2.7,6.38
+Bhutan,Thimphu,89.75,27.52
+Bolivia,La Paz,-68.17,-16.33
+Bosnia and Herzegovina,Sarajevo,18.43,43.87
+Botswana,Gaborone,25.95,-24.75
+Brazil,Brasilia,-47.92,-15.87
+British Virgin Islands,Road Town,-64.62,18.45
+Brunei Darussalam,Bandar Seri Begawan,116.67,4.87
+Bulgaria,Sofia,23.33,42.75
+Burkina Faso,Ouagadougou,-1.5,12.25
+Burundi,Bujumbura,29.3,-3.27
+Cambodia,Phnom Penh,104.92,11.55
+Cameroon,Yaounde,11.58,3.83
+Canada-Alberta,Banff,-115.55,51.18
+Canada-Alberta,Calgary,-114.08,51.05
+Canada-Alberta,Cold Lake,-110.23,54.43
+Canada-Alberta,Edmonton,-113.5,53.5
+Canada-Alberta,Fort McMurray,-111.27,56.73
+Canada-Alberta,Jasper,-118.05,53
+Canada-Alberta,Lethbridge,-112.78,49.62
+Canada-Alberta,Medicine Hat,-110.73,50.03
+Canada-Alberta,Peace River,-117.4,56.23
+Canada-British Columbia,Abbotsford,-122.32,49.03
+Canada-British Columbia,Comox,-124.9,49.68
+Canada-British Columbia,Cranbrook,-115.76,49.68
+Canada-British Columbia,Fairmont Springs,-115.8,50.35
+Canada-British Columbia,Fort Nelson,-122.63,58.8
+Canada-British Columbia,Kamloops,-120.45,50.7
+Canada-British Columbia,Point Atkinson,-123.26,49.33
+Canada-British Columbia,Prince George,-122.69,53.92
+Canada-British Columbia,Prince Rupert,-130.38,54.31
+Canada-British Columbia,Triple Island,-130.88,54.29
+Canada-British Columbia,Vancouver,-123.08,49.25
+Canada-British Columbia,Victoria,-123.4,48.63
+Canada-Manitoba,Churchill,-94.09,58.77
+Canada-Manitoba,The Pas,-101.17,53.88
+Canada-Manitoba,Winnipeg,-97.13,49.9
+Canada-New Brunswick,Brandon,-99.95,49.85
+Canada-New Brunswick,Chatham,-65.45,47.05
+Canada-New Brunswick,Edmundston,-68.41,47.43
+Canada-New Brunswick,Fredericton,-66.43,45.85
+Canada-New Brunswick,Moncton,-64.67,46.11
+Canada-New Brunswick,Saint John,-65.96,45.34
+Canada-Newfoundland,Cape Race,-53.07,46.66
+Canada-Newfoundland,Corner Brook,-57.97,48.95
+Canada-Newfoundland,Gander,-54.57,48.93
+Canada-Newfoundland,Goose Bay,-60.42,53.33
+Canada-Newfoundland,Saint Johns,-52.71,47.08
+Canada-Northwest Territories,Alert,-62.28,82.52
+Canada-Northwest Territories,Echo Bay (Port Radium),-117.92,66.08
+Canada-Northwest Territories,Fort McPherson,-134.85,67.43
+Canada-Northwest Territories,Fort Simpson,-121.25,61.76
+Canada-Northwest Territories,Great Slave Lake,-115.63,61.38
+Canada-Northwest Territories,Iqaluit,-68.55,63.76
+Canada-Northwest Territories,Yellowknife,-114.42,62.48
+Canada-Nova Scotia,Glace Bay,-59.95,46.2
+Canada-Nova Scotia,Halifax,-63.58,44.67
+Canada-Nova Scotia,Saint Paul Island,-60.17,47.25
+Canada-Nova Scotia,Sydney,-60.08,46.14
+Canada-Nova Scotia,Western Head,-64.66,43.99
+Canada-Ontario,Dryden,-92.83,49.77
+Canada-Ontario,Fort Albany,-81.58,52.25
+Canada-Ontario,Fort Severn,-87.67,56
+Canada-Ontario,Guelph,-80.18,43.57
+Canada-Ontario,Hamilton,-79.85,43.25
+Canada-Ontario,Kapuskasing,-82.5,49.42
+Canada-Ontario,Kenora,-94.35,49.8
+Canada-Ontario,Kingston,-76.6,44.22
+Canada-Ontario,Kitchener,-80.33,43.25
+Canada-Ontario,London,-81.25,43
+Canada-Ontario,Mississauga,-79.46,43.59
+Canada-Ontario,North Bay,-79.46,46.32
+Canada-Ontario,Ottawa,-75.67,45.42
+Canada-Ontario,Point Petre (CCG DGPS REFSTA),-77.25,43.84
+Canada-Ontario,Saint Catherines,-79.12,43.1
+Canada-Ontario,Scarborough,-79.37,43.67
+Canada-Ontario,Sioux Lookout,-91.92,50.07
+Canada-Ontario,Sioux Narrows,-94,49.4
+Canada-Ontario,Sudbury,-80.86,46.54
+Canada-Ontario,Thunder Bay,-89.2,48.45
+Canada-Ontario,Timmins,-81.33,48.48
+Canada-Ontario,Toronto,-79.37,43.67
+Canada-Ontario,Waterloo,-80.49,43.46
+Canada-Ontario,Windsor,-82.97,42.28
+Canada-Quebec,BaieComeau,-68.18,49.14
+Canada-Quebec,Charlevoix,-70.19,47.61
+Canada-Quebec,Chibougamau,-74.38,49.9
+Canada-Quebec,Gaspe,-64.51,48.78
+Canada-Quebec,Laval,-73.61,45.5
+Canada-Quebec,MontJoli,-68.22,48.6
+Canada-Quebec,Montreal,-73.58,45.5
+Canada-Quebec,Quebec,-71.17,46.75
+Canada-Quebec,Sept-Iles,-66.31,50.22
+Canada-Quebec,Sherbrooke,-71.77,45.4
+Canada-Quebec,Trois-Rivieres,-72.68,46.36
+Canada-Quebec,Val-d-or,-77.78,48.08
+Canada-Saskatchewan,Moose Jaw,-105.53,50.37
+Canada-Saskatchewan,Prince Albert,-111.12,55.4
+Canada-Saskatchewan,Regina,-104.5,50.5
+Canada-Saskatchewan,Saskatoon,-106.6,52.15
+Canada-Saskatchewan,Swift Current,-107.75,50.28
+Canada-Yukon,Burwash,-139,61.33
+Cape Verde,Praia,-23.57,15.03
+Cayman Islands,George Town,-81.4,19.33
+Central African Republic,Bangui,18.58,4.38
+Chad,N'Djamena,14.98,12.17
+Chile,Santiago,-70.67,-33.4
+China,Beijing,116.33,39.92
+Colombia,Bogota,-74,4.57
+Comros,Moroni,43.27,-11.67
+Congo,Brazzaville,15.2,-4.15
+Costa Rica,San Jose,-84.03,9.92
+Cote d'Ivoire,Yamoussoukro,-5.28,6.82
+Croatia,Zagreb,15.97,45.83
+Cuba,Havana,-82.37,23.13
+Cyprus,Nicosia,33.42,35.17
+Czech Republic,Prague,14.37,50.08
+Democratic People's Republic of Korea,P'yongyang,125.5,39.15
+Democratic Republic of the Congo,Kinshasa,15.25,-4.33
+Denmark,Aalborg,9.85,57.1
+Denmark,Copenhagen,12.57,55.68
+Djibouti,Djibouti,42.33,11.13
+Dominica,Roseau,-61.4,15.33
+Dominica Republic,Santo Domingo,-69.98,18.5
+East Timor,Dili,125.57,-8.48
+Ecuador,Quito,-78.58,-0.25
+Egypt,Cairo,31.23,30.02
+El Salvador,San Salvador,-89.17,13.67
+Equatorial Guinea,Malabo,8.83,3.75
+Eritrea,Asmara,38.92,15.32
+Estonia,Tallinn,24.8,59.37
+Ethiopia,Addis Ababa,38.7,9.03
+Falkland Islands (Malvinas),Stanley,-59.85,-51.67
+Faroe Islands,Torshavn,-6.93,62.08
+Fiji,Suva,178.5,-18.1
+Finland,Helsinki,25.05,60.25
+France,Paris,2.2,48.5
+French Guiana,Cayenne,-52.3,5.08
+French Polynesia,Papeete,-149.57,-17.53
+Gabon,Libreville,9.43,0.42
+Gambia,Banjul,-16.67,13.47
+Georgia,T'bilisi,44.83,41.72
+Germany,Berlin,13.25,52.3
+Ghana,Accra,-0.1,5.58
+Greece,Athens,23.77,37.97
+Greenland,Nuuk,-51.58,64.17
+Guadeloupe,Basse-Terre,-61.73,16
+Guatemala,Guatemala,-90.37,14.67
+Guernsey,St. Peter Port,-2.55,49.43
+Guinea,Conakry,-13.82,9.48
+Guinea-Bissau,Bissau,-15.75,11.75
+Guyana,Georgetown,-58.2,6.83
+Haiti,Port-au-Prince,-72.33,18.67
+Heard Island and McDonald Islands,,75.67,-54.67
+Honduras,Tegucigalpa,-87.23,14.08
+Hungary,Budapest,19.08,47.48
+Iceland,Reykjavik,-21.95,64.17
+India,Bombay,72.83,18.97
+India,New Delhi,77.22,28.62
+Indonesia,Jakarta,106.82,-6.15
+Iran (Islamic Republic of),Tehran,51.5,35.73
+Iraq,Baghdad,44.5,33.33
+Ireland,Dublin,-6.25,53.35
+Israel,Jerusalem,-35.17,32.18
+Italy,Aviano,12.6,46.03
+Italy,Rome,12.29,41.54
+Jamaica,Kingston,-76.83,18
+Jordan,Amman,35.87,31.95
+Kazakhstan,Astana,71.5,51.17
+Kenya,Nairobi,36.8,-1.28
+Kiribati,Tarawa,174.67,1.5
+Kuwait,Kuwait,49.67,29.5
+Kyrgyzstan,Bishkek,74.77,42.9
+Lao People's Democratic Republic,Vientiane,102.6,17.97
+Latvia,Riga,24.13,56.88
+Lebanon,Beirut,35.52,33.88
+Lesotho,Maseru,27.5,-29.3
+Liberia,Monrovia,-10.78,6.3
+Libyan Arab Jamahiriya,Tripoli,13.12,32.82
+Liechtenstein,Vaduz,9.52,47.13
+Lithuania,Vilnius,25.32,54.63
+Luxembourg,Luxembourg,6.15,49.62
+Macau,Macau,113.55,22.2
+Macedonia,Skopje,21.43,42.02
+Madagascar,Antananarivo,47.52,-18.92
+Malawi,Lilongwe,33.8,-15.67
+Malaysia,Kuala Lumpur,101.68,3.15
+Maldives,Male,73.47,4
+Mali,Bamako,-7.92,12.57
+Malta,Valletta,14.52,35.9
+Martinique,Fort-de-France,-61.03,14.6
+Mauritania,Nouakchott,57.5,-20.17
+Mayotte,Mamoudzou,45.23,-12.8
+Mexico,Mexico,-99.17,19.33
+Micronesia,Palikir,158.15,6.92
+Moldova Republic of,Chisinau,28.83,47.03
+Mozambique,Maputo,32.53,-25.97
+Myanmar,Yangon,96.33,16.75
+Namibia,Windhoek,17.07,-22.58
+Nepal,Kathmandu,85.33,27.75
+Netherlands,Amsterdam,4.87,52.35
+Netherlands Antilles,Willemstad,-69,12.08
+New Caledonia,Noumea,166.5,-22.28
+New Zealand,Auckland,174.75,-36.88
+New Zealand,Wellington,174.77,-41.32
+Nicaragua,Managua,-86.33,12.1
+Niger,Niamey,2.1,13.45
+Nigeria,Abuja,7.53,9.08
+Norfolk Island,Kingston,168.72,-45.33
+Northern Mariana Islands,Saipan,145.75,15.2
+Norway,Bergen,5.22,60.29
+Norway,Oslo,10.75,59.92
+Oman,Masqat,58.6,23.62
+Pakistan,Islamabad,73.17,33.67
+Palau,Koror,134.47,7.33
+Panama,Panama,-79.42,9
+Papua New Guinea,Port Moresby,147.13,-9.4
+Paraguay,Asuncion,-57.5,-25.17
+Peru,Lima,-77,-13.67
+Philippines,Manila,121.05,14.67
+Poland,Warsaw,22.67,52.22
+Portugal,Lisbon,-9.17,38.7
+Puerto Rico,San Juan,-66.12,18.47
+Qatar,Doha,51.58,25.25
+Rawanda,Kigali,30.07,-1.98
+Republic of Korea,Seoul,126.97,37.52
+Romania,Bucuresti,26.17,44.45
+Russian Federation,Moskva,37.58,55.75
+Saint Kitts and Nevis,Basseterre,-62.72,17.28
+Saint Lucia,Castries,-60.97,14.03
+Saint Pierre and Miquelon,Saint-Pierre,-56.2,46.77
+Saint Vincent and the Grenadines,Kingstown,-61.17,13.17
+Samoa,Apia,-171.83,-13.83
+San Marino,San Marino,12.5,43.92
+Sao Tome and Principe,Sao Tome,6.65,0.17
+Saudi Arabia,Riyadh,46.7,24.68
+Senegal,Dakar,-17.48,14.57
+Sierra Leone,Freetown,-13.28,8.5
+Slovakia,Bratislava,17.12,48.17
+Slovenia,Ljubljana,14.55,46.07
+Solomon Islands,Honiara,159.95,-9.45
+Somalia,Mogadishu,45.42,2.03
+South Africa,Pretoria,28.2,-25.73
+Spain,Barcelona,2.09,41.3
+Spain,Madrid,-3.75,40.42
+Sudan,Khartoum,32.58,15.52
+Suriname,Paramaribo,-55.17,5.83
+Swaziland,Mbabane,31.1,-26.3
+Sweden,Stockholm,18.03,59.2
+Switzerland,Bern,7.47,46.95
+Switzerland,Zurich,8.53,47.37
+Syrian Arab Republic,Damascus,36.3,33.5
+Tajikistan,Dushanbe,68.8,38.55
+Thailand,Bangkok,100.58,13.75
+Togo,Lome,1.33,6.15
+Tonga,Nuku'alofa,-174,-21.17
+Tunisia,Tunis,10.18,36.83
+Turkey,Ankara,32.9,39.95
+Turkmenistan,Ashgabat,57.83,38
+Tuvalu,Funafuti,179.22,-8.52
+Uganda,Kampala,32.5,0.33
+Ukraine,Kiev,30.47,50.5
+UK-England,Birmingham,-1.88,52.48
+UK-England,London,-0.01,51.31
+UK-Scotland,Aberdeen,-2.2,57.2
+UK-Wales,Aberswyth,-4.08,52.42
+United Arab Emirates,Abu Dhabi,54.37,24.47
+United Republic of Tanzania,Dodoma,35.75,-6.13
+Uruguay,Montevideo,-56.18,-34.83
+Uzbekistan,Tashkent,69.17,41.33
+Vanuatu,Port-Vila,168.3,-17.75
+Venezuela,Caracas,-66.92,10.5
+Viet Nam,Hanoi,105.92,21.08
+Yugoslavia,Belgrade,20.62,44.83
+Zambia,Lusaka,28.27,-15.47
+Zimbabwe,Harare,31.03,-17.72

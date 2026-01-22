@@ -1,0 +1,855 @@
+1/21/2026 8:08:40 AM	PowerView	Info	[POLL-DONE] Poll complete for hub 192.168.3.164: 21 processed, 0 skipped
+1/21/2026 8:08:40 AM	PowerView	Info	Shade 168: SignalStrength=50, BatteryStrength=75
+1/21/2026 8:08:40 AM	PowerView	Info	[POLLING] Updating shade 168: Battery=75%, Signal=50%, Position=0.98
+1/21/2026 8:08:40 AM	PowerView	Info	[FindDevice] Found shade 168 (hub 192.168.3.164) via INI mapping (ref 4634)
+1/21/2026 8:08:40 AM	PowerView	Info	Shade 156: SignalStrength=36, BatteryStrength=75
+1/21/2026 8:08:40 AM	PowerView	Info	[POLLING] Updating shade 156: Battery=75%, Signal=36%, Position=0.00
+1/21/2026 8:08:40 AM	PowerView	Info	[FindDevice] Found shade 156 (hub 192.168.3.164) via INI mapping (ref 4630)
+1/21/2026 8:08:40 AM	PowerView	Info	Shade 148: SignalStrength=53, BatteryStrength=75
+1/21/2026 8:08:40 AM	PowerView	Info	[POLLING] Updating shade 148: Battery=75%, Signal=53%, Position=0.00
+1/21/2026 8:08:40 AM	PowerView	Info	[FindDevice] Found shade 148 (hub 192.168.3.164) via INI mapping (ref 4677)
+1/21/2026 8:08:40 AM	PowerView	Info	Shade 140: SignalStrength=35, BatteryStrength=75
+1/21/2026 8:08:40 AM	PowerView	Info	[POLLING] Updating shade 140: Battery=75%, Signal=35%, Position=0.00
+1/21/2026 8:08:40 AM	PowerView	Info	[FindDevice] Found shade 140 (hub 192.168.3.164) via INI mapping (ref 4626)
+1/21/2026 8:08:40 AM	PowerView	Info	Shade 132: SignalStrength=51, BatteryStrength=75
+1/21/2026 8:08:40 AM	PowerView	Info	[POLLING] Updating shade 132: Battery=75%, Signal=51%, Position=0.00
+1/21/2026 8:08:40 AM	PowerView	Info	[FindDevice] Found shade 132 (hub 192.168.3.164) via INI mapping (ref 4620)
+1/21/2026 8:08:40 AM	PowerView	Info	Shade 116: SignalStrength=35, BatteryStrength=75
+1/21/2026 8:08:40 AM	PowerView	Info	[POLLING] Updating shade 116: Battery=75%, Signal=35%, Position=0.00
+1/21/2026 8:08:40 AM	PowerView	Info	[FindDevice] Found shade 116 (hub 192.168.3.164) via INI mapping (ref 4653)
+1/21/2026 8:08:40 AM	PowerView	Info	Shade 117: SignalStrength=31, BatteryStrength=75
+1/21/2026 8:08:40 AM	PowerView	Info	[POLLING] Updating shade 117: Battery=75%, Signal=31%, Position=0.00
+1/21/2026 8:08:40 AM	PowerView	Info	[FindDevice] Found shade 117 (hub 192.168.3.164) via INI mapping (ref 4644)
+1/21/2026 8:08:40 AM	PowerView	Info	Shade 118: SignalStrength=31, BatteryStrength=75
+1/21/2026 8:08:40 AM	PowerView	Info	[POLLING] Updating shade 118: Battery=75%, Signal=31%, Position=0.00
+1/21/2026 8:08:40 AM	PowerView	Info	[FindDevice] Found shade 118 (hub 192.168.3.164) via INI mapping (ref 4616)
+1/21/2026 8:08:40 AM	PowerView	Info	Shade 100: SignalStrength=46, BatteryStrength=75
+1/21/2026 8:08:40 AM	PowerView	Info	[POLLING] Updating shade 100: Battery=75%, Signal=46%, Position=0.00
+1/21/2026 8:08:40 AM	PowerView	Info	[FindDevice] Found shade 100 (hub 192.168.3.164) via INI mapping (ref 4673)
+1/21/2026 8:08:40 AM	PowerView	Info	Shade 84: SignalStrength=56, BatteryStrength=75
+1/21/2026 8:08:40 AM	PowerView	Info	[POLLING] Updating shade 84: Battery=75%, Signal=56%, Position=1.00
+1/21/2026 8:08:40 AM	PowerView	Info	[FindDevice] Found shade 84 (hub 192.168.3.164) via INI mapping (ref 4693)
+1/21/2026 8:08:40 AM	PowerView	Info	Shade 92: SignalStrength=0, BatteryStrength=0
+1/21/2026 8:08:40 AM	PowerView	Info	[POLLING] Updating shade 92: Battery=0%, Signal=0%, Position=
+1/21/2026 8:08:40 AM	PowerView	Info	[FindDevice] Found shade 92 (hub 192.168.3.164) via INI mapping (ref 4685)
+1/21/2026 8:08:40 AM	PowerView	Info	Shade 85: SignalStrength=40, BatteryStrength=75
+1/21/2026 8:08:40 AM	PowerView	Info	[POLLING] Updating shade 85: Battery=75%, Signal=40%, Position=1.00
+1/21/2026 8:08:40 AM	PowerView	Info	[FindDevice] Found shade 85 (hub 192.168.3.164) via INI mapping (ref 4669)
+1/21/2026 8:08:40 AM	PowerView	Info	Shade 71: SignalStrength=61, BatteryStrength=75
+1/21/2026 8:08:40 AM	PowerView	Info	[POLLING] Updating shade 71: Battery=75%, Signal=61%, Position=0.00
+1/21/2026 8:08:40 AM	PowerView	Info	[FindDevice] Found shade 71 (hub 192.168.3.164) via INI mapping (ref 4609)
+1/21/2026 8:08:40 AM	PowerView	Info	Shade 46: SignalStrength=73, BatteryStrength=75
+1/21/2026 8:08:40 AM	PowerView	Info	[POLLING] Updating shade 46: Battery=75%, Signal=73%, Position=0.00
+1/21/2026 8:08:40 AM	PowerView	Info	[FindDevice] Found shade 46 (hub 192.168.3.164) via INI mapping (ref 4665)
+1/21/2026 8:08:40 AM	PowerView	Info	Shade 40: SignalStrength=50, BatteryStrength=75
+1/21/2026 8:08:40 AM	PowerView	Info	[POLLING] Updating shade 40: Battery=75%, Signal=50%, Position=0.00
+1/21/2026 8:08:40 AM	PowerView	Info	[FindDevice] Found shade 40 (hub 192.168.3.164) via INI mapping (ref 4661)
+1/21/2026 8:08:40 AM	PowerView	Info	Shade 16: SignalStrength=51, BatteryStrength=75
+1/21/2026 8:08:40 AM	PowerView	Info	[POLLING] Updating shade 16: Battery=75%, Signal=51%, Position=0.00
+1/21/2026 8:08:40 AM	PowerView	Info	[FindDevice] Found shade 16 (hub 192.168.3.164) via INI mapping (ref 4649)
+1/21/2026 8:08:40 AM	PowerView	Info	Shade 14: SignalStrength=61, BatteryStrength=75
+1/21/2026 8:08:40 AM	PowerView	Info	[POLLING] Updating shade 14: Battery=75%, Signal=61%, Position=0.00
+1/21/2026 8:08:40 AM	PowerView	Info	[FindDevice] Found shade 14 (hub 192.168.3.164) via INI mapping (ref 4638)
+1/21/2026 8:08:40 AM	PowerView	Info	Shade 15: SignalStrength=41, BatteryStrength=75
+1/21/2026 8:08:40 AM	PowerView	Info	[POLLING] Updating shade 15: Battery=75%, Signal=41%, Position=0.00
+1/21/2026 8:08:40 AM	PowerView	Info	[FindDevice] Found shade 15 (hub 192.168.3.164) via INI mapping (ref 4605)
+1/21/2026 8:08:40 AM	PowerView	Info	Shade 2: SignalStrength=36, BatteryStrength=75
+1/21/2026 8:08:40 AM	PowerView	Info	[POLLING] Updating shade 2: Battery=75%, Signal=36%, Position=0.00
+1/21/2026 8:08:40 AM	PowerView	Info	[FindDevice] Found shade 2 (hub 192.168.3.164) via INI mapping (ref 4689)
+1/21/2026 8:08:40 AM	PowerView	Info	Shade 3: SignalStrength=43, BatteryStrength=75
+1/21/2026 8:08:40 AM	PowerView	Info	[POLLING] Updating shade 3: Battery=75%, Signal=43%, Position=0.00
+1/21/2026 8:08:40 AM	PowerView	Info	[FindDevice] Found shade 3 (hub 192.168.3.164) via INI mapping (ref 4681)
+1/21/2026 8:08:40 AM	PowerView	Info	Shade 4: SignalStrength=40, BatteryStrength=75
+1/21/2026 8:08:40 AM	PowerView	Info	[POLLING] Updating shade 4: Battery=75%, Signal=40%, Position=0.00
+1/21/2026 8:08:40 AM	PowerView	Info	[FindDevice] Found shade 4 (hub 192.168.3.164) via INI mapping (ref 4657)
+1/21/2026 8:08:40 AM	PowerView	Info	[POLL-SHADES] GetShadesAsync returned 21 shades
+1/21/2026 8:08:40 AM	PowerView	Info	GetShadesAsync returning 21 unique shades from /home
+1/21/2026 8:08:40 AM	PowerView	Info	Added shade 168 (Ron's Office) - Battery: 3, Signal: 50, Position: 0.98
+1/21/2026 8:08:40 AM	PowerView	Info	Added shade 156 (Guest 1) - Battery: 3, Signal: 36, Position: 0
+1/21/2026 8:08:40 AM	PowerView	Info	Added shade 148 (Katie 1) - Battery: 3, Signal: 53, Position: 0
+1/21/2026 8:08:40 AM	PowerView	Info	Added shade 140 (Liane 1) - Battery: 3, Signal: 35, Position: 0
+1/21/2026 8:08:40 AM	PowerView	Info	Added shade 132 (Main Hall 1) - Battery: 3, Signal: 51, Position: 0
+1/21/2026 8:08:40 AM	PowerView	Info	Added shade 116 (Main 3) - Battery: 3, Signal: 35, Position: 0
+1/21/2026 8:08:40 AM	PowerView	Info	Added shade 117 (Main 2) - Battery: 3, Signal: 31, Position: 0
+1/21/2026 8:08:40 AM	PowerView	Info	Added shade 118 (Main 1) - Battery: 3, Signal: 31, Position: 0
+1/21/2026 8:08:40 AM	PowerView	Info	Added shade 100 (Laundry 1) - Battery: 3, Signal: 46, Position: 0
+1/21/2026 8:08:40 AM	PowerView	Info	Added shade 84 (Game 3) - Battery: 3, Signal: 56, Position: 1
+1/21/2026 8:08:40 AM	PowerView	Info	Added shade 92 (Game 2) - Battery: 0, Signal: 0, Position: 
+1/21/2026 8:08:40 AM	PowerView	Info	Added shade 85 (Game 1) - Battery: 3, Signal: 40, Position: 1
+1/21/2026 8:08:40 AM	PowerView	Info	Added shade 71 (Pool Bath Shade) - Battery: 3, Signal: 61, Position: 0
+1/21/2026 8:08:40 AM	PowerView	Info	Added shade 46 (Hall 1) - Battery: 3, Signal: 73, Position: 0
+1/21/2026 8:08:40 AM	PowerView	Info	Added shade 40 (Garage 1) - Battery: 3, Signal: 50, Position: 0
+1/21/2026 8:08:40 AM	PowerView	Info	Added shade 16 (Dining 3) - Battery: 3, Signal: 51, Position: 0
+1/21/2026 8:08:40 AM	PowerView	Info	Added shade 14 (Dining 2) - Battery: 3, Signal: 61, Position: 0
+1/21/2026 8:08:40 AM	PowerView	Info	Added shade 15 (Dining 1) - Battery: 3, Signal: 41, Position: 0
+1/21/2026 8:08:40 AM	PowerView	Info	Added shade 2 (Liv 3) - Battery: 3, Signal: 36, Position: 0
+1/21/2026 8:08:40 AM	PowerView	Info	Added shade 3 (Liv 2) - Battery: 3, Signal: 43, Position: 0
+1/21/2026 8:08:40 AM	PowerView	Info	Added shade 4 (Liv 1) - Battery: 3, Signal: 40, Position: 0
+1/21/2026 8:08:39 AM	PowerView	Info	PowerView: Calling GET http://192.168.3.164/home
+1/21/2026 8:08:39 AM	PowerView	Info	[POLL-START] PollShadesAndScenesAsync called for hub 192.168.3.164
+1/21/2026 8:08:39 AM	PowerView	Info	[TIMER-FIRED] Timer fired for hub 192.168.3.164 at 08:08:39.710
+1/21/2026 8:08:16 AM	PowerView	Info	Global status device cleanup complete. Deleted 0 duplicates.
+1/21/2026 8:08:16 AM	PowerView	Info	Rebuilt INI cache with 0 valid status devices
+1/21/2026 8:08:16 AM	PowerView	Info	Clearing [Status] INI section to rebuild cache...
+1/21/2026 8:08:16 AM	PowerView	Info	Found 0 status devices, 0 marked for deletion
+1/21/2026 8:08:10 AM	PowerView	Info	Running global cleanup of duplicate status devices...
+1/21/2026 8:08:10 AM	PowerView	Info	[POLL-DONE] Poll complete for hub 192.168.3.164: 21 processed, 0 skipped
+1/21/2026 8:08:10 AM	PowerView	Info	Shade 168: SignalStrength=53, BatteryStrength=75
+1/21/2026 8:08:10 AM	PowerView	Info	[POLLING] Updating shade 168: Battery=75%, Signal=53%, Position=0.98
+1/21/2026 8:08:10 AM	PowerView	Info	[FindDevice] Found shade 168 (hub 192.168.3.164) via INI mapping (ref 4634)
+1/21/2026 8:08:10 AM	PowerView	Info	Shade 156: SignalStrength=36, BatteryStrength=75
+1/21/2026 8:08:10 AM	PowerView	Info	[POLLING] Updating shade 156: Battery=75%, Signal=36%, Position=0.00
+1/21/2026 8:08:10 AM	PowerView	Info	[FindDevice] Found shade 156 (hub 192.168.3.164) via INI mapping (ref 4630)
+1/21/2026 8:08:10 AM	PowerView	Info	Shade 148: SignalStrength=53, BatteryStrength=75
+1/21/2026 8:08:10 AM	PowerView	Info	[POLLING] Updating shade 148: Battery=75%, Signal=53%, Position=0.00
+1/21/2026 8:08:10 AM	PowerView	Info	[FindDevice] Found shade 148 (hub 192.168.3.164) via INI mapping (ref 4677)
+1/21/2026 8:08:10 AM	PowerView	Info	Shade 140: SignalStrength=38, BatteryStrength=75
+1/21/2026 8:08:10 AM	PowerView	Info	[POLLING] Updating shade 140: Battery=75%, Signal=38%, Position=0.00
+1/21/2026 8:08:10 AM	PowerView	Info	[FindDevice] Found shade 140 (hub 192.168.3.164) via INI mapping (ref 4626)
+1/21/2026 8:08:10 AM	PowerView	Info	Shade 132: SignalStrength=50, BatteryStrength=75
+1/21/2026 8:08:10 AM	PowerView	Info	[POLLING] Updating shade 132: Battery=75%, Signal=50%, Position=0.00
+1/21/2026 8:08:10 AM	PowerView	Info	[FindDevice] Found shade 132 (hub 192.168.3.164) via INI mapping (ref 4620)
+1/21/2026 8:08:10 AM	PowerView	Info	Shade 116: SignalStrength=36, BatteryStrength=75
+1/21/2026 8:08:10 AM	PowerView	Info	[POLLING] Updating shade 116: Battery=75%, Signal=36%, Position=0.00
+1/21/2026 8:08:10 AM	PowerView	Info	[FindDevice] Found shade 116 (hub 192.168.3.164) via INI mapping (ref 4653)
+1/21/2026 8:08:10 AM	PowerView	Info	Shade 117: SignalStrength=31, BatteryStrength=75
+1/21/2026 8:08:10 AM	PowerView	Info	[POLLING] Updating shade 117: Battery=75%, Signal=31%, Position=0.00
+1/21/2026 8:08:10 AM	PowerView	Info	[FindDevice] Found shade 117 (hub 192.168.3.164) via INI mapping (ref 4644)
+1/21/2026 8:08:10 AM	PowerView	Info	Shade 118: SignalStrength=33, BatteryStrength=75
+1/21/2026 8:08:10 AM	PowerView	Info	[POLLING] Updating shade 118: Battery=75%, Signal=33%, Position=0.00
+1/21/2026 8:08:10 AM	PowerView	Info	[FindDevice] Found shade 118 (hub 192.168.3.164) via INI mapping (ref 4616)
+1/21/2026 8:08:10 AM	PowerView	Info	Shade 100: SignalStrength=46, BatteryStrength=75
+1/21/2026 8:08:10 AM	PowerView	Info	[POLLING] Updating shade 100: Battery=75%, Signal=46%, Position=0.00
+1/21/2026 8:08:10 AM	PowerView	Info	[FindDevice] Found shade 100 (hub 192.168.3.164) via INI mapping (ref 4673)
+1/21/2026 8:08:10 AM	PowerView	Info	Shade 84: SignalStrength=61, BatteryStrength=75
+1/21/2026 8:08:10 AM	PowerView	Info	[POLLING] Updating shade 84: Battery=75%, Signal=61%, Position=1.00
+1/21/2026 8:08:10 AM	PowerView	Info	[FindDevice] Found shade 84 (hub 192.168.3.164) via INI mapping (ref 4693)
+1/21/2026 8:08:10 AM	PowerView	Info	Shade 92: SignalStrength=0, BatteryStrength=0
+1/21/2026 8:08:10 AM	PowerView	Info	[POLLING] Updating shade 92: Battery=0%, Signal=0%, Position=
+1/21/2026 8:08:10 AM	PowerView	Info	[FindDevice] Found shade 92 (hub 192.168.3.164) via INI mapping (ref 4685)
+1/21/2026 8:08:10 AM	PowerView	Info	Shade 85: SignalStrength=41, BatteryStrength=75
+1/21/2026 8:08:10 AM	PowerView	Info	[POLLING] Updating shade 85: Battery=75%, Signal=41%, Position=1.00
+1/21/2026 8:08:10 AM	PowerView	Info	[FindDevice] Found shade 85 (hub 192.168.3.164) via INI mapping (ref 4669)
+1/21/2026 8:08:10 AM	PowerView	Info	Shade 71: SignalStrength=60, BatteryStrength=75
+1/21/2026 8:08:10 AM	PowerView	Info	[POLLING] Updating shade 71: Battery=75%, Signal=60%, Position=0.00
+1/21/2026 8:08:10 AM	PowerView	Info	[FindDevice] Found shade 71 (hub 192.168.3.164) via INI mapping (ref 4609)
+1/21/2026 8:08:10 AM	PowerView	Info	Shade 46: SignalStrength=70, BatteryStrength=75
+1/21/2026 8:08:10 AM	PowerView	Info	[POLLING] Updating shade 46: Battery=75%, Signal=70%, Position=0.00
+1/21/2026 8:08:10 AM	PowerView	Info	[FindDevice] Found shade 46 (hub 192.168.3.164) via INI mapping (ref 4665)
+1/21/2026 8:08:10 AM	PowerView	Info	Shade 40: SignalStrength=48, BatteryStrength=75
+1/21/2026 8:08:10 AM	PowerView	Info	[POLLING] Updating shade 40: Battery=75%, Signal=48%, Position=0.00
+1/21/2026 8:08:10 AM	PowerView	Info	[FindDevice] Found shade 40 (hub 192.168.3.164) via INI mapping (ref 4661)
+1/21/2026 8:08:10 AM	PowerView	Info	Shade 16: SignalStrength=51, BatteryStrength=75
+1/21/2026 8:08:10 AM	PowerView	Info	[POLLING] Updating shade 16: Battery=75%, Signal=51%, Position=0.00
+1/21/2026 8:08:10 AM	PowerView	Info	[FindDevice] Found shade 16 (hub 192.168.3.164) via INI mapping (ref 4649)
+1/21/2026 8:08:10 AM	PowerView	Info	Shade 14: SignalStrength=61, BatteryStrength=75
+1/21/2026 8:08:10 AM	PowerView	Info	[POLLING] Updating shade 14: Battery=75%, Signal=61%, Position=0.00
+1/21/2026 8:08:10 AM	PowerView	Info	[FindDevice] Found shade 14 (hub 192.168.3.164) via INI mapping (ref 4638)
+1/21/2026 8:08:10 AM	PowerView	Info	Shade 15: SignalStrength=41, BatteryStrength=75
+1/21/2026 8:08:10 AM	PowerView	Info	[POLLING] Updating shade 15: Battery=75%, Signal=41%, Position=0.00
+1/21/2026 8:08:10 AM	PowerView	Info	[FindDevice] Found shade 15 (hub 192.168.3.164) via INI mapping (ref 4605)
+1/21/2026 8:08:10 AM	PowerView	Info	Shade 2: SignalStrength=36, BatteryStrength=75
+1/21/2026 8:08:10 AM	PowerView	Info	[POLLING] Updating shade 2: Battery=75%, Signal=36%, Position=0.00
+1/21/2026 8:08:10 AM	PowerView	Info	[FindDevice] Found shade 2 (hub 192.168.3.164) via INI mapping (ref 4689)
+1/21/2026 8:08:10 AM	PowerView	Info	Shade 3: SignalStrength=43, BatteryStrength=75
+1/21/2026 8:08:10 AM	PowerView	Info	[POLLING] Updating shade 3: Battery=75%, Signal=43%, Position=0.00
+1/21/2026 8:08:10 AM	PowerView	Info	[FindDevice] Found shade 3 (hub 192.168.3.164) via INI mapping (ref 4681)
+1/21/2026 8:08:10 AM	PowerView	Info	Shade 4: SignalStrength=41, BatteryStrength=75
+1/21/2026 8:08:10 AM	PowerView	Info	[POLLING] Updating shade 4: Battery=75%, Signal=41%, Position=0.00
+1/21/2026 8:08:10 AM	PowerView	Info	[FindDevice] Found shade 4 (hub 192.168.3.164) via INI mapping (ref 4657)
+1/21/2026 8:08:10 AM	PowerView	Info	[POLL-SHADES] GetShadesAsync returned 21 shades
+1/21/2026 8:08:10 AM	PowerView	Info	GetShadesAsync returning 21 unique shades from /home
+1/21/2026 8:08:10 AM	PowerView	Info	Added shade 168 (Ron's Office) - Battery: 3, Signal: 53, Position: 0.98
+1/21/2026 8:08:10 AM	PowerView	Info	Added shade 156 (Guest 1) - Battery: 3, Signal: 36, Position: 0
+1/21/2026 8:08:10 AM	PowerView	Info	Added shade 148 (Katie 1) - Battery: 3, Signal: 53, Position: 0
+1/21/2026 8:08:10 AM	PowerView	Info	Added shade 140 (Liane 1) - Battery: 3, Signal: 38, Position: 0
+1/21/2026 8:08:10 AM	PowerView	Info	Added shade 132 (Main Hall 1) - Battery: 3, Signal: 50, Position: 0
+1/21/2026 8:08:10 AM	PowerView	Info	Added shade 116 (Main 3) - Battery: 3, Signal: 36, Position: 0
+1/21/2026 8:08:10 AM	PowerView	Info	Added shade 117 (Main 2) - Battery: 3, Signal: 31, Position: 0
+1/21/2026 8:08:10 AM	PowerView	Info	Added shade 118 (Main 1) - Battery: 3, Signal: 33, Position: 0
+1/21/2026 8:08:10 AM	PowerView	Info	Added shade 100 (Laundry 1) - Battery: 3, Signal: 46, Position: 0
+1/21/2026 8:08:10 AM	PowerView	Info	Added shade 84 (Game 3) - Battery: 3, Signal: 61, Position: 1
+1/21/2026 8:08:10 AM	PowerView	Info	Added shade 92 (Game 2) - Battery: 0, Signal: 0, Position: 
+1/21/2026 8:08:10 AM	PowerView	Info	Added shade 85 (Game 1) - Battery: 3, Signal: 41, Position: 1
+1/21/2026 8:08:10 AM	PowerView	Info	Added shade 71 (Pool Bath Shade) - Battery: 3, Signal: 60, Position: 0
+1/21/2026 8:08:10 AM	PowerView	Info	Added shade 46 (Hall 1) - Battery: 3, Signal: 70, Position: 0
+1/21/2026 8:08:10 AM	PowerView	Info	Added shade 40 (Garage 1) - Battery: 3, Signal: 48, Position: 0
+1/21/2026 8:08:10 AM	PowerView	Info	Added shade 16 (Dining 3) - Battery: 3, Signal: 51, Position: 0
+1/21/2026 8:08:10 AM	PowerView	Info	Added shade 14 (Dining 2) - Battery: 3, Signal: 61, Position: 0
+1/21/2026 8:08:10 AM	PowerView	Info	Added shade 15 (Dining 1) - Battery: 3, Signal: 41, Position: 0
+1/21/2026 8:08:10 AM	PowerView	Info	Added shade 2 (Liv 3) - Battery: 3, Signal: 36, Position: 0
+1/21/2026 8:08:10 AM	PowerView	Info	Added shade 3 (Liv 2) - Battery: 3, Signal: 43, Position: 0
+1/21/2026 8:08:10 AM	PowerView	Info	Added shade 4 (Liv 1) - Battery: 3, Signal: 41, Position: 0
+1/21/2026 8:08:09 AM	PowerView	Info	PowerView: Calling GET http://192.168.3.164/home
+1/21/2026 8:08:09 AM	PowerView	Info	[POLL-START] PollShadesAndScenesAsync called for hub 192.168.3.164
+1/21/2026 8:08:09 AM	PowerView	Info	[TIMER-FIRED] Timer fired for hub 192.168.3.164 at 08:08:09.705
+1/21/2026 8:07:50 AM	Legacy-Plugin	Z-Wave	Starting Z-Wave Polling for Network F8CF3E5F...
+1/21/2026 8:07:47 AM	PowerView	Info	===== INITIAL DISCOVERY COMPLETE =====
+1/21/2026 8:07:47 AM	PowerView	Info	Step 3 complete: Cleanup finished
+1/21/2026 8:07:47 AM	PowerView	Info	Global status device cleanup complete. Deleted 0 duplicates.
+1/21/2026 8:07:47 AM	PowerView	Info	Rebuilt INI cache with 0 valid status devices
+1/21/2026 8:07:47 AM	PowerView	Info	Clearing [Status] INI section to rebuild cache...
+1/21/2026 8:07:47 AM	PowerView	Info	Found 0 status devices, 0 marked for deletion
+1/21/2026 8:07:42 AM	Sonos4	Info	Error in getAccessToken, unable to authenticate
+1/21/2026 8:07:42 AM	HomeSeer	Speaker	Speaker host added (R), Name: Sonos4 Instance: Outdoor Living IP address: 192.168.3.139
+1/21/2026 8:07:42 AM	Sonos4	Info	DirectConnect called for Zone Outdoor Living with device name = uuid:RINCON_C43875863EC401400 and Model = S16
+1/21/2026 8:07:42 AM	HomeSeer	Speaker	Speaker host added (R), Name: Sonos4 Instance: Ron’s Office IP address: 192.168.3.139
+1/21/2026 8:07:42 AM	Sonos4	Warning	Warning in SetUpAudioClip. Unauthenticated. Open Setup and click on Register to register your PI with your Sonos account
+1/21/2026 8:07:41 AM	Sonos4	Info	Error in getAccessToken, unable to authenticate
+1/21/2026 8:07:41 AM	HomeSeer	TTS	Speak ():Welcome to Home-Seer
+1/21/2026 8:07:41 AM	Sonos4	Info	DirectConnect called for Zone Ron’s Office with device name = uuid:RINCON_C438758637D401400 and Model = S16
+1/21/2026 8:07:41 AM	HomeSeer	Speaker	Speaker host added (R), Name: Sonos4 Instance: Bedroom IP address: 192.168.3.139
+1/21/2026 8:07:41 AM	Sonos4	Info	DirectConnect called for Zone Bedroom with device name = uuid:RINCON_C4387585E38901400 and Model = S16
+1/21/2026 8:07:41 AM	HomeSeer	Speaker	Speaker host added (R), Name: Sonos4 Instance: Living Room IP address: 192.168.3.139
+1/21/2026 8:07:40 AM	PowerView	Info	[POLL-DONE] Poll complete for hub 192.168.3.164: 21 processed, 0 skipped
+1/21/2026 8:07:40 AM	PowerView	Info	Shade 168: SignalStrength=53, BatteryStrength=75
+1/21/2026 8:07:40 AM	PowerView	Info	[POLLING] Updating shade 168: Battery=75%, Signal=53%, Position=0.98
+1/21/2026 8:07:40 AM	PowerView	Info	[FindDevice] Found shade 168 (hub 192.168.3.164) via INI mapping (ref 4634)
+1/21/2026 8:07:40 AM	PowerView	Info	Shade 156: SignalStrength=36, BatteryStrength=75
+1/21/2026 8:07:40 AM	PowerView	Info	[POLLING] Updating shade 156: Battery=75%, Signal=36%, Position=0.00
+1/21/2026 8:07:40 AM	PowerView	Info	[FindDevice] Found shade 156 (hub 192.168.3.164) via INI mapping (ref 4630)
+1/21/2026 8:07:40 AM	PowerView	Info	Shade 148: SignalStrength=53, BatteryStrength=75
+1/21/2026 8:07:40 AM	PowerView	Info	[POLLING] Updating shade 148: Battery=75%, Signal=53%, Position=0.00
+1/21/2026 8:07:40 AM	PowerView	Info	[FindDevice] Found shade 148 (hub 192.168.3.164) via INI mapping (ref 4677)
+1/21/2026 8:07:40 AM	PowerView	Info	Shade 140: SignalStrength=36, BatteryStrength=75
+1/21/2026 8:07:40 AM	PowerView	Info	[POLLING] Updating shade 140: Battery=75%, Signal=36%, Position=0.00
+1/21/2026 8:07:40 AM	PowerView	Info	[FindDevice] Found shade 140 (hub 192.168.3.164) via INI mapping (ref 4626)
+1/21/2026 8:07:40 AM	Sonos4	Info	DirectConnect called for Zone Living Room with device name = uuid:RINCON_C4387585E36501400 and Model = S16
+1/21/2026 8:07:40 AM	PowerView	Info	Shade 132: SignalStrength=53, BatteryStrength=75
+1/21/2026 8:07:40 AM	PowerView	Info	[POLLING] Updating shade 132: Battery=75%, Signal=53%, Position=0.00
+1/21/2026 8:07:40 AM	PowerView	Info	[FindDevice] Found shade 132 (hub 192.168.3.164) via INI mapping (ref 4620)
+1/21/2026 8:07:40 AM	PowerView	Info	Shade 116: SignalStrength=36, BatteryStrength=75
+1/21/2026 8:07:40 AM	PowerView	Info	[POLLING] Updating shade 116: Battery=75%, Signal=36%, Position=0.00
+1/21/2026 8:07:40 AM	PowerView	Info	[FindDevice] Found shade 116 (hub 192.168.3.164) via INI mapping (ref 4653)
+1/21/2026 8:07:40 AM	PowerView	Info	Shade 117: SignalStrength=33, BatteryStrength=75
+1/21/2026 8:07:40 AM	PowerView	Info	[POLLING] Updating shade 117: Battery=75%, Signal=33%, Position=0.00
+1/21/2026 8:07:40 AM	PowerView	Info	[FindDevice] Found shade 117 (hub 192.168.3.164) via INI mapping (ref 4644)
+1/21/2026 8:07:40 AM	PowerView	Info	Shade 118: SignalStrength=31, BatteryStrength=75
+1/21/2026 8:07:40 AM	PowerView	Info	[POLLING] Updating shade 118: Battery=75%, Signal=31%, Position=0.00
+1/21/2026 8:07:40 AM	PowerView	Info	[FindDevice] Found shade 118 (hub 192.168.3.164) via INI mapping (ref 4616)
+1/21/2026 8:07:40 AM	PowerView	Info	Shade 100: SignalStrength=46, BatteryStrength=75
+1/21/2026 8:07:40 AM	PowerView	Info	[POLLING] Updating shade 100: Battery=75%, Signal=46%, Position=0.00
+1/21/2026 8:07:40 AM	PowerView	Info	[FindDevice] Found shade 100 (hub 192.168.3.164) via INI mapping (ref 4673)
+1/21/2026 8:07:40 AM	PowerView	Info	Shade 84: SignalStrength=61, BatteryStrength=75
+1/21/2026 8:07:40 AM	PowerView	Info	[POLLING] Updating shade 84: Battery=75%, Signal=61%, Position=1.00
+1/21/2026 8:07:40 AM	PowerView	Info	[FindDevice] Found shade 84 (hub 192.168.3.164) via INI mapping (ref 4693)
+1/21/2026 8:07:40 AM	PowerView	Info	Shade 92: SignalStrength=0, BatteryStrength=0
+1/21/2026 8:07:40 AM	PowerView	Info	[POLLING] Updating shade 92: Battery=0%, Signal=0%, Position=
+1/21/2026 8:07:40 AM	PowerView	Info	[FindDevice] Found shade 92 (hub 192.168.3.164) via INI mapping (ref 4685)
+1/21/2026 8:07:40 AM	PowerView	Info	Shade 85: SignalStrength=40, BatteryStrength=75
+1/21/2026 8:07:40 AM	PowerView	Info	[POLLING] Updating shade 85: Battery=75%, Signal=40%, Position=1.00
+1/21/2026 8:07:40 AM	PowerView	Info	[FindDevice] Found shade 85 (hub 192.168.3.164) via INI mapping (ref 4669)
+1/21/2026 8:07:40 AM	PowerView	Info	Shade 71: SignalStrength=60, BatteryStrength=75
+1/21/2026 8:07:40 AM	PowerView	Info	[POLLING] Updating shade 71: Battery=75%, Signal=60%, Position=0.00
+1/21/2026 8:07:40 AM	PowerView	Info	[FindDevice] Found shade 71 (hub 192.168.3.164) via INI mapping (ref 4609)
+1/21/2026 8:07:40 AM	PowerView	Info	Shade 46: SignalStrength=71, BatteryStrength=75
+1/21/2026 8:07:40 AM	PowerView	Info	[POLLING] Updating shade 46: Battery=75%, Signal=71%, Position=0.00
+1/21/2026 8:07:40 AM	PowerView	Info	[FindDevice] Found shade 46 (hub 192.168.3.164) via INI mapping (ref 4665)
+1/21/2026 8:07:40 AM	PowerView	Info	Shade 40: SignalStrength=50, BatteryStrength=75
+1/21/2026 8:07:40 AM	PowerView	Info	[POLLING] Updating shade 40: Battery=75%, Signal=50%, Position=0.00
+1/21/2026 8:07:40 AM	PowerView	Info	[FindDevice] Found shade 40 (hub 192.168.3.164) via INI mapping (ref 4661)
+1/21/2026 8:07:40 AM	PowerView	Info	Shade 16: SignalStrength=51, BatteryStrength=75
+1/21/2026 8:07:40 AM	PowerView	Info	[POLLING] Updating shade 16: Battery=75%, Signal=51%, Position=0.00
+1/21/2026 8:07:40 AM	PowerView	Info	[FindDevice] Found shade 16 (hub 192.168.3.164) via INI mapping (ref 4649)
+1/21/2026 8:07:40 AM	PowerView	Info	Shade 14: SignalStrength=65, BatteryStrength=75
+1/21/2026 8:07:40 AM	PowerView	Info	[POLLING] Updating shade 14: Battery=75%, Signal=65%, Position=0.00
+1/21/2026 8:07:40 AM	PowerView	Info	[FindDevice] Found shade 14 (hub 192.168.3.164) via INI mapping (ref 4638)
+1/21/2026 8:07:40 AM	PowerView	Info	Shade 15: SignalStrength=41, BatteryStrength=75
+1/21/2026 8:07:40 AM	PowerView	Info	[POLLING] Updating shade 15: Battery=75%, Signal=41%, Position=0.00
+1/21/2026 8:07:40 AM	PowerView	Info	[FindDevice] Found shade 15 (hub 192.168.3.164) via INI mapping (ref 4605)
+1/21/2026 8:07:40 AM	PowerView	Info	Shade 2: SignalStrength=36, BatteryStrength=75
+1/21/2026 8:07:40 AM	PowerView	Info	[POLLING] Updating shade 2: Battery=75%, Signal=36%, Position=0.00
+1/21/2026 8:07:40 AM	PowerView	Info	[FindDevice] Found shade 2 (hub 192.168.3.164) via INI mapping (ref 4689)
+1/21/2026 8:07:40 AM	PowerView	Info	Shade 3: SignalStrength=41, BatteryStrength=75
+1/21/2026 8:07:40 AM	PowerView	Info	[POLLING] Updating shade 3: Battery=75%, Signal=41%, Position=0.00
+1/21/2026 8:07:40 AM	PowerView	Info	[FindDevice] Found shade 3 (hub 192.168.3.164) via INI mapping (ref 4681)
+1/21/2026 8:07:40 AM	PowerView	Info	Shade 4: SignalStrength=41, BatteryStrength=75
+1/21/2026 8:07:40 AM	PowerView	Info	[POLLING] Updating shade 4: Battery=75%, Signal=41%, Position=0.00
+1/21/2026 8:07:40 AM	PowerView	Info	[FindDevice] Found shade 4 (hub 192.168.3.164) via INI mapping (ref 4657)
+1/21/2026 8:07:40 AM	PowerView	Info	[POLL-SHADES] GetShadesAsync returned 21 shades
+1/21/2026 8:07:40 AM	PowerView	Info	GetShadesAsync returning 21 unique shades from /home
+1/21/2026 8:07:40 AM	PowerView	Info	Added shade 168 (Ron's Office) - Battery: 3, Signal: 53, Position: 0.98
+1/21/2026 8:07:40 AM	PowerView	Info	Added shade 156 (Guest 1) - Battery: 3, Signal: 36, Position: 0
+1/21/2026 8:07:40 AM	PowerView	Info	Added shade 148 (Katie 1) - Battery: 3, Signal: 53, Position: 0
+1/21/2026 8:07:40 AM	PowerView	Info	Added shade 140 (Liane 1) - Battery: 3, Signal: 36, Position: 0
+1/21/2026 8:07:40 AM	PowerView	Info	Added shade 132 (Main Hall 1) - Battery: 3, Signal: 53, Position: 0
+1/21/2026 8:07:40 AM	PowerView	Info	Added shade 116 (Main 3) - Battery: 3, Signal: 36, Position: 0
+1/21/2026 8:07:40 AM	PowerView	Info	Added shade 117 (Main 2) - Battery: 3, Signal: 33, Position: 0
+1/21/2026 8:07:40 AM	PowerView	Info	Added shade 118 (Main 1) - Battery: 3, Signal: 31, Position: 0
+1/21/2026 8:07:40 AM	PowerView	Info	Added shade 100 (Laundry 1) - Battery: 3, Signal: 46, Position: 0
+1/21/2026 8:07:40 AM	PowerView	Info	Added shade 84 (Game 3) - Battery: 3, Signal: 61, Position: 1
+1/21/2026 8:07:40 AM	PowerView	Info	Added shade 92 (Game 2) - Battery: 0, Signal: 0, Position: 
+1/21/2026 8:07:40 AM	PowerView	Info	Added shade 85 (Game 1) - Battery: 3, Signal: 40, Position: 1
+1/21/2026 8:07:40 AM	PowerView	Info	Added shade 71 (Pool Bath Shade) - Battery: 3, Signal: 60, Position: 0
+1/21/2026 8:07:40 AM	PowerView	Info	Added shade 46 (Hall 1) - Battery: 3, Signal: 71, Position: 0
+1/21/2026 8:07:40 AM	PowerView	Info	Added shade 40 (Garage 1) - Battery: 3, Signal: 50, Position: 0
+1/21/2026 8:07:40 AM	PowerView	Info	Added shade 16 (Dining 3) - Battery: 3, Signal: 51, Position: 0
+1/21/2026 8:07:40 AM	PowerView	Info	Added shade 14 (Dining 2) - Battery: 3, Signal: 65, Position: 0
+1/21/2026 8:07:40 AM	PowerView	Info	Added shade 15 (Dining 1) - Battery: 3, Signal: 41, Position: 0
+1/21/2026 8:07:40 AM	PowerView	Info	Added shade 2 (Liv 3) - Battery: 3, Signal: 36, Position: 0
+1/21/2026 8:07:40 AM	PowerView	Info	Added shade 3 (Liv 2) - Battery: 3, Signal: 41, Position: 0
+1/21/2026 8:07:40 AM	PowerView	Info	Added shade 4 (Liv 1) - Battery: 3, Signal: 41, Position: 0
+1/21/2026 8:07:39 AM	PowerView	Info	PowerView: Calling GET http://192.168.3.164/home
+1/21/2026 8:07:39 AM	PowerView	Info	[POLL-START] PollShadesAndScenesAsync called for hub 192.168.3.164
+1/21/2026 8:07:39 AM	PowerView	Info	[TIMER-FIRED] Timer fired for hub 192.168.3.164 at 08:07:39.691
+1/21/2026 8:07:39 AM	PowerView	Info	Running global cleanup of duplicate status devices...
+1/21/2026 8:07:39 AM	PowerView	Info	Step 3: Running cleanup after initial discovery...
+1/21/2026 8:07:37 AM	PowerView	Info	Step 2 complete: Scenes synced
+1/21/2026 8:07:37 AM	PowerView	Info	Scene sync complete: 33 created, 0 already existed. Total scenes: 33
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Scene loop complete - processed 33 total scenes
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Created scene device #33 for 173
+1/21/2026 8:07:37 AM	PowerView	Info	Scene device created: ref 5489, Location='Ron Off', Scene ID 173
+1/21/2026 8:07:37 AM	PowerView	Info	Creating scene device: Ron Off Open (ID: 173, Room: Ron Off)
+1/21/2026 8:07:37 AM	PowerView	Info	Creating new scene device: Ron Off Open (ID 173)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Scene 33/33: Processing scene 173 (Ron Off Open)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Created scene device #32 for 171
+1/21/2026 8:07:37 AM	PowerView	Info	Scene device created: ref 5487, Location='Ron Off', Scene ID 171
+1/21/2026 8:07:37 AM	PowerView	Info	Creating scene device: Ron Off Privacy (ID: 171, Room: Ron Off)
+1/21/2026 8:07:37 AM	PowerView	Info	Creating new scene device: Ron Off Privacy (ID 171)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Scene 32/33: Processing scene 171 (Ron Off Privacy)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Created scene device #31 for 169
+1/21/2026 8:07:37 AM	PowerView	Info	Scene device created: ref 5485, Location='Ron Off', Scene ID 169
+1/21/2026 8:07:37 AM	PowerView	Info	Creating scene device: Ron Off Close (ID: 169, Room: Ron Off)
+1/21/2026 8:07:37 AM	PowerView	Info	Creating new scene device: Ron Off Close (ID 169)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Scene 31/33: Processing scene 169 (Ron Off Close)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Created scene device #30 for 163
+1/21/2026 8:07:37 AM	PowerView	Info	Scene device created: ref 5483, Location='Dining Room Half', Scene ID 163
+1/21/2026 8:07:37 AM	PowerView	Info	Creating scene device: Dining Room Half Open (ID: 163, Room: Dining Room Half)
+1/21/2026 8:07:37 AM	PowerView	Info	Creating new scene device: Dining Room Half Open (ID 163)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Scene 30/33: Processing scene 163 (Dining Room Half Open)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Created scene device #29 for 161
+1/21/2026 8:07:37 AM	PowerView	Info	Scene device created: ref 5481, Location='Guest Room', Scene ID 161
+1/21/2026 8:07:37 AM	PowerView	Info	Creating scene device: Guest Room Open (ID: 161, Room: Guest Room)
+1/21/2026 8:07:37 AM	PowerView	Info	Creating new scene device: Guest Room Open (ID 161)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Scene 29/33: Processing scene 161 (Guest Room Open)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Created scene device #28 for 159
+1/21/2026 8:07:37 AM	PowerView	Info	Scene device created: ref 5479, Location='Guest Room', Scene ID 159
+1/21/2026 8:07:37 AM	PowerView	Info	Creating scene device: Guest Room Privacy (ID: 159, Room: Guest Room)
+1/21/2026 8:07:37 AM	PowerView	Info	Creating new scene device: Guest Room Privacy (ID 159)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Scene 28/33: Processing scene 159 (Guest Room Privacy)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Created scene device #27 for 157
+1/21/2026 8:07:37 AM	PowerView	Info	Scene device created: ref 5477, Location='Guest Room', Scene ID 157
+1/21/2026 8:07:37 AM	PowerView	Info	Creating scene device: Guest Room Close (ID: 157, Room: Guest Room)
+1/21/2026 8:07:37 AM	PowerView	Info	Creating new scene device: Guest Room Close (ID 157)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Scene 27/33: Processing scene 157 (Guest Room Close)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Created scene device #26 for 153
+1/21/2026 8:07:37 AM	PowerView	Info	Scene device created: ref 5475, Location='Katie's Room', Scene ID 153
+1/21/2026 8:07:37 AM	PowerView	Info	Creating scene device: Katie's Room Open (ID: 153, Room: Katie's Room)
+1/21/2026 8:07:37 AM	PowerView	Info	Creating new scene device: Katie's Room Open (ID 153)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Scene 26/33: Processing scene 153 (Katie's Room Open)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Created scene device #25 for 151
+1/21/2026 8:07:37 AM	PowerView	Info	Scene device created: ref 5473, Location='Katie's Room', Scene ID 151
+1/21/2026 8:07:37 AM	PowerView	Info	Creating scene device: Katie's Room Privacy (ID: 151, Room: Katie's Room)
+1/21/2026 8:07:37 AM	PowerView	Info	Creating new scene device: Katie's Room Privacy (ID 151)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Scene 25/33: Processing scene 151 (Katie's Room Privacy)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Created scene device #24 for 149
+1/21/2026 8:07:37 AM	PowerView	Info	Scene device created: ref 5471, Location='Katie's Room', Scene ID 149
+1/21/2026 8:07:37 AM	PowerView	Info	Creating scene device: Katie's Room Close (ID: 149, Room: Katie's Room)
+1/21/2026 8:07:37 AM	PowerView	Info	Creating new scene device: Katie's Room Close (ID 149)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Scene 24/33: Processing scene 149 (Katie's Room Close)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Created scene device #23 for 145
+1/21/2026 8:07:37 AM	PowerView	Info	Scene device created: ref 5469, Location='Liane Office', Scene ID 145
+1/21/2026 8:07:37 AM	PowerView	Info	Creating scene device: Liane Office  Open (ID: 145, Room: Liane Office)
+1/21/2026 8:07:37 AM	PowerView	Info	Creating new scene device: Liane Office  Open (ID 145)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Scene 23/33: Processing scene 145 (Liane Office  Open)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Created scene device #22 for 143
+1/21/2026 8:07:37 AM	PowerView	Info	Scene device created: ref 5467, Location='Liane Office', Scene ID 143
+1/21/2026 8:07:37 AM	PowerView	Info	Creating scene device: Liane Office  Privacy (ID: 143, Room: Liane Office)
+1/21/2026 8:07:37 AM	PowerView	Info	Creating new scene device: Liane Office  Privacy (ID 143)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Scene 22/33: Processing scene 143 (Liane Office  Privacy)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Created scene device #21 for 141
+1/21/2026 8:07:37 AM	PowerView	Info	Scene device created: ref 5465, Location='Liane Office', Scene ID 141
+1/21/2026 8:07:37 AM	PowerView	Info	Creating scene device: Liane Office  Close (ID: 141, Room: Liane Office)
+1/21/2026 8:07:37 AM	PowerView	Info	Creating new scene device: Liane Office  Close (ID 141)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Scene 21/33: Processing scene 141 (Liane Office  Close)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Created scene device #20 for 137
+1/21/2026 8:07:37 AM	PowerView	Info	Scene device created: ref 5463, Location='Main Hall', Scene ID 137
+1/21/2026 8:07:37 AM	PowerView	Info	Creating scene device: Main Hall Open (ID: 137, Room: Main Hall)
+1/21/2026 8:07:37 AM	PowerView	Info	Creating new scene device: Main Hall Open (ID 137)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Scene 20/33: Processing scene 137 (Main Hall Open)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Created scene device #19 for 135
+1/21/2026 8:07:37 AM	PowerView	Info	Scene device created: ref 5461, Location='Main Hall', Scene ID 135
+1/21/2026 8:07:37 AM	PowerView	Info	Creating scene device: Main Hall Privacy (ID: 135, Room: Main Hall)
+1/21/2026 8:07:37 AM	PowerView	Info	Creating new scene device: Main Hall Privacy (ID 135)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Scene 19/33: Processing scene 135 (Main Hall Privacy)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Created scene device #18 for 133
+1/21/2026 8:07:37 AM	PowerView	Info	Scene device created: ref 5459, Location='Main Hall', Scene ID 133
+1/21/2026 8:07:37 AM	PowerView	Info	Creating scene device: Main Hall Close (ID: 133, Room: Main Hall)
+1/21/2026 8:07:37 AM	PowerView	Info	Creating new scene device: Main Hall Close (ID 133)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Scene 18/33: Processing scene 133 (Main Hall Close)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Created scene device #17 for 123
+1/21/2026 8:07:37 AM	PowerView	Info	Scene device created: ref 5457, Location='Main Bedroom', Scene ID 123
+1/21/2026 8:07:37 AM	PowerView	Info	Creating scene device: Main Bedroom Open (ID: 123, Room: Main Bedroom)
+1/21/2026 8:07:37 AM	PowerView	Info	Creating new scene device: Main Bedroom Open (ID 123)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Scene 17/33: Processing scene 123 (Main Bedroom Open)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Created scene device #16 for 121
+1/21/2026 8:07:37 AM	PowerView	Info	Scene device created: ref 5455, Location='Main Bedroom', Scene ID 121
+1/21/2026 8:07:37 AM	PowerView	Info	Creating scene device: Main Bedroom Privacy (ID: 121, Room: Main Bedroom)
+1/21/2026 8:07:37 AM	PowerView	Info	Creating new scene device: Main Bedroom Privacy (ID 121)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Scene 16/33: Processing scene 121 (Main Bedroom Privacy)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Created scene device #15 for 119
+1/21/2026 8:07:37 AM	PowerView	Info	Scene device created: ref 5453, Location='Main Bedroom', Scene ID 119
+1/21/2026 8:07:37 AM	PowerView	Info	Creating scene device: Main Bedroom Close (ID: 119, Room: Main Bedroom)
+1/21/2026 8:07:37 AM	PowerView	Info	Creating new scene device: Main Bedroom Close (ID 119)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Scene 15/33: Processing scene 119 (Main Bedroom Close)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Created scene device #14 for 103
+1/21/2026 8:07:37 AM	PowerView	Info	Scene device created: ref 5451, Location='Laundry', Scene ID 103
+1/21/2026 8:07:37 AM	PowerView	Info	Creating scene device: Laundry  Close (ID: 103, Room: Laundry)
+1/21/2026 8:07:37 AM	PowerView	Info	Creating new scene device: Laundry  Close (ID 103)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Scene 14/33: Processing scene 103 (Laundry  Close)
+1/21/2026 8:07:37 AM	PowerView	Info	DEBUG: Created scene device #13 for 101
+1/21/2026 8:07:37 AM	PowerView	Info	Scene device created: ref 5449, Location='Laundry', Scene ID 101
+1/21/2026 8:07:36 AM	PowerView	Info	Creating scene device: Laundry  Open (ID: 101, Room: Laundry)
+1/21/2026 8:07:36 AM	PowerView	Info	Creating new scene device: Laundry  Open (ID 101)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Scene 13/33: Processing scene 101 (Laundry  Open)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Created scene device #12 for 88
+1/21/2026 8:07:36 AM	PowerView	Info	Scene device created: ref 5447, Location='Game Room', Scene ID 88
+1/21/2026 8:07:36 AM	PowerView	Info	Creating scene device: Game Room Close (ID: 88, Room: Game Room)
+1/21/2026 8:07:36 AM	PowerView	Info	Creating new scene device: Game Room Close (ID 88)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Scene 12/33: Processing scene 88 (Game Room Close)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Created scene device #11 for 86
+1/21/2026 8:07:36 AM	PowerView	Info	Scene device created: ref 5445, Location='Game Room', Scene ID 86
+1/21/2026 8:07:36 AM	PowerView	Info	Creating scene device: Game Room Open (ID: 86, Room: Game Room)
+1/21/2026 8:07:36 AM	PowerView	Info	Creating new scene device: Game Room Open (ID 86)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Scene 11/33: Processing scene 86 (Game Room Open)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Created scene device #10 for 74
+1/21/2026 8:07:36 AM	PowerView	Info	Scene device created: ref 5443, Location='Pool Bath', Scene ID 74
+1/21/2026 8:07:36 AM	PowerView	Info	Creating scene device: Pool Bath Close (ID: 74, Room: Pool Bath)
+1/21/2026 8:07:36 AM	PowerView	Info	Creating new scene device: Pool Bath Close (ID 74)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Scene 10/33: Processing scene 74 (Pool Bath Close)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Created scene device #9 for 72
+1/21/2026 8:07:36 AM	PowerView	Info	Scene device created: ref 5441, Location='Pool Bath', Scene ID 72
+1/21/2026 8:07:36 AM	PowerView	Info	Creating scene device: Pool Bath Open (ID: 72, Room: Pool Bath)
+1/21/2026 8:07:36 AM	PowerView	Info	Creating new scene device: Pool Bath Open (ID 72)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Scene 9/33: Processing scene 72 (Pool Bath Open)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Created scene device #8 for 49
+1/21/2026 8:07:36 AM	PowerView	Info	Scene device created: ref 5439, Location='Hall', Scene ID 49
+1/21/2026 8:07:36 AM	PowerView	Info	Creating scene device: Hall Close (ID: 49, Room: Hall)
+1/21/2026 8:07:36 AM	PowerView	Info	Creating new scene device: Hall Close (ID 49)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Scene 8/33: Processing scene 49 (Hall Close)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Created scene device #7 for 47
+1/21/2026 8:07:36 AM	PowerView	Info	Scene device created: ref 5437, Location='Hall', Scene ID 47
+1/21/2026 8:07:36 AM	PowerView	Info	Creating scene device: Hall Open (ID: 47, Room: Hall)
+1/21/2026 8:07:36 AM	PowerView	Info	Creating new scene device: Hall Open (ID 47)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Scene 7/33: Processing scene 47 (Hall Open)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Created scene device #6 for 43
+1/21/2026 8:07:36 AM	PowerView	Info	Scene device created: ref 5435, Location='Garage', Scene ID 43
+1/21/2026 8:07:36 AM	PowerView	Info	Creating scene device: Garage  Close (ID: 43, Room: Garage)
+1/21/2026 8:07:36 AM	PowerView	Info	Creating new scene device: Garage  Close (ID 43)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Scene 6/33: Processing scene 43 (Garage  Close)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Created scene device #5 for 41
+1/21/2026 8:07:36 AM	PowerView	Info	Scene device created: ref 5433, Location='Garage', Scene ID 41
+1/21/2026 8:07:36 AM	PowerView	Info	Creating scene device: Garage  Open (ID: 41, Room: Garage)
+1/21/2026 8:07:36 AM	PowerView	Info	Creating new scene device: Garage  Open (ID 41)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Scene 5/33: Processing scene 41 (Garage  Open)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Created scene device #4 for 19
+1/21/2026 8:07:36 AM	PowerView	Info	Scene device created: ref 5431, Location='Dining Room', Scene ID 19
+1/21/2026 8:07:36 AM	PowerView	Info	Creating scene device: Dining Room Close (ID: 19, Room: Dining Room)
+1/21/2026 8:07:36 AM	PowerView	Info	Creating new scene device: Dining Room Close (ID 19)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Scene 4/33: Processing scene 19 (Dining Room Close)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Created scene device #3 for 17
+1/21/2026 8:07:36 AM	PowerView	Info	Scene device created: ref 5429, Location='Dining Room', Scene ID 17
+1/21/2026 8:07:36 AM	PowerView	Info	Creating scene device: Dining Room Open (ID: 17, Room: Dining Room)
+1/21/2026 8:07:36 AM	PowerView	Info	Creating new scene device: Dining Room Open (ID 17)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Scene 3/33: Processing scene 17 (Dining Room Open)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Created scene device #2 for 7
+1/21/2026 8:07:36 AM	PowerView	Info	Scene device created: ref 5427, Location='Living Room', Scene ID 7
+1/21/2026 8:07:36 AM	PowerView	Info	Creating scene device: Living Room Close (ID: 7, Room: Living Room)
+1/21/2026 8:07:36 AM	PowerView	Info	Creating new scene device: Living Room Close (ID 7)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Scene 2/33: Processing scene 7 (Living Room Close)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Created scene device #1 for 5
+1/21/2026 8:07:36 AM	PowerView	Info	Scene device created: ref 5425, Location='Living Room', Scene ID 5
+1/21/2026 8:07:36 AM	PowerView	Info	Creating scene device: Living Room Open (ID: 5, Room: Living Room)
+1/21/2026 8:07:36 AM	PowerView	Info	Creating new scene device: Living Room Open (ID 5)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Scene 1/33: Processing scene 5 (Living Room Open)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Starting scene creation loop for 33 scenes
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: CleanupObsoleteScenes returned successfully
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: CleanupObsoleteScenes returned successfully
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: CleanupObsoleteScenes END - all deletions complete
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5424 (Activate)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5423 (Ron Off Open)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5422 (Activate)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5421 (Ron Off Privacy)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5420 (Activate)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5419 (Ron Off Close)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5418 (Activate)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5417 (Dining Room Half Open)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5416 (Activate)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5415 (Guest Room Open)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5414 (Activate)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5413 (Guest Room Privacy)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5412 (Activate)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5411 (Guest Room Close)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5410 (Activate)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5409 (Katie's Room Open)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5408 (Activate)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5407 (Katie's Room Privacy)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5406 (Activate)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5405 (Katie's Room Close)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5404 (Activate)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5403 (Liane Office  Open)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5402 (Activate)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5401 (Liane Office  Privacy)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5400 (Activate)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5399 (Liane Office  Close)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5398 (Activate)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5397 (Main Hall Open)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5396 (Activate)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5395 (Main Hall Privacy)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5394 (Activate)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5393 (Main Hall Close)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5392 (Activate)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5391 (Main Bedroom Open)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5390 (Activate)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5389 (Main Bedroom Privacy)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5388 (Activate)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5387 (Main Bedroom Close)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5386 (Activate)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5385 (Laundry  Close)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5384 (Activate)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5383 (Laundry  Open)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5382 (Activate)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5381 (Game Room Close)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5380 (Activate)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5379 (Game Room Open)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5378 (Activate)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5377 (Pool Bath Close)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5376 (Activate)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5375 (Pool Bath Open)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5374 (Activate)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5373 (Hall Close)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5372 (Activate)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5371 (Hall Open)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5370 (Activate)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5369 (Garage  Close)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5368 (Activate)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5367 (Garage  Open)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5366 (Activate)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5365 (Dining Room Close)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5364 (Activate)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5363 (Dining Room Open)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5362 (Activate)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5361 (Living Room Close)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5360 (Activate)
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Deleting scene device ref 5359 (Living Room Open)
+1/21/2026 8:07:36 AM	PowerView	Info	Cleanup: Deleting 66 obsolete/duplicate scene devices
+1/21/2026 8:07:36 AM	PowerView	Info	DEBUG: Stray device scan complete, total to delete: 66
+1/21/2026 8:07:30 AM	PowerView	Info	DEBUG: Scanning for stray scene devices
+1/21/2026 8:07:30 AM	PowerView	Info	DEBUG: Device scan complete, found 0 devices to delete
+1/21/2026 8:07:29 AM	Legacy-Plugin	Z-Wave	*******************************************************************************
+1/21/2026 8:07:29 AM	Legacy-Plugin	Z-Wave	   STARTUP COMPLETE: All configured interfaces were successfully initialized.
+1/21/2026 8:07:29 AM	Legacy-Plugin	Z-Wave	*******************************************************************************
+1/21/2026 8:07:26 AM	Legacy-Plugin	Z-Wave	Security S2 Support Is Enabled
+1/21/2026 8:07:26 AM	Legacy-Plugin	Z-Wave	Crosswood: ......................................................................
+1/21/2026 8:07:26 AM	Legacy-Plugin	Z-Wave	Crosswood: .............................. FINISHED ..............................
+1/21/2026 8:07:26 AM	Legacy-Plugin	Z-Wave	Crosswood: ......................................................................
+1/21/2026 8:07:26 AM	Legacy-Plugin	Z-Wave	Crosswood: Controller is a BRIDGE controller
+1/21/2026 8:07:26 AM	Legacy-Plugin	Z-Wave	Crosswood: Found 69 Z-Wave nodes in interface node ID 1 (Crosswood)
+1/21/2026 8:07:26 AM	Legacy-Plugin	Z-Wave	Crosswood: Z-Wave interface node ID: 1, Home ID: F8CF3E5F
+1/21/2026 8:07:26 AM	Legacy-Plugin	Z-Wave	Crosswood: Z-Wave Serial API version: 9
+1/21/2026 8:07:26 AM	Legacy-Plugin	Z-Wave	Crosswood: Z-Wave services for the SECURITY COMMAND CLASS were successfully started.
+1/21/2026 8:07:24 AM	HomeSeer	Info	Done rebuild of device references cache
+1/21/2026 8:07:23 AM	PowerView	Info	DEBUG: Starting device scan for cleanup
+1/21/2026 8:07:23 AM	PowerView	Info	Cleanup: 33 valid scenes for hub 192.168.3.164
+1/21/2026 8:07:23 AM	PowerView	Info	DEBUG: CleanupObsoleteScenes START
+1/21/2026 8:07:23 AM	PowerView	Info	Cleaning up obsolete scenes...
+1/21/2026 8:07:23 AM	PowerView	Info	  Scene: ID=173, Name=Um9uIE9mZiBPcGVu, PtName=Ron Off Open
+1/21/2026 8:07:23 AM	PowerView	Info	  Scene: ID=171, Name=Um9uIE9mZiBQcml2YWN5, PtName=Ron Off Privacy
+1/21/2026 8:07:23 AM	PowerView	Info	  Scene: ID=169, Name=Um9uIE9mZiBDbG9zZQ==, PtName=Ron Off Close
+1/21/2026 8:07:23 AM	PowerView	Info	  Scene: ID=163, Name=RGluaW5nIFJvb20gSGFsZiBPcGVu, PtName=Dining Room Half Open
+1/21/2026 8:07:23 AM	PowerView	Info	  Scene: ID=161, Name=R3Vlc3QgUm9vbSBPcGVu, PtName=Guest Room Open
+1/21/2026 8:07:23 AM	PowerView	Info	  Scene: ID=159, Name=R3Vlc3QgUm9vbSBQcml2YWN5, PtName=Guest Room Privacy
+1/21/2026 8:07:23 AM	PowerView	Info	  Scene: ID=157, Name=R3Vlc3QgUm9vbSBDbG9zZQ==, PtName=Guest Room Close
+1/21/2026 8:07:23 AM	PowerView	Info	  Scene: ID=153, Name=S2F0aWUncyBSb29tIE9wZW4=, PtName=Katie's Room Open
+1/21/2026 8:07:23 AM	PowerView	Info	  Scene: ID=151, Name=S2F0aWUncyBSb29tIFByaXZhY3k=, PtName=Katie's Room Privacy
+1/21/2026 8:07:23 AM	PowerView	Info	  Scene: ID=149, Name=S2F0aWUncyBSb29tIENsb3Nl, PtName=Katie's Room Close
+1/21/2026 8:07:23 AM	PowerView	Info	  Scene: ID=145, Name=TGlhbmUgT2ZmaWNlICBPcGVu, PtName=Liane Office  Open
+1/21/2026 8:07:23 AM	PowerView	Info	  Scene: ID=143, Name=TGlhbmUgT2ZmaWNlICBQcml2YWN5, PtName=Liane Office  Privacy
+1/21/2026 8:07:23 AM	PowerView	Info	  Scene: ID=141, Name=TGlhbmUgT2ZmaWNlICBDbG9zZQ==, PtName=Liane Office  Close
+1/21/2026 8:07:23 AM	PowerView	Info	  Scene: ID=137, Name=TWFpbiBIYWxsIE9wZW4=, PtName=Main Hall Open
+1/21/2026 8:07:23 AM	PowerView	Info	  Scene: ID=135, Name=TWFpbiBIYWxsIFByaXZhY3k=, PtName=Main Hall Privacy
+1/21/2026 8:07:23 AM	PowerView	Info	  Scene: ID=133, Name=TWFpbiBIYWxsIENsb3Nl, PtName=Main Hall Close
+1/21/2026 8:07:23 AM	PowerView	Info	  Scene: ID=123, Name=TWFpbiBCZWRyb29tIE9wZW4=, PtName=Main Bedroom Open
+1/21/2026 8:07:23 AM	PowerView	Info	  Scene: ID=121, Name=TWFpbiBCZWRyb29tIFByaXZhY3k=, PtName=Main Bedroom Privacy
+1/21/2026 8:07:23 AM	PowerView	Info	  Scene: ID=119, Name=TWFpbiBCZWRyb29tIENsb3Nl, PtName=Main Bedroom Close
+1/21/2026 8:07:23 AM	PowerView	Info	  Scene: ID=103, Name=TGF1bmRyeSAgQ2xvc2U=, PtName=Laundry  Close
+1/21/2026 8:07:23 AM	PowerView	Info	  Scene: ID=101, Name=TGF1bmRyeSAgT3Blbg==, PtName=Laundry  Open
+1/21/2026 8:07:23 AM	PowerView	Info	  Scene: ID=88, Name=R2FtZSBSb29tIENsb3Nl, PtName=Game Room Close
+1/21/2026 8:07:23 AM	PowerView	Info	  Scene: ID=86, Name=R2FtZSBSb29tIE9wZW4=, PtName=Game Room Open
+1/21/2026 8:07:23 AM	PowerView	Info	  Scene: ID=74, Name=UG9vbCBCYXRoIENsb3Nl, PtName=Pool Bath Close
+1/21/2026 8:07:23 AM	PowerView	Info	  Scene: ID=72, Name=UG9vbCBCYXRoIE9wZW4=, PtName=Pool Bath Open
+1/21/2026 8:07:23 AM	PowerView	Info	  Scene: ID=49, Name=SGFsbCBDbG9zZQ==, PtName=Hall Close
+1/21/2026 8:07:23 AM	PowerView	Info	  Scene: ID=47, Name=SGFsbCBPcGVu, PtName=Hall Open
+1/21/2026 8:07:23 AM	PowerView	Info	  Scene: ID=43, Name=R2FyYWdlICBDbG9zZQ==, PtName=Garage  Close
+1/21/2026 8:07:23 AM	PowerView	Info	  Scene: ID=41, Name=R2FyYWdlICBPcGVu, PtName=Garage  Open
+1/21/2026 8:07:23 AM	PowerView	Info	  Scene: ID=19, Name=RGluaW5nIFJvb20gQ2xvc2U=, PtName=Dining Room Close
+1/21/2026 8:07:23 AM	PowerView	Info	  Scene: ID=17, Name=RGluaW5nIFJvb20gT3Blbg==, PtName=Dining Room Open
+1/21/2026 8:07:23 AM	PowerView	Info	  Scene: ID=7, Name=TGl2aW5nIFJvb20gQ2xvc2U=, PtName=Living Room Close
+1/21/2026 8:07:23 AM	PowerView	Info	  Scene: ID=5, Name=TGl2aW5nIFJvb20gT3Blbg==, PtName=Living Room Open
+1/21/2026 8:07:23 AM	PowerView	Info	Syncing 33 scenes from hub 192.168.3.164
+1/21/2026 8:07:23 AM	PowerView	Info	Retrieved 33 scenes from hub
+1/21/2026 8:07:23 AM	HomeSeer	Info	Starting rebuild of device references cache...
+1/21/2026 8:07:23 AM	PowerView	Info	Fetching scenes from http://192.168.3.164/home/scenes
+1/21/2026 8:07:23 AM	PowerView	Info	DEBUG: SyncScenesAsync START for hub 192.168.3.164
+1/21/2026 8:07:23 AM	PowerView	Info	Step 2: Starting scene sync...
+1/21/2026 8:07:23 AM	PowerView	Info	DEBUG: About to call SyncScenesAsync for hub {_primaryHubIp}
+1/21/2026 8:07:23 AM	PowerView	Info	Step 1 complete: Shades discovered
+1/21/2026 8:07:23 AM	PowerView	Info	DEBUG: DiscoverShadesAsync loop complete, exiting method
+1/21/2026 8:07:23 AM	PowerView	Info	Shade device 168 already exists (ref 4634), polling will update it
+1/21/2026 8:07:23 AM	PowerView	Info	[FindDevice] Found shade 168 (hub 192.168.3.164) via INI mapping (ref 4634)
+1/21/2026 8:07:23 AM	PowerView	Info	DEBUG: Processing shade 168 (Shade 168 - Ron's Office)
+1/21/2026 8:07:23 AM	PowerView	Info	Shade device 156 already exists (ref 4630), polling will update it
+1/21/2026 8:07:23 AM	PowerView	Info	[FindDevice] Found shade 156 (hub 192.168.3.164) via INI mapping (ref 4630)
+1/21/2026 8:07:23 AM	PowerView	Info	DEBUG: Processing shade 156 (Shade 156 - Guest 1)
+1/21/2026 8:07:23 AM	PowerView	Info	Shade device 148 already exists (ref 4677), polling will update it
+1/21/2026 8:07:23 AM	PowerView	Info	[FindDevice] Found shade 148 (hub 192.168.3.164) via INI mapping (ref 4677)
+1/21/2026 8:07:23 AM	PowerView	Info	DEBUG: Processing shade 148 (Shade 148 - Katie 1)
+1/21/2026 8:07:23 AM	PowerView	Info	Shade device 140 already exists (ref 4626), polling will update it
+1/21/2026 8:07:23 AM	PowerView	Info	[FindDevice] Found shade 140 (hub 192.168.3.164) via INI mapping (ref 4626)
+1/21/2026 8:07:23 AM	PowerView	Info	DEBUG: Processing shade 140 (Shade 140 - Liane 1)
+1/21/2026 8:07:23 AM	PowerView	Info	Shade device 132 already exists (ref 4620), polling will update it
+1/21/2026 8:07:23 AM	PowerView	Info	[FindDevice] Found shade 132 (hub 192.168.3.164) via INI mapping (ref 4620)
+1/21/2026 8:07:23 AM	PowerView	Info	DEBUG: Processing shade 132 (Shade 132 - Main Hall 1)
+1/21/2026 8:07:23 AM	PowerView	Info	Shade device 116 already exists (ref 4653), polling will update it
+1/21/2026 8:07:23 AM	PowerView	Info	[FindDevice] Found shade 116 (hub 192.168.3.164) via INI mapping (ref 4653)
+1/21/2026 8:07:23 AM	PowerView	Info	DEBUG: Processing shade 116 (Shade 116 - Main 3)
+1/21/2026 8:07:23 AM	PowerView	Info	Shade device 117 already exists (ref 4644), polling will update it
+1/21/2026 8:07:23 AM	PowerView	Info	[FindDevice] Found shade 117 (hub 192.168.3.164) via INI mapping (ref 4644)
+1/21/2026 8:07:23 AM	PowerView	Info	DEBUG: Processing shade 117 (Shade 117 - Main 2)
+1/21/2026 8:07:23 AM	PowerView	Info	Shade device 118 already exists (ref 4616), polling will update it
+1/21/2026 8:07:23 AM	PowerView	Info	[FindDevice] Found shade 118 (hub 192.168.3.164) via INI mapping (ref 4616)
+1/21/2026 8:07:23 AM	PowerView	Info	DEBUG: Processing shade 118 (Shade 118 - Main 1)
+1/21/2026 8:07:23 AM	PowerView	Info	Shade device 100 already exists (ref 4673), polling will update it
+1/21/2026 8:07:23 AM	PowerView	Info	[FindDevice] Found shade 100 (hub 192.168.3.164) via INI mapping (ref 4673)
+1/21/2026 8:07:23 AM	PowerView	Info	DEBUG: Processing shade 100 (Shade 100 - Laundry 1)
+1/21/2026 8:07:23 AM	PowerView	Info	Shade device 84 already exists (ref 4693), polling will update it
+1/21/2026 8:07:23 AM	PowerView	Info	[FindDevice] Found shade 84 (hub 192.168.3.164) via INI mapping (ref 4693)
+1/21/2026 8:07:23 AM	PowerView	Info	DEBUG: Processing shade 84 (Shade 84 - Game 3)
+1/21/2026 8:07:23 AM	PowerView	Info	Shade device 92 already exists (ref 4685), polling will update it
+1/21/2026 8:07:23 AM	PowerView	Info	[FindDevice] Found shade 92 (hub 192.168.3.164) via INI mapping (ref 4685)
+1/21/2026 8:07:23 AM	PowerView	Info	DEBUG: Processing shade 92 (Shade 92 - Game 2)
+1/21/2026 8:07:23 AM	PowerView	Info	Shade device 85 already exists (ref 4669), polling will update it
+1/21/2026 8:07:23 AM	PowerView	Info	[FindDevice] Found shade 85 (hub 192.168.3.164) via INI mapping (ref 4669)
+1/21/2026 8:07:23 AM	PowerView	Info	DEBUG: Processing shade 85 (Shade 85 - Game 1)
+1/21/2026 8:07:23 AM	PowerView	Info	Shade device 71 already exists (ref 4609), polling will update it
+1/21/2026 8:07:23 AM	PowerView	Info	[FindDevice] Found shade 71 (hub 192.168.3.164) via INI mapping (ref 4609)
+1/21/2026 8:07:23 AM	PowerView	Info	DEBUG: Processing shade 71 (Shade 71 - Pool Bath Shade)
+1/21/2026 8:07:23 AM	PowerView	Info	Shade device 46 already exists (ref 4665), polling will update it
+1/21/2026 8:07:23 AM	PowerView	Info	[FindDevice] Found shade 46 (hub 192.168.3.164) via INI mapping (ref 4665)
+1/21/2026 8:07:23 AM	PowerView	Info	DEBUG: Processing shade 46 (Shade 46 - Hall 1)
+1/21/2026 8:07:23 AM	PowerView	Info	Shade device 40 already exists (ref 4661), polling will update it
+1/21/2026 8:07:23 AM	PowerView	Info	[FindDevice] Found shade 40 (hub 192.168.3.164) via INI mapping (ref 4661)
+1/21/2026 8:07:23 AM	PowerView	Info	DEBUG: Processing shade 40 (Shade 40 - Garage 1)
+1/21/2026 8:07:23 AM	PowerView	Info	Shade device 16 already exists (ref 4649), polling will update it
+1/21/2026 8:07:23 AM	PowerView	Info	[FindDevice] Found shade 16 (hub 192.168.3.164) via INI mapping (ref 4649)
+1/21/2026 8:07:23 AM	PowerView	Info	DEBUG: Processing shade 16 (Shade 16 - Dining 3)
+1/21/2026 8:07:23 AM	PowerView	Info	Shade device 14 already exists (ref 4638), polling will update it
+1/21/2026 8:07:23 AM	PowerView	Info	[FindDevice] Found shade 14 (hub 192.168.3.164) via INI mapping (ref 4638)
+1/21/2026 8:07:23 AM	PowerView	Info	DEBUG: Processing shade 14 (Shade 14 - Dining 2)
+1/21/2026 8:07:23 AM	PowerView	Info	Shade device 15 already exists (ref 4605), polling will update it
+1/21/2026 8:07:23 AM	PowerView	Info	[FindDevice] Found shade 15 (hub 192.168.3.164) via INI mapping (ref 4605)
+1/21/2026 8:07:23 AM	PowerView	Info	DEBUG: Processing shade 15 (Shade 15 - Dining 1)
+1/21/2026 8:07:23 AM	PowerView	Info	Shade device 2 already exists (ref 4689), polling will update it
+1/21/2026 8:07:23 AM	PowerView	Info	[FindDevice] Found shade 2 (hub 192.168.3.164) via INI mapping (ref 4689)
+1/21/2026 8:07:23 AM	PowerView	Info	DEBUG: Processing shade 2 (Shade 2 - Liv 3)
+1/21/2026 8:07:23 AM	PowerView	Info	Shade device 3 already exists (ref 4681), polling will update it
+1/21/2026 8:07:23 AM	PowerView	Info	[FindDevice] Found shade 3 (hub 192.168.3.164) via INI mapping (ref 4681)
+1/21/2026 8:07:23 AM	PowerView	Info	DEBUG: Processing shade 3 (Shade 3 - Liv 2)
+1/21/2026 8:07:23 AM	PowerView	Info	Shade device 4 already exists (ref 4657), polling will update it
+1/21/2026 8:07:23 AM	PowerView	Info	[FindDevice] Found shade 4 (hub 192.168.3.164) via INI mapping (ref 4657)
+1/21/2026 8:07:23 AM	PowerView	Info	DEBUG: Processing shade 4 (Shade 4 - Liv 1)
+1/21/2026 8:07:23 AM	PowerView	Info	DEBUG: CleanupDuplicateDevices complete
+1/21/2026 8:07:22 AM	Legacy-Plugin	Z-Wave	Crosswood: Controller firmware version: 7.18
+1/21/2026 8:07:22 AM	HomeSeer	Info	System connected to MyHS Service successfully with license ID 716487.
+1/21/2026 8:07:22 AM	HomeSeer	Info	System connected to MyHS Service, waiting for acknowledge...
+1/21/2026 8:07:22 AM	HomeSeer	Startup	Start up complete.
+1/21/2026 8:07:22 AM	HomeSeer	Info	No device issues found
+1/21/2026 8:07:22 AM	HomeSeer	Info	Checking device parent child relationships...
+1/21/2026 8:07:22 AM	HomeSeer	Info	ASCII listener started on port 11000
+1/21/2026 8:07:22 AM	Script	Startup	(Startup.vb script) No speaker clients detected, waiting up to 30 seconds for any to connect...
+1/21/2026 8:07:22 AM	Script	Startup	(Startup.vb script) Scripting is OK and is now running Startup.vb
+1/21/2026 8:07:22 AM	HomeSeer	Startup	Starting Event Scheduler...
+1/21/2026 8:07:20 AM	HomeSeer	Startup	Running the startup script Startup.vb
+1/21/2026 8:07:20 AM	HomeSeer	Info	Notification init complete
+1/21/2026 8:07:20 AM	HomeSeer	Startup	HStouch server started, waiting for clients to connect.
+1/21/2026 8:07:20 AM	HomeSeer	HSTouch Server	Server started on port 10200
+1/21/2026 8:07:20 AM	HomeSeer	Plug-In	Finished initializing plug-in Z-Wave
+1/21/2026 8:07:20 AM	HomeSeer	Starting Plug-In	Z-Wave loaded in 5818 milliseconds
+1/21/2026 8:07:20 AM	Legacy-Plugin	Z-Wave	Crosswood: Getting node information from controller...
+1/21/2026 8:07:20 AM	Legacy-Plugin	Z-Wave	Crosswood: The Z-Wave API Execution Thread was Started or Restarted.
+1/21/2026 8:07:20 AM	HomeSeer	Starting Plug-In	Plugin Z-Wave started successfully in 4799 milliseconds
+1/21/2026 8:07:20 AM	Legacy-Plugin	Z-Wave	Crosswood: Z-Wave Ethernet at IP 192.168.3.132, connected to interface ok.
+1/21/2026 8:07:20 AM	Legacy-Plugin	Z-Wave	Crosswood: The Z-Wave Command Execution Thread was Started or Restarted.
+1/21/2026 8:07:20 AM	Legacy-Plugin	Z-Wave	Crosswood: ----------------------------------------------------------------------
+1/21/2026 8:07:20 AM	Legacy-Plugin	Z-Wave	Initializing Z-Wave interface Crosswood (HomeSeer Z-NET Ethernet) at 192.168.3.132, port 2001
+1/21/2026 8:07:20 AM	Legacy-Plugin	Z-Wave	Crosswood: ----------------------------------------------------------------------
+1/21/2026 8:07:20 AM	Legacy-Plugin	Z-Wave	Crosswood: ======================================================================
+1/21/2026 8:07:20 AM	Legacy-Plugin	Z-Wave	465 Simple AV Control Command Class Control Commands have been loaded successfully.
+1/21/2026 8:07:19 AM	Legacy-Plugin	Z-Wave	0 event triggers were loaded from HomeSeer.
+1/21/2026 8:07:19 AM	Legacy-Plugin	Z-Wave	0 event actions were loaded from HomeSeer.
+1/21/2026 8:07:19 AM	Legacy-Plugin	Z-Wave	InitIO called, plug-in version 4.1.6.0 is being initialized...
+1/21/2026 8:07:15 AM	HomeSeer	Starting Plug-In	Initializing plugin Z-Wave ...
+1/21/2026 8:07:15 AM	HomeSeer	Info	Plugin Z-Wave with instance Z-Wave has connected. IP:127.0.0.1:50726
+1/21/2026 8:07:14 AM	HomeSeer	Plug-In	Finished initializing plug-in Honeywell WiFi Thermostat
+1/21/2026 8:07:14 AM	HomeSeer	Starting Plug-In	Honeywell WiFi Thermostat loaded in 4294 milliseconds
+1/21/2026 8:07:14 AM	HomeSeer	Starting Plug-In	Plugin Honeywell WiFi Thermostat started successfully in 1787 milliseconds
+1/21/2026 8:07:14 AM	Honeywell WiFi Thermostat	Info	Honeywell WiFi Thermostat initialized.
+1/21/2026 8:07:13 AM	Honeywell WiFi Thermostat	Info	Honeywell WiFi Thermostat Version: 4.3.2.2
+1/21/2026 8:07:13 AM	Honeywell WiFi Thermostat	Info	Connected successfully!
+1/21/2026 8:07:13 AM	HomeSeer	Starting Plug-In	Initializing plugin Honeywell WiFi Thermostat ...
+1/21/2026 8:07:12 AM	HomeSeer	Info	Plugin WiFiThermostat with instance Honeywell WiFi Thermostat has connected. IP:127.0.0.1:50722
+1/21/2026 8:07:11 AM	PowerView	Info	DEBUG: GetShadesAsync returned 21 shades
+1/21/2026 8:07:11 AM	PowerView	Info	GetShadesAsync returning 21 unique shades from /home
+1/21/2026 8:07:11 AM	PowerView	Info	Added shade 168 (Ron's Office) - Battery: 3, Signal: 51, Position: 0.98
+1/21/2026 8:07:11 AM	PowerView	Info	Added shade 156 (Guest 1) - Battery: 3, Signal: 40, Position: 0
+1/21/2026 8:07:11 AM	PowerView	Info	Added shade 148 (Katie 1) - Battery: 3, Signal: 55, Position: 0
+1/21/2026 8:07:11 AM	PowerView	Info	Added shade 140 (Liane 1) - Battery: 3, Signal: 33, Position: 0
+1/21/2026 8:07:11 AM	PowerView	Info	Added shade 132 (Main Hall 1) - Battery: 3, Signal: 53, Position: 0
+1/21/2026 8:07:11 AM	PowerView	Info	Added shade 116 (Main 3) - Battery: 3, Signal: 36, Position: 0
+1/21/2026 8:07:11 AM	PowerView	Info	Added shade 117 (Main 2) - Battery: 3, Signal: 33, Position: 0
+1/21/2026 8:07:11 AM	PowerView	Info	Added shade 118 (Main 1) - Battery: 3, Signal: 30, Position: 0
+1/21/2026 8:07:11 AM	PowerView	Info	Added shade 100 (Laundry 1) - Battery: 3, Signal: 50, Position: 0
+1/21/2026 8:07:11 AM	PowerView	Info	Added shade 84 (Game 3) - Battery: 3, Signal: 58, Position: 1
+1/21/2026 8:07:11 AM	PowerView	Info	Added shade 92 (Game 2) - Battery: 0, Signal: 0, Position: 
+1/21/2026 8:07:11 AM	PowerView	Info	Added shade 85 (Game 1) - Battery: 3, Signal: 38, Position: 1
+1/21/2026 8:07:11 AM	PowerView	Info	Added shade 71 (Pool Bath Shade) - Battery: 3, Signal: 60, Position: 0
+1/21/2026 8:07:11 AM	PowerView	Info	Added shade 46 (Hall 1) - Battery: 3, Signal: 73, Position: 0
+1/21/2026 8:07:11 AM	PowerView	Info	Added shade 40 (Garage 1) - Battery: 3, Signal: 50, Position: 0
+1/21/2026 8:07:11 AM	PowerView	Info	Added shade 16 (Dining 3) - Battery: 3, Signal: 50, Position: 0
+1/21/2026 8:07:11 AM	PowerView	Info	Added shade 14 (Dining 2) - Battery: 3, Signal: 63, Position: 0
+1/21/2026 8:07:11 AM	PowerView	Info	Added shade 15 (Dining 1) - Battery: 3, Signal: 41, Position: 0
+1/21/2026 8:07:11 AM	PowerView	Info	Added shade 2 (Liv 3) - Battery: 3, Signal: 36, Position: 0
+1/21/2026 8:07:11 AM	PowerView	Info	Added shade 3 (Liv 2) - Battery: 3, Signal: 41, Position: 0
+1/21/2026 8:07:11 AM	PowerView	Info	Added shade 4 (Liv 1) - Battery: 3, Signal: 38, Position: 0
+1/21/2026 8:07:10 AM	HomeSeer	Plug-In	Finished initializing plug-in rnbHydra
+1/21/2026 8:07:10 AM	HomeSeer	Starting Plug-In	rnbHydra loaded in 754 milliseconds
+1/21/2026 8:07:10 AM	HomeSeer	Starting Plug-In	Plugin rnbHydra started successfully in 45 milliseconds
+1/21/2026 8:07:10 AM	HomeSeer	Starting Plug-In	Initializing plugin rnbHydra ...
+1/21/2026 8:07:10 AM	Sonos4	Info	MySSDP.StartSSDPDiscovery waiting for an additional 30 seconds while receiving and processing the UPnP Device Info ..... 
+1/21/2026 8:07:10 AM	HomeSeer	Info	Plugin rnbHydra with instance rnbHydra has connected. IP:127.0.0.1:50709
+1/21/2026 8:07:10 AM	Sonos4	Info	MySSDP.StartSSDPDiscovery found so far 4 Devices. Still 0 Entries awaiting processing ..... 
+1/21/2026 8:07:09 AM	PowerView	Info	PowerView: Calling GET http://192.168.3.164/home
+1/21/2026 8:07:09 AM	PowerView	Info	Discovering PowerView shades on hub 192.168.3.164...
+1/21/2026 8:07:09 AM	PowerView	Info	Step 1: Discovering shades...
+1/21/2026 8:07:09 AM	PowerView	Info	DEBUG: _primaryHubIp is '192.168.3.164'
+1/21/2026 8:07:09 AM	PowerView	Info	DEBUG: _primaryClient is initialized
+1/21/2026 8:07:09 AM	PowerView	Info	===== INITIAL DISCOVERY STARTING =====
+1/21/2026 8:07:09 AM	HomeSeer	Plug-In	Finished initializing plug-in PowerView
+1/21/2026 8:07:09 AM	HomeSeer	Starting Plug-In	PowerView loaded in 561 milliseconds
+1/21/2026 8:07:09 AM	HomeSeer	Starting Plug-In	Plugin PowerView started successfully in 96 milliseconds
+1/21/2026 8:07:09 AM	PowerView	Info	Started polling for status updates. Use Settings page to re-discover devices if needed.
+1/21/2026 8:07:09 AM	PowerView	Info	Started polling hub 192.168.3.164 every 30 seconds
+1/21/2026 8:07:09 AM	PowerView	Info	[TIMER-SETUP-DONE] Timer created and stored for hub 192.168.3.164
+1/21/2026 8:07:09 AM	PowerView	Info	[TIMER-SETUP] Creating timer with interval 30s
+1/21/2026 8:07:09 AM	PowerView	Info	[TIMER-SETUP-START] Attempting to start polling for hub 192.168.3.164
+1/21/2026 8:07:09 AM	PowerView	Info	Queueing initial discovery...
+1/21/2026 8:07:09 AM	PowerView	Info	PowerView Hub configured at 192.168.3.165
+1/21/2026 8:07:09 AM	PowerView	Info	PowerView Hub configured at 192.168.3.164
+1/21/2026 8:07:09 AM	PowerView	Info	PowerView Plugin version 1.0.0.0 (file 1.0.0.0) built 2026-01-21 08:05:15
+1/21/2026 8:07:09 AM	PowerView	Info	Initializing PowerView Plugin...
+1/21/2026 8:07:09 AM	HomeSeer	Starting Plug-In	Initializing plugin PowerView ...
+1/21/2026 8:07:09 AM	HomeSeer	Info	Plugin PowerView with instance PowerView has connected. IP:127.0.0.1:50700
+1/21/2026 8:07:09 AM	Ring	Info	TreatWebPNSocketMessage received a new connection from our RingNode app with version = v1.0.5
+1/21/2026 8:07:08 AM	HomeSeer	Plug-In	Finished initializing plug-in HSBuddy
+1/21/2026 8:07:08 AM	HomeSeer	Starting Plug-In	HSBuddy loaded in 8313 milliseconds
+1/21/2026 8:07:08 AM	HomeSeer	Starting Plug-In	Plugin HSBuddy started successfully in 6656 milliseconds
+1/21/2026 8:07:06 AM	Ring	Info	StartStopPushReceiver started program = C:\Program Files (x86)\HomeSeer HS4/bin/Ring/RingNode-win.exe 8089 NONE
+1/21/2026 8:07:01 AM	HomeSeer	Starting Plug-In	Initializing plugin HSBuddy ...
+1/21/2026 8:07:01 AM	HomeSeer	Info	Plugin HSBuddy with instance HSBuddy has connected. IP:127.0.0.1:50612
+1/21/2026 8:07:01 AM	Sonos4	Info	MySSDP.StartSSDPDiscovery, waiting for 9 seconds while discovering UPnP Devices ..... 
+1/21/2026 8:07:01 AM	Sonos4	Info	MySSDP.StartEventListener started listening on interface = 192.168.3.139 and port = 50611
+1/21/2026 8:06:59 AM	HomeSeer	Plug-In	Finished initializing plug-in Sonos4
+1/21/2026 8:06:59 AM	HomeSeer	Starting Plug-In	Sonos4 loaded in 574 milliseconds
+1/21/2026 8:06:59 AM	HomeSeer	Starting Plug-In	Plugin Sonos4 started successfully in 168 milliseconds
+1/21/2026 8:06:59 AM	Sonos4	Info	Initialize - Done
+1/21/2026 8:06:59 AM	Sonos4	Info	Sonos Plugin Initialized
+1/21/2026 8:06:59 AM	Sonos4	Info	CheckFirewallStatus ---- Action: Allow
+1/21/2026 8:06:59 AM	Sonos4	Info	CheckFirewallStatus found Rule Name: Sonos4 for HomeSeer, Description = Allow HomeSeer pluging acces, App Name = C:\Program Files (x86)\HomeSeer HS4\HSPI_Sonos4.exe, Service Name =  and Enabled = True
+1/21/2026 8:06:59 AM	Sonos4	Info	CheckFirewallStatus ---- Action: Allow
+1/21/2026 8:06:59 AM	Sonos4	Info	CheckFirewallStatus found Rule Name: Sonos4 for HomeSeer, Description = Allow HomeSeer pluging acces, App Name = C:\Program Files (x86)\HomeSeer HS4\HSPI_Sonos4.exe, Service Name =  and Enabled = True
+1/21/2026 8:06:59 AM	Sonos4	Info	InitPlugIn retrieved from HomeSeer Ethernet Interface = 192.168.3.139 and Port = 80
+1/21/2026 8:06:59 AM	HomeSeer	Starting Plug-In	Initializing plugin Sonos4 ...
+1/21/2026 8:06:59 AM	HomeSeer	Info	Plugin Sonos4 with instance Sonos4 has connected. IP:127.0.0.1:50601
+1/21/2026 8:06:59 AM	HomeSeer	Plug-In	Finished initializing plug-in SmartThings
+1/21/2026 8:06:59 AM	HomeSeer	Starting Plug-In	SmartThings loaded in 1011 milliseconds
+1/21/2026 8:06:59 AM	HomeSeer	Starting Plug-In	Plugin SmartThings started successfully in 461 milliseconds
+1/21/2026 8:06:58 AM	SmartThings	Info	SmartThings version 4.0.19.0
+1/21/2026 8:06:58 AM	HomeSeer	Starting Plug-In	Initializing plugin SmartThings ...
+1/21/2026 8:06:58 AM	HomeSeer	Info	Plugin SmartThings with instance SmartThings has connected. IP:127.0.0.1:50600
+1/21/2026 8:06:57 AM	HomeSeer	Plug-In	Finished initializing plug-in Ring
+1/21/2026 8:06:57 AM	HomeSeer	Starting Plug-In	Ring loaded in 438 milliseconds
+1/21/2026 8:06:57 AM	HomeSeer	Starting Plug-In	Plugin Ring started successfully in 181 milliseconds
+1/21/2026 8:06:57 AM	Ring	Info	Initialize - Done
+1/21/2026 8:06:57 AM	Ring	Info	Plugin Initialized
+1/21/2026 8:06:57 AM	Ring	Info	CheckFirewallStatus ---- Action: Allow
+1/21/2026 8:06:57 AM	Ring	Info	CheckFirewallStatus found Rule Name: RingNode for HomeSeer, Description = Allow HomeSeer pluging acces, App Name = C:\Program Files (x86)\HomeSeer HS4\bin\Ring\RingNode-win.exe, Service Name =  and Enabled = True
+1/21/2026 8:06:57 AM	Ring	Info	CheckFirewallStatus ---- Action: Allow
+1/21/2026 8:06:57 AM	Ring	Info	CheckFirewallStatus found Rule Name: RingNode for HomeSeer, Description = Allow HomeSeer pluging acces, App Name = C:\Program Files (x86)\HomeSeer HS4\bin\Ring\RingNode-win.exe, Service Name =  and Enabled = True
+1/21/2026 8:06:57 AM	Ring	Info	CheckLocalIPv4Address found IP Address = 192.168.3.139 equal to HS IP address so Plugin is running local
+1/21/2026 8:06:57 AM	Ring	Info	CheckLocalIPv4Address found IP Address = 192.168.3.139 with AddressFamily = InterNetwork
+1/21/2026 8:06:57 AM	Ring	Info	CheckLocalIPv4Address found IP Address = fe80::f0df:3422:fcfc:eae7%23 with AddressFamily = InterNetworkV6
+1/21/2026 8:06:57 AM	Ring	Info	CheckLocalIPv4Address found IP Host = HT-PRO-G1v2
+1/21/2026 8:06:57 AM	Ring	Info	InitPlugIn retrieved from HomeSeer Ethernet Interface = 192.168.3.139 and Port = 80
+1/21/2026 8:06:57 AM	Ring	Info	InitPlugIn found plugin version = 1.0.6.7
+1/21/2026 8:06:57 AM	Ring	Info	InitPlugIn found this plugin running on Linux = False
+1/21/2026 8:06:57 AM	Ring	Info	InitPlugIn called and running on OS = Win32NT
+1/21/2026 8:06:57 AM	Ring	Info	InitPlugIn found HS running on Linux = False
+1/21/2026 8:06:57 AM	Ring	Info	InitPlugIn found CurrentAppPath = C:\Program Files (x86)\HomeSeer HS4
+1/21/2026 8:06:57 AM	Ring	Info	InitPlugIn called - Starting
+1/21/2026 8:06:57 AM	Ring	Info	Initialize called
+1/21/2026 8:06:57 AM	HomeSeer	Starting Plug-In	Initializing plugin Ring ...
+1/21/2026 8:06:57 AM	HomeSeer	Info	Plugin Ring with instance Ring has connected. IP:127.0.0.1:50597
+1/21/2026 8:06:55 AM	HomeSeer	Plug-In	Finished initializing plug-in BLDenon
+1/21/2026 8:06:55 AM	HomeSeer	Starting Plug-In	BLDenon loaded in 439 milliseconds
+1/21/2026 8:06:55 AM	HomeSeer	Starting Plug-In	Plugin BLDenon started successfully in 96 milliseconds
+1/21/2026 8:06:55 AM	BLDenon	Info	BLDenon plugin has been initialized
+1/21/2026 8:06:55 AM	BLDenon	Info	No receivers have been assigned to BLDenon!
+1/21/2026 8:06:55 AM	BLDenon	Info	Loaded configuration successfully
+1/21/2026 8:06:55 AM	BLDenon	Info	BLDenon version is: 4.0.10.0
+1/21/2026 8:06:55 AM	BLDenon	Info	Initializing BLDenon...
+1/21/2026 8:06:55 AM	HomeSeer	Starting Plug-In	Initializing plugin BLDenon ...
+1/21/2026 8:06:55 AM	HomeSeer	Info	Plugin BLDenon with instance BLDenon has connected. IP:127.0.0.1:50594
+1/21/2026 8:06:54 AM	HomeSeer	Startup	Initializing Plug-Ins
+1/21/2026 8:06:54 AM	HomeSeer	Plug-In	Found plug-in: Z-Wave, version: 4.1.6.0
+1/21/2026 8:06:54 AM	HomeSeer	Plug-In	Found plug-in: Sonos4, version: 4.0.1.45
+1/21/2026 8:06:54 AM	HomeSeer	Plug-In	Found plug-in: SmartThings, version: 4.0.19.0
+1/21/2026 8:06:54 AM	HomeSeer	Plug-In	Found plug-in: Honeywell WiFi Thermostat, version: 4.3.2.2
+1/21/2026 8:06:54 AM	HomeSeer	Plug-In	Found plug-in: rnbHydra, version: 4.0.4.1
+1/21/2026 8:06:54 AM	HomeSeer	Plug-In	Found plug-in: Ring, version: 1.0.6.7
+1/21/2026 8:06:54 AM	HomeSeer	Plug-In	Found plug-in: PowerView, version: 1.0.0.0
+1/21/2026 8:06:54 AM	HomeSeer	Web Server	Web Server authorized local login successful from: 192.168.3.139 User: rnicol@1975.usna.com
+1/21/2026 8:06:53 AM	HomeSeer	Plug-In	Found plug-in: HSBuddy, version: 4.53.825.4
+1/21/2026 8:06:53 AM	HomeSeer	Plug-In	Found plug-in: BLDenon, version: 4.0.10.0
+1/21/2026 8:06:53 AM	HomeSeer	Startup	Checking for available plug-ins
+1/21/2026 8:06:53 AM	HomeSeer	Info	Remote plug-in API interface started on port 10400
+1/21/2026 8:06:53 AM	HomeSeer	Startup	Starting Find service...
+1/21/2026 8:06:53 AM	HomeSeer	Startup	Updater services starting...
+1/21/2026 8:06:52 AM	HomeSeer	Database	Opening (Mode=Read/Write) up HomeSeer Energy database C:\Program Files (x86)\HomeSeer HS4\Data\Energy\Energy.hsd
+1/21/2026 8:06:52 AM	HomeSeer	Speech	Listening for remote speaker connections on port 10401
+1/21/2026 8:06:52 AM	HomeSeer	Startup	Initializing Speaker Client Interface
+1/21/2026 8:06:52 AM	HomeSeer	Startup	Start automation engine...
+1/21/2026 8:06:52 AM	HomeSeer	Web Server	Web Server started on port 80
+1/21/2026 8:06:52 AM	HomeSeer	Web Server	Local IP address (subnet) is: 192.168.3.139 (255.255.255.0)
+1/21/2026 8:06:52 AM	HomeSeer	Startup	This version of HomeSeer is registered as a HS4PRO version.
+1/21/2026 8:06:52 AM	HomeSeer	Startup	Creating Speaker Client Interface Object...
+1/21/2026 8:06:52 AM	HomeSeer	Startup	HomeSeer version is: 4.2.22.4
+1/21/2026 8:06:52 AM	HomeSeer	Info	Loaded 0 Timers.
+1/21/2026 8:06:52 AM	HomeSeer	Info	Loaded 0 Counters.
+1/21/2026 8:06:52 AM	HomeSeer	Info	Loaded 9 Events.
+1/21/2026 8:06:52 AM	HomeSeer	Info	Loaded 693 Devices.
+1/21/2026 8:06:51 AM	HomeSeer	Info	Loading configuration: C:\Program Files (x86)\HomeSeer HS4\Data\HS4Data.json
+1/21/2026 8:06:51 AM	HomeSeer	Startup	Local voice recognition class started.
+1/21/2026 8:06:51 AM	HomeSeer	Startup	Plug-In Interface class started.
+1/21/2026 8:06:51 AM	HomeSeer	Startup	E-Mail RECEIVE class started.
+1/21/2026 8:06:51 AM	HomeSeer	Startup	E-Mail SEND class started.
+1/21/2026 8:06:51 AM	HomeSeer	Startup	Web server class started.
+1/21/2026 8:06:51 AM	HomeSeer	Startup	Application interface class started.
+1/21/2026 8:06:51 AM	HomeSeer	Startup	COM port classes started.
+1/21/2026 8:06:51 AM	HomeSeer	Startup	Creating Class Objects...
+1/21/2026 8:06:51 AM	HomeSeer	startup	
+1/21/2026 8:06:51 AM	HomeSeer	startup	********************************************************************************
+1/21/2026 8:06:51 AM	HomeSeer	startup	              HomeSeerVersion 4.2.22.4 Edition: HS4 Pro StartingNow
+1/21/2026 8:06:51 AM	HomeSeer	startup	********************************************************************************
+1/21/2026 8:06:51 AM	HomeSeer	startup	
+1/21/2026 8:06:51 AM	HomeSeer	Startup	Settings Loaded.
+1/21/2026 8:06:51 AM	HomeSeer	Startup	Loading Settings

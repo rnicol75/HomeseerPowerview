@@ -28,6 +28,18 @@ namespace HSPI_PowerView
         {
             HomeSeerSystem.WriteLog(ELogType.Info, "Initializing PowerView Plugin...", Name);
 
+            // Log assembly version and build timestamp to confirm correct binary is loaded
+            try
+            {
+                var asm = typeof(HSPI).Assembly;
+                var ver = asm.GetName().Version?.ToString() ?? "unknown";
+                var fvi = System.Diagnostics.FileVersionInfo.GetVersionInfo(asm.Location);
+                var fileVer = fvi?.FileVersion ?? "unknown";
+                var ts = System.IO.File.GetLastWriteTime(asm.Location);
+                HomeSeerSystem.WriteLog(ELogType.Info, $"PowerView Plugin version {ver} (file {fileVer}) built {ts:yyyy-MM-dd HH:mm:ss}", Name);
+            }
+            catch { /* best-effort version logging */ }
+
             // Load settings
             var hubIp = GetSetting(SETTING_HUB_IP);
             if (!string.IsNullOrEmpty(hubIp))

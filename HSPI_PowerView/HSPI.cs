@@ -248,8 +248,10 @@ namespace HSPI_PowerView
 
         public override void SetIOMulti(List<ControlEvent> colSend)
         {
+            HomeSeerSystem.WriteLog(ELogType.Info, $"SetIOMulti called with {colSend?.Count ?? 0} control events", Name);
             foreach (var controlEvent in colSend)
             {
+                HomeSeerSystem.WriteLog(ELogType.Info, $"Processing control event: TargetRef={controlEvent.TargetRef}, ControlValue={controlEvent.ControlValue}, ControlString={controlEvent.ControlString}", Name);
                 Task.Run(async () => await HandleControlEventAsync(controlEvent));
             }
         }
@@ -880,17 +882,26 @@ namespace HSPI_PowerView
                     var targetHubIp = string.IsNullOrEmpty(shade.GatewayIp) ? hubIp : shade.GatewayIp;
                     HomeSeerSystem.WriteLog(ELogType.Info, $"DEBUG: Processing shade {shade.Id} ({shadeName})", Name);
 
-                    // Check if device already exists - just verify/create, don't update during initial discovery
+                    // Check if device already exists - DELETE and RECREATE to ensure scene IDs are linked
                     var existingDevice = FindDeviceByShadeId(shade.Id, targetHubIp, shadeName);
-                    if (existingDevice == null)
+                    if (existingDevice != null)
                     {
-                        HomeSeerSystem.WriteLog(ELogType.Info, $"Creating new shade device for {shade.Id}", Name);
-                        await CreateShadeDevice(shade, targetHubIp);
+                        HomeSeerSystem.WriteLog(ELogType.Info, $"Deleting existing shade device {shade.Id} (ref {existingDevice.Ref}) to recreate with scene linking", Name);
+                        
+                        // Delete the parent device and all its child features
+                        var result = HomeSeerSystem.DeleteDevice(existingDevice.Ref);
+                        if (result)
+                        {
+                            HomeSeerSystem.WriteLog(ELogType.Info, $"Successfully deleted shade device {shade.Id}", Name);
+                        }
+                        else
+                        {
+                            HomeSeerSystem.WriteLog(ELogType.Warning, $"Failed to delete shade device {shade.Id}, will try to create anyway", Name);
+                        }
                     }
-                    else
-                    {
-                        HomeSeerSystem.WriteLog(ELogType.Info, $"Shade device {shade.Id} already exists (ref {existingDevice.Ref}), polling will update it", Name);
-                    }
+                    
+                    HomeSeerSystem.WriteLog(ELogType.Info, $"Creating shade device for {shade.Id}", Name);
+                    await CreateShadeDevice(shade, targetHubIp);
                 }
                 HomeSeerSystem.WriteLog(ELogType.Info, $"DEBUG: DiscoverShadesAsync loop complete, exiting method", Name);
             }
@@ -1168,8 +1179,45 @@ namespace HSPI_PowerView
                     childExtra.AddNamed("ShadeId", shade.Id.ToString());
                     childExtra.AddNamed("HubIp", hubIp);
                     childExtra.AddNamed("OriginalName", originalName);
+                    
+                    // Mark Position, Battery, and Signal as read-only status devices
+                    if (string.Equals(child.Name, "Position", StringComparison.OrdinalIgnoreCase))
+                    {
+                        childExtra.AddNamed("StatusType", "Position");
+                    }
+                    else if (string.Equals(child.Name, "Battery", StringComparison.OrdinalIgnoreCase))
+                    {
+                        childExtra.AddNamed("StatusType", "Battery");
+                    }
+                    else if (string.Equals(child.Name, "Signal", StringComparison.OrdinalIgnoreCase))
+                    {
+                        childExtra.AddNamed("StatusType", "Signal");
+                    }
+                    
                     HomeSeerSystem.UpdatePropertyByRef(childRef, EProperty.PlugExtraData, childExtra);
                     HomeSeerSystem.WriteLog(ELogType.Info, $"Stored ShadeId={shade.Id}, HubIp={hubIp} in feature PlugExtraData for {child.Name} (ref {childRef})", Name);
+                    
+                    // Add actual controls to Shade Control feature so HomeSeer routes clicks to SetIOMulti
+                    if (string.Equals(child.Name, "Shade Control", StringComparison.OrdinalIgnoreCase))
+                    {
+                        HomeSeerSystem.WriteLog(ELogType.Info, $"Adding control pairs to Shade Control feature (ref {childRef})", Name);
+                        
+                        // Add Close control (value=0)
+                        var svgClose = new StatusGraphic("/images/HomeSeer/status/down.png", 0, "Close");
+                        svgClose.IsRange = false;
+                        svgClose.TargetRange = new ValueRange(0, 0);
+                        svgClose.ControlUse = EControlUse.On;  // This makes it clickable!
+                        HomeSeerSystem.AddStatusGraphicToFeature(childRef, svgClose);
+                        
+                        // Add Open control (value=100)
+                        var svgOpen = new StatusGraphic("/images/HomeSeer/status/up.png", 100, "Open");
+                        svgOpen.IsRange = false;
+                        svgOpen.TargetRange = new ValueRange(100, 100);
+                        svgOpen.ControlUse = EControlUse.Off;  // This makes it clickable!
+                        HomeSeerSystem.AddStatusGraphicToFeature(childRef, svgOpen);
+                        
+                        HomeSeerSystem.WriteLog(ELogType.Info, $"Added Close (0) and Open (100) controls to Shade Control", Name);
+                    }
                 }
 
                 // Link scenes to this shade (Open/Close/Privacy)
@@ -1819,11 +1867,131 @@ namespace HSPI_PowerView
                 }
                 HomeSeerSystem.WriteLog(ELogType.Info, $"DEBUG: Scene loop complete - processed {created + skipped} total scenes", Name);
                 HomeSeerSystem.WriteLog(ELogType.Info, $"Scene sync complete: {created} created, {skipped} already existed. Total scenes: {scenes.Count}", Name);
+                
+                // After scenes are synced, update all existing shade devices with scene links
+                await UpdateAllShadeScenesAsync(client, hubIp);
             }
             catch (Exception ex)
             {
                 HomeSeerSystem.WriteLog(ELogType.Error, $"Error syncing scenes on hub {hubIp}: {ex.Message}", Name);
                 HomeSeerSystem.WriteLog(ELogType.Error, $"StackTrace: {ex.StackTrace}", Name);
+            }
+        }
+
+        private async Task UpdateAllShadeScenesAsync(PowerViewClient client, string hubIp)
+        {
+            try
+            {
+                HomeSeerSystem.WriteLog(ELogType.Info, $"Updating scene links for all existing shade devices on hub {hubIp}...", Name);
+                
+                // Get all scenes for this hub
+                var scenes = await client.GetScenesAsync();
+                if (scenes == null || scenes.Count == 0)
+                {
+                    HomeSeerSystem.WriteLog(ELogType.Info, $"No scenes found to link to shades on hub {hubIp}", Name);
+                    return;
+                }
+
+                // Find all shade devices for this hub
+                var allDevices = HomeSeerSystem.GetAllDevices(withFeatures: false);
+                int updated = 0;
+                int skipped = 0;
+
+                foreach (var device in allDevices)
+                {
+                    // Only process devices from PowerView plugin (check interface ID)
+                    if (device.Interface != Id)
+                        continue;
+
+                    // Only process parent devices (not features)
+                    if (device.Relationship != ERelationship.Device)
+                        continue;
+
+                    // Only process shade devices (Location2 = "Shades")
+                    if (!string.Equals(device.Location2, "Shades", StringComparison.OrdinalIgnoreCase))
+                        continue;
+
+                    // Get PlugExtraData
+                    var ped = HomeSeerSystem.GetPropertyByRef(device.Ref, EProperty.PlugExtraData) as PlugExtraData;
+                    if (ped == null || !ped.ContainsNamed("ShadeId"))
+                    {
+                        skipped++;
+                        continue;
+                    }
+
+                    // Check if this device is for this hub
+                    string deviceHubIp = ped.ContainsNamed("HubIp") ? ped["HubIp"].ToString() : null;
+                    if (!string.Equals(deviceHubIp, hubIp, StringComparison.OrdinalIgnoreCase))
+                    {
+                        skipped++;
+                        continue;
+                    }
+
+                    // Get shade ID
+                    if (!int.TryParse(ped["ShadeId"].ToString(), out int shadeId))
+                    {
+                        skipped++;
+                        continue;
+                    }
+
+                    // Check if already has scene links
+                    bool hasSceneLinks = ped.ContainsNamed("SceneOpenId") || ped.ContainsNamed("SceneCloseId");
+                    
+                    // Find scenes that control this shade
+                    int? openSceneId = null;
+                    int? closeSceneId = null;
+                    int? privacySceneId = null;
+
+                    foreach (var scene in scenes)
+                    {
+                        if (scene.ShadeIds != null && scene.ShadeIds.Contains(shadeId))
+                        {
+                            if (scene.NetworkNumber == 45057)
+                                openSceneId = scene.Id;
+                            else if (scene.NetworkNumber == 45058)
+                                closeSceneId = scene.Id;
+                            else if (scene.NetworkNumber == 45060)
+                                privacySceneId = scene.Id;
+                        }
+                    }
+
+                    // Update PlugExtraData if we found scenes
+                    bool needsUpdate = false;
+                    if (openSceneId.HasValue && (!ped.ContainsNamed("SceneOpenId") || ped["SceneOpenId"].ToString() != openSceneId.Value.ToString()))
+                    {
+                        ped.AddNamed("SceneOpenId", openSceneId.Value.ToString());
+                        needsUpdate = true;
+                    }
+                    if (closeSceneId.HasValue && (!ped.ContainsNamed("SceneCloseId") || ped["SceneCloseId"].ToString() != closeSceneId.Value.ToString()))
+                    {
+                        ped.AddNamed("SceneCloseId", closeSceneId.Value.ToString());
+                        needsUpdate = true;
+                    }
+                    if (privacySceneId.HasValue && (!ped.ContainsNamed("ScenePrivacyId") || ped["ScenePrivacyId"].ToString() != privacySceneId.Value.ToString()))
+                    {
+                        ped.AddNamed("ScenePrivacyId", privacySceneId.Value.ToString());
+                        needsUpdate = true;
+                    }
+
+                    if (needsUpdate)
+                    {
+                        HomeSeerSystem.UpdatePropertyByRef(device.Ref, EProperty.PlugExtraData, ped);
+                        HomeSeerSystem.WriteLog(ELogType.Info, $"Linked scenes to {device.Name}: Open={openSceneId?.ToString() ?? "none"}, Close={closeSceneId?.ToString() ?? "none"}, Privacy={privacySceneId?.ToString() ?? "none"}", Name);
+                        updated++;
+                    }
+                    else
+                    {
+                        if (hasSceneLinks)
+                            HomeSeerSystem.WriteLog(ELogType.Debug, $"Shade {device.Name} already has scene links", Name);
+                        skipped++;
+                    }
+                }
+
+                HomeSeerSystem.WriteLog(ELogType.Info, $"Scene link update complete: {updated} shades updated, {skipped} skipped", Name);
+            }
+            catch (Exception ex)
+            {
+                HomeSeerSystem.WriteLog(ELogType.Error, $"Error updating shade scene links: {ex.Message}", Name);
             }
         }
 

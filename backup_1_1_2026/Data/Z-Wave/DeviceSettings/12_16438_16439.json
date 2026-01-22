@@ -1,0 +1,764 @@
+{
+	"title": "HomeSeer HS-WX300 Dimmer/Switch",
+	"manufacturer_id": 12,
+	"product_ids": [
+		16438,
+		16439
+	],
+	"product_type": [
+		17479
+	],
+	"default_name": "HomeSeer HS-WX300 Dimmer/Switch",
+	"settings": [
+		{
+			"param_num": 3,
+			"description": "Bottom LED Operation",
+			"control_type": 1,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 1,
+			"droplist_type": 1,
+			"droplist_options": [
+				{
+					"Key": 0,
+					"Value": "Off if Load is Off"
+				},
+				{
+					"Key": 1,
+					"Value": "On if Load is Off"
+				}
+			],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": ""
+		},
+		{
+			"param_num": 4,
+			"description": "Paddle Operation",
+			"control_type": 1,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 1,
+			"droplist_type": 1,
+			"droplist_options": [
+				{
+					"Key": 0,
+					"Value": "Normal"
+				},
+				{
+					"Key": 1,
+					"Value": "Reverse"
+				}
+			],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": ""
+		},
+		{
+			"param_num": 5,
+			"description": "Low Dimming Threshold (Dimmer Mode Only) 3Wire/2Wire",
+			"control_type": 1,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 1,
+			"droplist_type": 1,
+			"droplist_options": [
+				{
+					"Key": 1,
+					"Value": "16%/25%"
+				},
+				{
+					"Key": 2,
+					"Value": "16.8%/25.4%"
+				},
+				{
+					"Key": 3,
+					"Value": "17.5%/25.8%"
+				},
+				{
+					"Key": 4,
+					"Value": "18.2%/26.2%"
+				},
+				{
+					"Key": 5,
+					"Value": "19%/26.6%"
+				},
+				{
+					"Key": 6,
+					"Value": "19.6%/27%"
+				},
+				{
+					"Key": 7,
+					"Value": "20.2%/27.3%"
+				},
+				{
+					"Key": 8,
+					"Value": "21%/27.6%"
+				},
+				{
+					"Key": 9,
+					"Value": "21.8%/27.9%"
+				},
+				{
+					"Key": 10,
+					"Value": "22.4%/28.2%"
+				},
+				{
+					"Key": 11,
+					"Value": "23.2%/28.5%"
+				},
+				{
+					"Key": 12,
+					"Value": "23.9%/28.8%"
+				},
+				{
+					"Key": 13,
+					"Value": "24.5%/29%"
+				},
+				{
+					"Key": 14,
+					"Value": "25%/30%"
+				}
+			],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": ""
+		},
+		{
+			"param_num": 6,
+			"description": "Faster Response/Disable Multitap",
+			"control_type": 1,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 1,
+			"droplist_type": 1,
+			"droplist_options": [
+				{
+					"Key": 1,
+					"Value": "Enabled"
+				},
+				{
+					"Key": 0,
+					"Value": "Disabled"
+				}
+			],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": ""
+		},
+		{
+			"param_num": 11,
+			"description": "Ramp Rate for Remote Control (Dimmer Mode Only) (0-90) (1=1 second)",
+			"control_type": 0,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 1,
+			"droplist_type": 0,
+			"droplist_options": [],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": ""
+		},
+		{
+			"param_num": 12,
+			"description": "Ramp Rate for Local Control (Dimmer Mode Only) (0-90) (1=1 second)",
+			"control_type": 0,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 1,
+			"droplist_type": 0,
+			"droplist_options": [],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": ""
+		},
+		{
+			"param_num": 13,
+			"description": "Status Mode",
+			"control_type": 1,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 1,
+			"droplist_type": 1,
+			"droplist_options": [
+				{
+					"Key": 0,
+					"Value": "Disable"
+				},
+				{
+					"Key": 1,
+					"Value": "Enabled"
+				}
+			],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": ""
+		},
+		{
+			"param_num": 14,
+			"description": "Default LED Color",
+			"control_type": 1,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 1,
+			"droplist_type": 1,
+			"droplist_options": [
+				{
+					"Key": 0,
+					"Value": "White"
+				},
+				{
+					"Key": 1,
+					"Value": "Red"
+				},
+				{
+					"Key": 2,
+					"Value": "Green"
+				},
+				{
+					"Key": 3,
+					"Value": "Blue"
+				},
+				{
+					"Key": 4,
+					"Value": "Magenta"
+				},
+				{
+					"Key": 5,
+					"Value": "Yellow"
+				},
+				{
+					"Key": 6,
+					"Value": "Cyan"
+				}
+			],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": ""
+		},
+		{
+			"param_num": 21,
+			"description": "Color for LED 1 (Bottom) in status mode",
+			"control_type": 1,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 1,
+			"droplist_type": 1,
+			"droplist_options": [
+				{
+					"Key": 0,
+					"Value": "Off"
+				},
+				{
+					"Key": 1,
+					"Value": "Red"
+				},
+				{
+					"Key": 2,
+					"Value": "Green"
+				},
+				{
+					"Key": 3,
+					"Value": "Blue"
+				},
+				{
+					"Key": 4,
+					"Value": "Magenta"
+				},
+				{
+					"Key": 5,
+					"Value": "Yellow"
+				},
+				{
+					"Key": 6,
+					"Value": "Cyan"
+				},
+				{
+					"Key": 7,
+					"Value": "White"
+				}
+			],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": ""
+		},
+		{
+			"param_num": 22,
+			"description": "Color for LED 2 in status mode",
+			"control_type": 1,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 1,
+			"droplist_type": 1,
+			"droplist_options": [
+				{
+					"Key": 0,
+					"Value": "Off"
+				},
+				{
+					"Key": 1,
+					"Value": "Red"
+				},
+				{
+					"Key": 2,
+					"Value": "Green"
+				},
+				{
+					"Key": 3,
+					"Value": "Blue"
+				},
+				{
+					"Key": 4,
+					"Value": "Magenta"
+				},
+				{
+					"Key": 5,
+					"Value": "Yellow"
+				},
+				{
+					"Key": 6,
+					"Value": "Cyan"
+				},
+				{
+					"Key": 7,
+					"Value": "White"
+				}
+			],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": ""
+		},
+		{
+			"param_num": 23,
+			"description": "Color for LED 3 in status mode",
+			"control_type": 1,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 1,
+			"droplist_type": 1,
+			"droplist_options": [
+				{
+					"Key": 0,
+					"Value": "Off"
+				},
+				{
+					"Key": 1,
+					"Value": "Red"
+				},
+				{
+					"Key": 2,
+					"Value": "Green"
+				},
+				{
+					"Key": 3,
+					"Value": "Blue"
+				},
+				{
+					"Key": 4,
+					"Value": "Magenta"
+				},
+				{
+					"Key": 5,
+					"Value": "Yellow"
+				},
+				{
+					"Key": 6,
+					"Value": "Cyan"
+				},
+				{
+					"Key": 7,
+					"Value": "White"
+				}
+			],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": ""
+		},
+		{
+			"param_num": 24,
+			"description": "Color for LED 4 in status mode",
+			"control_type": 1,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 1,
+			"droplist_type": 1,
+			"droplist_options": [
+				{
+					"Key": 0,
+					"Value": "Off"
+				},
+				{
+					"Key": 1,
+					"Value": "Red"
+				},
+				{
+					"Key": 2,
+					"Value": "Green"
+				},
+				{
+					"Key": 3,
+					"Value": "Blue"
+				},
+				{
+					"Key": 4,
+					"Value": "Magenta"
+				},
+				{
+					"Key": 5,
+					"Value": "Yellow"
+				},
+				{
+					"Key": 6,
+					"Value": "Cyan"
+				},
+				{
+					"Key": 7,
+					"Value": "White"
+				}
+			],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": ""
+		},
+		{
+			"param_num": 25,
+			"description": "Color for LED 5 in status mode",
+			"control_type": 1,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 1,
+			"droplist_type": 1,
+			"droplist_options": [
+				{
+					"Key": 0,
+					"Value": "Off"
+				},
+				{
+					"Key": 1,
+					"Value": "Red"
+				},
+				{
+					"Key": 2,
+					"Value": "Green"
+				},
+				{
+					"Key": 3,
+					"Value": "Blue"
+				},
+				{
+					"Key": 4,
+					"Value": "Magenta"
+				},
+				{
+					"Key": 5,
+					"Value": "Yellow"
+				},
+				{
+					"Key": 6,
+					"Value": "Cyan"
+				},
+				{
+					"Key": 7,
+					"Value": "White"
+				}
+			],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": ""
+		},
+		{
+			"param_num": 26,
+			"description": "Color for LED 6 in status mode",
+			"control_type": 1,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 1,
+			"droplist_type": 1,
+			"droplist_options": [
+				{
+					"Key": 0,
+					"Value": "Off"
+				},
+				{
+					"Key": 1,
+					"Value": "Red"
+				},
+				{
+					"Key": 2,
+					"Value": "Green"
+				},
+				{
+					"Key": 3,
+					"Value": "Blue"
+				},
+				{
+					"Key": 4,
+					"Value": "Magenta"
+				},
+				{
+					"Key": 5,
+					"Value": "Yellow"
+				},
+				{
+					"Key": 6,
+					"Value": "Cyan"
+				},
+				{
+					"Key": 7,
+					"Value": "White"
+				}
+			],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": ""
+		},
+		{
+			"param_num": 27,
+			"description": "Color for LED 7 (Top) in status mode",
+			"control_type": 1,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 1,
+			"droplist_type": 1,
+			"droplist_options": [
+				{
+					"Key": 0,
+					"Value": "Off"
+				},
+				{
+					"Key": 1,
+					"Value": "Red"
+				},
+				{
+					"Key": 2,
+					"Value": "Green"
+				},
+				{
+					"Key": 3,
+					"Value": "Blue"
+				},
+				{
+					"Key": 4,
+					"Value": "Magenta"
+				},
+				{
+					"Key": 5,
+					"Value": "Yellow"
+				},
+				{
+					"Key": 6,
+					"Value": "Cyan"
+				},
+				{
+					"Key": 7,
+					"Value": "White"
+				}
+			],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": ""
+		},
+		{
+			"param_num": 30,
+			"description": "Status Mode Blink Frequency (0-255) (1=100 milliseconds)",
+			"control_type": 0,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 1,
+			"droplist_type": 0,
+			"droplist_options": [],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": ""
+		},
+		{
+			"param_num": 32,
+			"description": "Wire Mode",
+			"control_type": 1,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 1,
+			"droplist_type": 1,
+			"droplist_options": [
+				{
+					"Key": 0,
+					"Value": "3 wire with neutral"
+				},
+				{
+					"Key": 1,
+					"Value": "2 wire no neutral"
+				}
+			],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": ""
+		},
+		{
+			"param_num": 33,
+			"description": "Startup LED Flash",
+			"control_type": 1,
+			"label": "Value",
+			"textbox_size": 6,			
+			"num_bytes": 1,
+			"droplist_type": 1,
+			"droplist_options": [
+				{
+					"Key": 1,
+					"Value": "Enabled"
+				},
+				{
+					"Key": 0,
+					"Value": "Disabled"
+				}
+			],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": "1.13-2.99"
+		},
+		{
+			"param_num": 34,
+			"description": "Sets the brightness of the LEDs 0-6",
+			"control_type": 1,
+			"label": "Value",
+			"textbox_size": 6,			
+			"num_bytes": 1,
+			"droplist_type": 1,
+			"droplist_options": [
+				{
+					"Key": 0,
+					"Value": "Lowest"
+				},
+				{
+					"Key": 1,
+					"Value": "1"
+				},
+				{
+					"Key": 2,
+					"Value": "2"
+				},
+				{
+					"Key": 3,
+					"Value": "3"
+				},
+				{
+					"Key": 4,
+					"Value": "4"
+				},
+				{
+					"Key": 5,
+					"Value": "5"
+				},
+				{
+					"Key": 6,
+					"Value": "Highest"
+				}
+			],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": "1.13-2.99"
+		},
+		{
+			"param_num": 35,
+			"description": "Configure the device to operate as a single switch toggle",
+			"control_type": 1,
+			"label": "Value",
+			"textbox_size": 6,			
+			"num_bytes": 1,
+			"droplist_type": 1,
+			"droplist_options": [
+				{
+					"Key": 1,
+					"Value": "Enabled"
+				},
+				{
+					"Key": 0,
+					"Value": "Disabled"
+				}
+			],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": "1.13-2.99"
+		},
+		{
+			"param_num": 36,
+			"description": "Set the default dim level for ON",
+			"control_type": 1,
+			"label": "Value",
+			"textbox_size": 6,			
+			"num_bytes": 1,
+			"droplist_type": 1,
+			"droplist_options": [
+				{
+					"Key": 0,
+					"Value": "Last Level"
+				},
+				{
+					"Key": 10,
+					"Value": "10%"
+				},
+				{
+					"Key": 20,
+					"Value": "20%"
+				},
+				{
+					"Key": 30,
+					"Value": "30%"
+				},
+				{
+					"Key": 40,
+					"Value": "40%"
+				},
+				{
+					"Key": 50,
+					"Value": "50%"
+				},
+				{
+					"Key": 60,
+					"Value": "60%"
+				},
+				{
+					"Key": 70,
+					"Value": "70%"
+				},
+				{
+					"Key": 80,
+					"Value": "80%"
+				},
+				{
+					"Key": 90,
+					"Value": "90%"
+				},
+				{
+					"Key": 99,
+					"Value": "100%"
+				}
+			],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": "1.13-2.99"
+		},
+		{
+			"param_num": 37,
+			"description": "Smart Bulb Mode",
+			"control_type": 1,
+			"label": "Value",
+			"textbox_size": 6,			
+			"num_bytes": 1,
+			"droplist_type": 1,
+			"droplist_options": [
+				{
+					"Key": 1,
+					"Value": "Enabled"
+				},
+				{
+					"Key": 0,
+					"Value": "Disabled"
+				}
+			],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": "1.13-2.99"
+		}
+	],
+	"default_child_names": []
+}

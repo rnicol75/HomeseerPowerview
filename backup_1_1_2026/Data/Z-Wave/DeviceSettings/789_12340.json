@@ -1,0 +1,184 @@
+{
+	"title": "Dimmer",
+	"manufacturer_id": 789,
+	"product_ids": [
+		12340
+	],
+	"product_type": [
+		17479
+	],
+	"default_name": "Dimmer",
+	"settings": [
+		{
+			"param_num": 4,
+			"description": "Switch Orientation",
+			"control_type": 1,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 2,
+			"droplist_type": 1,
+			"droplist_options": [
+				{
+					"Key": 0,
+					"Value": "Normal"
+				},
+				{
+					"Key": 1,
+					"Value": "Reversed"
+				}
+			],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": "50.0-50.99"
+		},
+		{
+			"param_num": 4,
+			"description": "Switch Orientation",
+			"control_type": 1,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 1,
+			"droplist_type": 1,
+			"droplist_options": [
+				{
+					"Key": 0,
+					"Value": "Normal"
+				},
+				{
+					"Key": 1,
+					"Value": "Reversed"
+				}
+			],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": "5.0-5.99"
+		},
+		{
+			"param_num": 7,
+			"description": "Remote Ramp Rate Step (1-99))",
+			"control_type": 0,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 2,
+			"droplist_type": 0,
+			"droplist_options": [],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": "50.0-50.99"
+		},
+		{
+			"param_num": 8,
+			"description": "Remote Ramp Rate Timer (1-255 1=10 milliseconds)",
+			"control_type": 0,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 2,
+			"droplist_type": 0,
+			"droplist_options": [],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": "50.0-50.99"
+		},
+		{
+			"param_num": 9,
+			"description": "Local Ramp Rate Step (1-99))",
+			"control_type": 0,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 2,
+			"droplist_type": 0,
+			"droplist_options": [],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": "50.0-50.99"
+		},
+		{
+			"param_num": 10,
+			"description": "Local Ramp Rate Timer (1-255 1=10 milliseconds)",
+			"control_type": 0,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 2,
+			"droplist_type": 0,
+			"droplist_options": [],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": "50.0-50.99"
+		},
+		{
+			"param_num": 7,
+			"description": "Remote Ramp Rate Step (1-99))",
+			"control_type": 0,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 1,
+			"droplist_type": 0,
+			"droplist_options": [],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": "5.0-5.99"
+		},
+		{
+			"param_num": 8,
+			"description": "Remote Ramp Rate Timer (1-255 1=10 milliseconds)",
+			"control_type": 0,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 2,
+			"droplist_type": 0,
+			"droplist_options": [],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": "5.0-5.99"
+		},
+		{
+			"param_num": 9,
+			"description": "Local Ramp Rate Step (1-99))",
+			"control_type": 0,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 1,
+			"droplist_type": 0,
+			"droplist_options": [],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": "5.0-5.99"
+		},
+		{
+			"param_num": 10,
+			"description": "Local Ramp Rate Timer (1-255 1=10 milliseconds)",
+			"control_type": 0,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 2,
+			"droplist_type": 0,
+			"droplist_options": [],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": "5.0-5.99"
+		},
+		{
+			"param_num": 5,
+			"description": "Low Dimming Threshold",
+			"control_type": 1,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 2,
+			"droplist_type": 1,
+			"droplist_options": [
+				{
+					"Key": 1,
+					"Value": "Lowest"
+				},
+				{
+					"Key": 0,
+					"Value": "Standard"
+				}
+			],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": "50.4-50.99"
+		}
+	],
+	"default_child_names": []
+}

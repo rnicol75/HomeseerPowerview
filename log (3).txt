@@ -1,0 +1,92 @@
+1/21/2026 1:15:40 PM	HomeSeer	TTS	Speak ():Welcome to Home-Seer
+1/21/2026 1:15:11 PM	HomeSeer	Info	Done rebuild of device references cache
+1/21/2026 1:15:10 PM	HomeSeer	Info	Starting rebuild of device references cache...
+1/21/2026 1:15:09 PM	HomeSeer	Info	System connected to MyHS Service successfully with license ID 716487.
+1/21/2026 1:15:09 PM	HomeSeer	Info	System connected to MyHS Service, waiting for acknowledge...
+1/21/2026 1:15:09 PM	HomeSeer	Startup	Start up complete.
+1/21/2026 1:15:09 PM	HomeSeer	Info	No device issues found
+1/21/2026 1:15:09 PM	HomeSeer	Info	ASCII listener started on port 11000
+1/21/2026 1:15:09 PM	HomeSeer	Info	Checking device parent child relationships...
+1/21/2026 1:15:09 PM	Script	Startup	(Startup.vb script) No speaker clients detected, waiting up to 30 seconds for any to connect...
+1/21/2026 1:15:09 PM	Script	Startup	(Startup.vb script) Scripting is OK and is now running Startup.vb
+1/21/2026 1:15:09 PM	HomeSeer	Startup	Starting Event Scheduler...
+1/21/2026 1:15:07 PM	HomeSeer	Startup	Running the startup script Startup.vb
+1/21/2026 1:15:07 PM	HomeSeer	Info	Notification init complete
+1/21/2026 1:15:07 PM	HomeSeer	Startup	HStouch server started, waiting for clients to connect.
+1/21/2026 1:15:07 PM	HomeSeer	HSTouch Server	Server started on port 10200
+1/21/2026 1:15:07 PM	HomeSeer	Plug-In	Finished initializing plug-in PowerView
+1/21/2026 1:15:07 PM	HomeSeer	Starting Plug-In	PowerView loaded in 15031 milliseconds
+1/21/2026 1:14:52 PM	HomeSeer	Plug-In	Finished initializing plug-in Honeywell WiFi Thermostat
+1/21/2026 1:14:52 PM	HomeSeer	Starting Plug-In	Honeywell WiFi Thermostat loaded in 15050 milliseconds
+1/21/2026 1:14:38 PM	HomeSeer	Info	Plugin WiFiThermostat with instance Honeywell WiFi Thermostat has connected. IP:127.0.0.1:49941
+1/21/2026 1:14:36 PM	HomeSeer	Plug-In	Finished initializing plug-in HSBuddy
+1/21/2026 1:14:36 PM	HomeSeer	Starting Plug-In	HSBuddy loaded in 15067 milliseconds
+1/21/2026 1:14:23 PM	HomeSeer	Info	Plugin HSBuddy with instance HSBuddy has connected. IP:127.0.0.1:49932
+1/21/2026 1:14:21 PM	HomeSeer	Plug-In	Finished initializing plug-in Sonos4
+1/21/2026 1:14:21 PM	HomeSeer	Starting Plug-In	Sonos4 loaded in 15003 milliseconds
+1/21/2026 1:14:06 PM	HomeSeer	Info	Plugin Sonos4 with instance Sonos4 has connected. IP:127.0.0.1:49930
+1/21/2026 1:14:05 PM	HomeSeer	Plug-In	Finished initializing plug-in SmartThings
+1/21/2026 1:14:05 PM	HomeSeer	Starting Plug-In	SmartThings loaded in 15035 milliseconds
+1/21/2026 1:13:50 PM	HomeSeer	Info	Plugin SmartThings with instance SmartThings has connected. IP:127.0.0.1:49909
+1/21/2026 1:13:49 PM	HomeSeer	Plug-In	Finished initializing plug-in Ring
+1/21/2026 1:13:49 PM	HomeSeer	Starting Plug-In	Ring loaded in 15073 milliseconds
+1/21/2026 1:13:35 PM	HomeSeer	Info	Plugin Ring with instance Ring has connected. IP:127.0.0.1:49876
+1/21/2026 1:13:32 PM	HomeSeer	Plug-In	Finished initializing plug-in BLDenon
+1/21/2026 1:13:32 PM	HomeSeer	Starting Plug-In	BLDenon loaded in 15101 milliseconds
+1/21/2026 1:13:19 PM	HomeSeer	Error	Initializing plug-in(2): Z-Wave Instance::Object reference not set to an instance of an object.STACK:   at HSCore.clsHSPI.CheckInterfaces()
+1/21/2026 1:13:17 PM	HomeSeer	Info	Plugin BLDenon with instance BLDenon has connected. IP:127.0.0.1:49858
+1/21/2026 1:13:16 PM	HomeSeer	Plug-In	Finished initializing plug-in Z-Wave
+1/21/2026 1:13:16 PM	HomeSeer	Starting Plug-In	Z-Wave loaded in 1267 milliseconds
+1/21/2026 1:13:16 PM	HomeSeer	Info	Plugin Z-Wave with ID: Z-Wave and Instance:  has disconnected
+1/21/2026 1:13:16 PM	HomeSeer	Error	Initializing plug-in(1): Z-Wave Instance::Disconnected before response received. Time to load: 309 milliseconds
+1/21/2026 1:13:16 PM	Legacy-Plugin	Z-Wave	InitIO called, plug-in version 4.1.6.0 is being initialized...
+1/21/2026 1:13:16 PM	HomeSeer	Starting Plug-In	Initializing plugin Z-Wave ...
+1/21/2026 1:13:16 PM	HomeSeer	Info	Plugin Z-Wave with instance Z-Wave has connected. IP:127.0.0.1:49848
+1/21/2026 1:13:15 PM	HomeSeer	Startup	Initializing Plug-Ins
+1/21/2026 1:13:15 PM	HomeSeer	Plug-In	Found plug-in: Z-Wave, version: 4.1.6.0
+1/21/2026 1:13:15 PM	HomeSeer	Plug-In	Found plug-in: Sonos4, version: 4.0.1.45
+1/21/2026 1:13:15 PM	HomeSeer	Plug-In	Found plug-in: SmartThings, version: 4.0.19.0
+1/21/2026 1:13:15 PM	HomeSeer	Plug-In	Found plug-in: Honeywell WiFi Thermostat, version: 4.3.2.2
+1/21/2026 1:13:15 PM	HomeSeer	Plug-In	Found plug-in: rnbHydra, version: 4.0.4.1
+1/21/2026 1:13:15 PM	HomeSeer	Plug-In	Found plug-in: Ring, version: 1.0.6.7
+1/21/2026 1:13:15 PM	HomeSeer	Plug-In	Found plug-in: PowerView, version: 1.0.0.0
+1/21/2026 1:13:14 PM	HomeSeer	Plug-In	Found plug-in: HSBuddy, version: 4.53.825.4
+1/21/2026 1:13:14 PM	HomeSeer	Plug-In	Found plug-in: BLDenon, version: 4.0.10.0
+1/21/2026 1:13:14 PM	HomeSeer	Startup	Checking for available plug-ins
+1/21/2026 1:13:14 PM	HomeSeer	Info	Remote plug-in API interface started on port 10400
+1/21/2026 1:13:14 PM	HomeSeer	Startup	Starting Find service...
+1/21/2026 1:13:14 PM	HomeSeer	Startup	Updater services starting...
+1/21/2026 1:13:11 PM	HomeSeer	Database	Opening (Mode=Read/Write) up HomeSeer Energy database C:\Program Files (x86)\HomeSeer HS4\Data\Energy\Energy.hsd
+1/21/2026 1:13:11 PM	HomeSeer	Speech	Listening for remote speaker connections on port 10401
+1/21/2026 1:13:10 PM	HomeSeer	Startup	Initializing Speaker Client Interface
+1/21/2026 1:13:10 PM	HomeSeer	Web Server	Web Server authorized local login successful from: 192.168.3.18 User: rnicol@1975.usna.com
+1/21/2026 1:13:10 PM	HomeSeer	Startup	Start automation engine...
+1/21/2026 1:13:10 PM	HomeSeer	Web Server	Web Server started on port 80
+1/21/2026 1:13:10 PM	HomeSeer	Web Server	Local IP address (subnet) is: 192.168.3.139 (255.255.255.0)
+1/21/2026 1:13:10 PM	HomeSeer	Startup	This version of HomeSeer is registered as a HS4PRO version.
+1/21/2026 1:13:10 PM	HomeSeer	Startup	Creating Speaker Client Interface Object...
+1/21/2026 1:13:10 PM	HomeSeer	Startup	HomeSeer version is: 4.2.22.4
+1/21/2026 1:13:10 PM	HomeSeer	Info	Loaded 0 Timers.
+1/21/2026 1:13:10 PM	HomeSeer	Info	Loaded 0 Counters.
+1/21/2026 1:13:10 PM	HomeSeer	Info	Loaded 9 Events.
+1/21/2026 1:13:10 PM	HomeSeer	Info	Loaded 1509 Devices.
+1/21/2026 1:13:08 PM	HomeSeer	Info	Loading configuration: C:\Program Files (x86)\HomeSeer HS4\Data\HS4Data.json
+1/21/2026 1:13:08 PM	HomeSeer	Startup	Local voice recognition class started.
+1/21/2026 1:13:08 PM	HomeSeer	Startup	Plug-In Interface class started.
+1/21/2026 1:13:08 PM	HomeSeer	Startup	E-Mail RECEIVE class started.
+1/21/2026 1:13:08 PM	HomeSeer	Startup	E-Mail SEND class started.
+1/21/2026 1:13:08 PM	HomeSeer	Startup	Web server class started.
+1/21/2026 1:13:08 PM	HomeSeer	Startup	Application interface class started.
+1/21/2026 1:13:08 PM	HomeSeer	Startup	COM port classes started.
+1/21/2026 1:13:08 PM	HomeSeer	Startup	Creating Class Objects...
+1/21/2026 1:13:08 PM	HomeSeer	startup	
+1/21/2026 1:13:08 PM	HomeSeer	startup	********************************************************************************
+1/21/2026 1:13:08 PM	HomeSeer	startup	              HomeSeerVersion 4.2.22.4 Edition: HS4 Pro StartingNow
+1/21/2026 1:13:08 PM	HomeSeer	startup	********************************************************************************
+1/21/2026 1:13:08 PM	HomeSeer	startup	
+1/21/2026 1:13:07 PM	HomeSeer	Startup	Settings Loaded.
+1/21/2026 1:13:07 PM	HomeSeer	Warning	HomeSeer was not shut down successfully the previous time it was started.
+1/21/2026 1:13:07 PM	HomeSeer	Startup	Loading Settings
+1/21/2026 1:13:07 PM	HomeSeer	Startup	Scripts folder has been restored from backup.
+1/21/2026 1:13:07 PM	HomeSeer	Startup	Data folder has been restored from backup.
+1/21/2026 1:13:06 PM	HomeSeer	Startup	Config folder has been restored from backup.

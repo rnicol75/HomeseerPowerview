@@ -1,0 +1,157 @@
+{
+	"title": "HomeSeer HS-FC200+ Fan Controller",
+	"manufacturer_id": 12,
+	"product_ids": [
+		1
+	],
+	"product_type": [
+		515
+	],
+	"default_name": "HomeSeer HS-FC200+ Fan Controller",
+	"settings": [
+		{
+			"param_num": 3,
+			"description": "Bottom LED Operation",
+			"control_type": 1,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 1,
+			"droplist_type": 1,
+			"droplist_options": [
+				{
+					"Key": 0,
+					"Value": "On if Load is Off"
+				},
+				{
+					"Key": 1,
+					"Value": "On if Load is On"
+				}
+			],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": ""
+		},
+		{
+			"param_num": 4,
+			"description": "Paddle Operation",
+			"control_type": 1,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 1,
+			"droplist_type": 1,
+			"droplist_options": [
+				{
+					"Key": 0,
+					"Value": "Normal"
+				},
+				{
+					"Key": 1,
+					"Value": "Reverse"
+				}
+			],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": ""
+		},
+		{
+			"param_num": 5,
+			"description": "Supported Speeds",
+			"control_type": 1,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 1,
+			"droplist_type": 1,
+			"droplist_options": [
+				{
+					"Key": 0,
+					"Value": "3 Speed"
+				},
+				{
+					"Key": 1,
+					"Value": "4 Speed"
+				}
+			],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": ""
+		},	
+		{
+			"param_num": 13,
+			"description": "Status Mode",
+			"control_type": 1,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 1,
+			"droplist_type": 1,
+			"droplist_options": [
+				{
+					"Key": 0,
+					"Value": "Disable"
+				},
+				{
+					"Key": 1,
+					"Value": "Enabled"
+				}
+			],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": ""
+		},
+		{
+			"param_num": 14,
+			"description": "Default LED Color",
+			"control_type": 1,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 1,
+			"droplist_type": 1,
+			"droplist_options": [
+				{
+					"Key": 0,
+					"Value": "White"
+				},
+				{
+					"Key": 1,
+					"Value": "Red"
+				},
+				{
+					"Key": 2,
+					"Value": "Green"
+				},
+				{
+					"Key": 3,
+					"Value": "Blue"
+				},
+				{
+					"Key": 4,
+					"Value": "Magenta"
+				},
+				{
+					"Key": 5,
+					"Value": "Yellow"
+				},
+				{
+					"Key": 6,
+					"Value": "Cyan"
+				}
+			],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": ""
+		},
+		{
+			"param_num": 30,
+			"description": "Status Mode Blink Frequency (0-255) (1=100 milliseconds)",
+			"control_type": 0,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 1,
+			"droplist_type": 0,
+			"droplist_options": [],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": ""
+		}
+	],
+	"default_child_names": []
+}

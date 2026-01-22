@@ -1,0 +1,114 @@
+{
+	"title": "HomeSeer Flex Sensor",
+	"manufacturer_id": 12,
+	"product_ids": [
+		1
+	],
+	"product_type": [
+		514
+	],
+	"default_name": "HomeSeer Flex Sensor",
+	"settings": [
+		{
+			"param_num": 1,
+			"description": "Light Sensitivity (When using light detection cable)",
+			"control_type": 1,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 1,
+			"droplist_type": 1,
+			"droplist_options": [
+				{
+					"Key": 0,
+					"Value": "High"
+				},
+				{
+					"Key": 1,
+					"Value": "Medium"
+				},
+				{
+					"Key": 2,
+					"Value": "Low"
+				}
+			],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": ""
+		},
+		{
+			"param_num": 4,
+			"description": "Notification Buzzer",
+			"control_type": 1,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 1,
+			"droplist_type": 1,
+			"droplist_options": [
+				{
+					"Key": 0,
+					"Value": "Disabled"
+				},
+				{
+					"Key": 1,
+					"Value": "Enabled"
+				}
+			],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": ""
+		},
+		{
+			"param_num": 3,
+			"description": "Temperature Reporting Interval when on Line Power (30-255 Seconds) (Reports every 60 min on battery)",
+			"control_type": 0,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 1,
+			"droplist_type": 0,
+			"droplist_options": [],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": ""
+		},
+		{
+			"param_num": 5,
+			"description": "Light Detection Delay (0-20 Seconds) (When using light detection cable)",
+			"control_type": 0,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 1,
+			"droplist_type": 0,
+			"droplist_options": [],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": ""
+		},
+		{
+			"param_num": 2,
+			"description": "Water Detection Beep Frequency (When using water detection cable)",
+			"control_type": 1,
+			"label": "Value",
+			"textbox_size": 6,
+			"num_bytes": 1,
+			"droplist_type": 1,
+			"droplist_options": [
+				{
+					"Key": 0,
+					"Value": "Every 10 Minutes"
+				},
+				{
+					"Key": 1,
+					"Value": "Every 5 minutes"
+				},
+				{
+					"Key": 2,
+					"Value": "Every 30 minutes"
+				}
+			],
+			"range_start": 0,
+			"range_end": 0,
+			"version_range": ""
+		}
+	],
+	"default_child_names": []
+}

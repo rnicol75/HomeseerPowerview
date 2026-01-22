@@ -1,0 +1,153 @@
+{
+        "title": "Aeon Energy Meter G5",
+        "manufacturer_id": 134,
+        "product_ids": [
+                95
+        ],
+        "product_type": [
+                258
+        ],
+        "default_name": "Aeon Energy Meter G5",
+        "settings": [
+                {
+                        "param_num": 101,
+                        "description": "Reports sent to Report Group 1",
+                        "control_type": 1,
+                        "label": "Value",
+                        "textbox_size": 6,
+                        "num_bytes": 4,
+                        "droplist_type": 1,
+                        "droplist_options": [
+                                {
+                                        "Key": 768,
+                                        "Value": "Clamp 1, Clamp 2 Watts"
+                                },
+                                {
+                                        "Key": 6144,
+                                        "Value": "Clamp 1, Clamp 2 KWH"
+                                },
+                                {
+                                        "Key": 196608,
+                                        "Value": "Clamp 1, Clamp 2, Voltage"
+                                },
+                                {
+                                        "Key": 6912,
+                                        "Value": "Clamp 1, Clamp 2, Watts & KWH"
+                                },
+                                {
+                                        "Key": 203520,
+                                        "Value": "Clamp 1, Clamp 2, Watts & KWH & Voltage"
+                                }
+                        ],
+                        "range_start": 0,
+                        "range_end": 0,
+                        "version_range": ""
+                },
+                {
+                        "param_num": 102,
+                        "description": "Reports sent to Report Group 2",
+                        "control_type": 1,
+                        "label": "Value",
+                        "textbox_size": 6,
+                        "num_bytes": 4,
+                        "droplist_type": 1,
+                        "droplist_options": [
+                                {
+                                        "Key": 768,
+                                        "Value": "Clamp 1, Clamp 2 Watts"
+                                },
+                                {
+                                        "Key": 6144,
+                                        "Value": "Clamp 1, Clamp 2 KWH"
+                                },
+                                {
+                                        "Key": 196608,
+                                        "Value": "Clamp 1, Clamp 2, Voltage"
+                                },
+                                {
+                                        "Key": 6912,
+                                        "Value": "Clamp 1, Clamp 2, Watts & KWH"
+                                },
+                                {
+                                        "Key": 203520,
+                                        "Value": "Clamp 1, Clamp 2, Watts & KWH & Voltage"
+                                }                        ],
+                        "range_start": 0,
+                        "range_end": 0,
+                        "version_range": ""
+                },
+                {
+                        "param_num": 103,
+                        "description": "Reports sent to Report Group 3",
+                        "control_type": 1,
+                        "label": "Value",
+                        "textbox_size": 6,
+                        "num_bytes": 4,
+                        "droplist_type": 1,
+                        "droplist_options": [
+                                {
+                                        "Key": 768,
+                                        "Value": "Clamp 1, Clamp 2 Watts"
+                                },
+                                {
+                                        "Key": 6144,
+                                        "Value": "Clamp 1, Clamp 2 KWH"
+                                },
+                                {
+                                        "Key": 196608,
+                                        "Value": "Clamp 1, Clamp 2, Voltage"
+                                },
+                                {
+                                        "Key": 6912,
+                                        "Value": "Clamp 1, Clamp 2, Watts & KWH"
+                                },
+                                {
+                                        "Key": 203520,
+                                        "Value": "Clamp 1, Clamp 2, Watts & KWH & Voltage"
+                                }                        ],
+                        "range_start": 0,
+                        "range_end": 0,
+                        "version_range": ""
+                },
+                {
+                        "param_num": 111,
+                        "description": "Report Interval to Group 1 (seconds)",
+                        "control_type": 0,
+                        "label": "Value",
+                        "textbox_size": 6,
+                        "num_bytes": 4,
+                        "droplist_type": 0,
+                        "droplist_options": [],
+                        "range_start": 0,
+                        "range_end": 0,
+                        "version_range": ""
+                },
+                {
+                        "param_num": 112,
+                        "description": "Report Interval to Group 2 (seconds)",
+                        "control_type": 0,
+                        "label": "Value",
+                        "textbox_size": 6,
+                        "num_bytes": 4,
+                        "droplist_type": 0,
+                        "droplist_options": [],
+                        "range_start": 0,
+                        "range_end": 0,
+                        "version_range": ""
+                },
+                {
+                        "param_num": 113,
+                        "description": "Report Interval to Group 3 (seconds)",
+                        "control_type": 0,
+                        "label": "Value",
+                        "textbox_size": 6,
+                        "num_bytes": 4,
+                        "droplist_type": 0,
+                        "droplist_options": [],
+                        "range_start": 0,
+                        "range_end": 0,
+                        "version_range": ""
+                }
+        ],
+        "default_child_names": []
+}

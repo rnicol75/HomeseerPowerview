@@ -1,0 +1,682 @@
+1/21/2026 8:03:00 AM	PowerView	Info	Running global cleanup of duplicate status devices...
+1/21/2026 8:03:00 AM	PowerView	Info	[POLL-DONE] Poll complete for hub 192.168.3.164: 21 processed, 0 skipped
+1/21/2026 8:03:00 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:03:00 AM	PowerView	Info	[POLLING] Updating shade 168: Battery=75%, Signal=51%, Position=0.98
+1/21/2026 8:03:00 AM	PowerView	Info	[FindDevice] Found shade 168 (hub 192.168.3.164) via INI mapping (ref 4634)
+1/21/2026 8:03:00 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:03:00 AM	PowerView	Info	[POLLING] Updating shade 156: Battery=75%, Signal=38%, Position=0.00
+1/21/2026 8:03:00 AM	PowerView	Info	[FindDevice] Found shade 156 (hub 192.168.3.164) via INI mapping (ref 4630)
+1/21/2026 8:03:00 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:03:00 AM	PowerView	Info	[POLLING] Updating shade 148: Battery=75%, Signal=53%, Position=0.00
+1/21/2026 8:03:00 AM	PowerView	Info	[FindDevice] Found shade 148 (hub 192.168.3.164) via INI mapping (ref 4677)
+1/21/2026 8:03:00 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:03:00 AM	PowerView	Info	[POLLING] Updating shade 140: Battery=75%, Signal=40%, Position=0.00
+1/21/2026 8:03:00 AM	PowerView	Info	[FindDevice] Found shade 140 (hub 192.168.3.164) via INI mapping (ref 4626)
+1/21/2026 8:03:00 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:03:00 AM	PowerView	Info	[POLLING] Updating shade 132: Battery=75%, Signal=53%, Position=0.00
+1/21/2026 8:03:00 AM	PowerView	Info	[FindDevice] Found shade 132 (hub 192.168.3.164) via INI mapping (ref 4620)
+1/21/2026 8:03:00 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:03:00 AM	PowerView	Info	[POLLING] Updating shade 116: Battery=75%, Signal=36%, Position=0.00
+1/21/2026 8:03:00 AM	PowerView	Info	[FindDevice] Found shade 116 (hub 192.168.3.164) via INI mapping (ref 4653)
+1/21/2026 8:03:00 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:03:00 AM	PowerView	Info	[POLLING] Updating shade 117: Battery=75%, Signal=35%, Position=0.00
+1/21/2026 8:03:00 AM	PowerView	Info	[FindDevice] Found shade 117 (hub 192.168.3.164) via INI mapping (ref 4644)
+1/21/2026 8:03:00 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:03:00 AM	PowerView	Info	[POLLING] Updating shade 118: Battery=75%, Signal=33%, Position=0.00
+1/21/2026 8:03:00 AM	PowerView	Info	[FindDevice] Found shade 118 (hub 192.168.3.164) via INI mapping (ref 4616)
+1/21/2026 8:03:00 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:03:00 AM	PowerView	Info	[POLLING] Updating shade 100: Battery=75%, Signal=51%, Position=0.00
+1/21/2026 8:03:00 AM	PowerView	Info	[FindDevice] Found shade 100 (hub 192.168.3.164) via INI mapping (ref 4673)
+1/21/2026 8:03:00 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:03:00 AM	PowerView	Info	[POLLING] Updating shade 84: Battery=75%, Signal=63%, Position=1.00
+1/21/2026 8:03:00 AM	PowerView	Info	[FindDevice] Found shade 84 (hub 192.168.3.164) via INI mapping (ref 4693)
+1/21/2026 8:03:00 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:03:00 AM	PowerView	Info	[POLLING] Updating shade 92: Battery=0%, Signal=0%, Position=
+1/21/2026 8:03:00 AM	PowerView	Info	[FindDevice] Found shade 92 (hub 192.168.3.164) via INI mapping (ref 4685)
+1/21/2026 8:03:00 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:03:00 AM	PowerView	Info	[POLLING] Updating shade 85: Battery=75%, Signal=38%, Position=1.00
+1/21/2026 8:03:00 AM	PowerView	Info	[FindDevice] Found shade 85 (hub 192.168.3.164) via INI mapping (ref 4669)
+1/21/2026 8:03:00 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:03:00 AM	PowerView	Info	[POLLING] Updating shade 71: Battery=75%, Signal=60%, Position=0.00
+1/21/2026 8:03:00 AM	PowerView	Info	[FindDevice] Found shade 71 (hub 192.168.3.164) via INI mapping (ref 4609)
+1/21/2026 8:03:00 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:03:00 AM	PowerView	Info	[POLLING] Updating shade 46: Battery=75%, Signal=70%, Position=0.00
+1/21/2026 8:03:00 AM	PowerView	Info	[FindDevice] Found shade 46 (hub 192.168.3.164) via INI mapping (ref 4665)
+1/21/2026 8:03:00 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:03:00 AM	PowerView	Info	[POLLING] Updating shade 40: Battery=75%, Signal=50%, Position=0.00
+1/21/2026 8:03:00 AM	PowerView	Info	[FindDevice] Found shade 40 (hub 192.168.3.164) via INI mapping (ref 4661)
+1/21/2026 8:03:00 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:03:00 AM	PowerView	Info	[POLLING] Updating shade 16: Battery=75%, Signal=51%, Position=0.00
+1/21/2026 8:03:00 AM	PowerView	Info	[FindDevice] Found shade 16 (hub 192.168.3.164) via INI mapping (ref 4649)
+1/21/2026 8:03:00 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:03:00 AM	PowerView	Info	[POLLING] Updating shade 14: Battery=75%, Signal=61%, Position=0.00
+1/21/2026 8:03:00 AM	PowerView	Info	[FindDevice] Found shade 14 (hub 192.168.3.164) via INI mapping (ref 4638)
+1/21/2026 8:03:00 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:03:00 AM	PowerView	Info	[POLLING] Updating shade 15: Battery=75%, Signal=41%, Position=0.00
+1/21/2026 8:03:00 AM	PowerView	Info	[FindDevice] Found shade 15 (hub 192.168.3.164) via INI mapping (ref 4605)
+1/21/2026 8:03:00 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:03:00 AM	PowerView	Info	[POLLING] Updating shade 2: Battery=75%, Signal=36%, Position=0.00
+1/21/2026 8:03:00 AM	PowerView	Info	[FindDevice] Found shade 2 (hub 192.168.3.164) via INI mapping (ref 4689)
+1/21/2026 8:03:00 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:03:00 AM	PowerView	Info	[POLLING] Updating shade 3: Battery=75%, Signal=41%, Position=0.00
+1/21/2026 8:03:00 AM	PowerView	Info	[FindDevice] Found shade 3 (hub 192.168.3.164) via INI mapping (ref 4681)
+1/21/2026 8:03:00 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:03:00 AM	PowerView	Info	[POLLING] Updating shade 4: Battery=75%, Signal=40%, Position=0.00
+1/21/2026 8:03:00 AM	PowerView	Info	[FindDevice] Found shade 4 (hub 192.168.3.164) via INI mapping (ref 4657)
+1/21/2026 8:03:00 AM	PowerView	Info	[POLL-SHADES] GetShadesAsync returned 21 shades
+1/21/2026 8:03:00 AM	PowerView	Info	GetShadesAsync returning 21 unique shades from /home
+1/21/2026 8:03:00 AM	PowerView	Info	Added shade 168 (Ron's Office) - Battery: 3, Signal: 51, Position: 0.98
+1/21/2026 8:03:00 AM	PowerView	Info	Added shade 156 (Guest 1) - Battery: 3, Signal: 38, Position: 0
+1/21/2026 8:03:00 AM	PowerView	Info	Added shade 148 (Katie 1) - Battery: 3, Signal: 53, Position: 0
+1/21/2026 8:03:00 AM	PowerView	Info	Added shade 140 (Liane 1) - Battery: 3, Signal: 40, Position: 0
+1/21/2026 8:03:00 AM	PowerView	Info	Added shade 132 (Main Hall 1) - Battery: 3, Signal: 53, Position: 0
+1/21/2026 8:03:00 AM	PowerView	Info	Added shade 116 (Main 3) - Battery: 3, Signal: 36, Position: 0
+1/21/2026 8:03:00 AM	PowerView	Info	Added shade 117 (Main 2) - Battery: 3, Signal: 35, Position: 0
+1/21/2026 8:03:00 AM	PowerView	Info	Added shade 118 (Main 1) - Battery: 3, Signal: 33, Position: 0
+1/21/2026 8:03:00 AM	PowerView	Info	Added shade 100 (Laundry 1) - Battery: 3, Signal: 51, Position: 0
+1/21/2026 8:03:00 AM	PowerView	Info	Added shade 84 (Game 3) - Battery: 3, Signal: 63, Position: 1
+1/21/2026 8:03:00 AM	PowerView	Info	Added shade 92 (Game 2) - Battery: 0, Signal: 0, Position: 
+1/21/2026 8:03:00 AM	PowerView	Info	Added shade 85 (Game 1) - Battery: 3, Signal: 38, Position: 1
+1/21/2026 8:03:00 AM	PowerView	Info	Added shade 71 (Pool Bath Shade) - Battery: 3, Signal: 60, Position: 0
+1/21/2026 8:03:00 AM	PowerView	Info	Added shade 46 (Hall 1) - Battery: 3, Signal: 70, Position: 0
+1/21/2026 8:03:00 AM	PowerView	Info	Added shade 40 (Garage 1) - Battery: 3, Signal: 50, Position: 0
+1/21/2026 8:03:00 AM	PowerView	Info	Added shade 16 (Dining 3) - Battery: 3, Signal: 51, Position: 0
+1/21/2026 8:03:00 AM	PowerView	Info	Added shade 14 (Dining 2) - Battery: 3, Signal: 61, Position: 0
+1/21/2026 8:03:00 AM	PowerView	Info	Added shade 15 (Dining 1) - Battery: 3, Signal: 41, Position: 0
+1/21/2026 8:03:00 AM	PowerView	Info	Added shade 2 (Liv 3) - Battery: 3, Signal: 36, Position: 0
+1/21/2026 8:03:00 AM	PowerView	Info	Added shade 3 (Liv 2) - Battery: 3, Signal: 41, Position: 0
+1/21/2026 8:03:00 AM	PowerView	Info	Added shade 4 (Liv 1) - Battery: 3, Signal: 40, Position: 0
+1/21/2026 8:03:00 AM	PowerView	Info	DEBUG: Starting device scan for cleanup
+1/21/2026 8:03:00 AM	PowerView	Info	Cleanup: 33 valid scenes for hub 192.168.3.164
+1/21/2026 8:03:00 AM	PowerView	Info	DEBUG: CleanupObsoleteScenes START
+1/21/2026 8:03:00 AM	PowerView	Info	Cleaning up obsolete scenes...
+1/21/2026 8:03:00 AM	PowerView	Info	  Scene: ID=173, Name=Um9uIE9mZiBPcGVu, PtName=Ron Off Open
+1/21/2026 8:03:00 AM	PowerView	Info	  Scene: ID=171, Name=Um9uIE9mZiBQcml2YWN5, PtName=Ron Off Privacy
+1/21/2026 8:03:00 AM	PowerView	Info	  Scene: ID=169, Name=Um9uIE9mZiBDbG9zZQ==, PtName=Ron Off Close
+1/21/2026 8:03:00 AM	PowerView	Info	  Scene: ID=163, Name=RGluaW5nIFJvb20gSGFsZiBPcGVu, PtName=Dining Room Half Open
+1/21/2026 8:03:00 AM	PowerView	Info	  Scene: ID=161, Name=R3Vlc3QgUm9vbSBPcGVu, PtName=Guest Room Open
+1/21/2026 8:03:00 AM	PowerView	Info	  Scene: ID=159, Name=R3Vlc3QgUm9vbSBQcml2YWN5, PtName=Guest Room Privacy
+1/21/2026 8:03:00 AM	PowerView	Info	  Scene: ID=157, Name=R3Vlc3QgUm9vbSBDbG9zZQ==, PtName=Guest Room Close
+1/21/2026 8:03:00 AM	PowerView	Info	  Scene: ID=153, Name=S2F0aWUncyBSb29tIE9wZW4=, PtName=Katie's Room Open
+1/21/2026 8:03:00 AM	PowerView	Info	  Scene: ID=151, Name=S2F0aWUncyBSb29tIFByaXZhY3k=, PtName=Katie's Room Privacy
+1/21/2026 8:03:00 AM	PowerView	Info	  Scene: ID=149, Name=S2F0aWUncyBSb29tIENsb3Nl, PtName=Katie's Room Close
+1/21/2026 8:03:00 AM	PowerView	Info	  Scene: ID=145, Name=TGlhbmUgT2ZmaWNlICBPcGVu, PtName=Liane Office  Open
+1/21/2026 8:03:00 AM	PowerView	Info	  Scene: ID=143, Name=TGlhbmUgT2ZmaWNlICBQcml2YWN5, PtName=Liane Office  Privacy
+1/21/2026 8:03:00 AM	PowerView	Info	  Scene: ID=141, Name=TGlhbmUgT2ZmaWNlICBDbG9zZQ==, PtName=Liane Office  Close
+1/21/2026 8:03:00 AM	PowerView	Info	  Scene: ID=137, Name=TWFpbiBIYWxsIE9wZW4=, PtName=Main Hall Open
+1/21/2026 8:03:00 AM	PowerView	Info	  Scene: ID=135, Name=TWFpbiBIYWxsIFByaXZhY3k=, PtName=Main Hall Privacy
+1/21/2026 8:03:00 AM	PowerView	Info	  Scene: ID=133, Name=TWFpbiBIYWxsIENsb3Nl, PtName=Main Hall Close
+1/21/2026 8:03:00 AM	PowerView	Info	  Scene: ID=123, Name=TWFpbiBCZWRyb29tIE9wZW4=, PtName=Main Bedroom Open
+1/21/2026 8:03:00 AM	PowerView	Info	  Scene: ID=121, Name=TWFpbiBCZWRyb29tIFByaXZhY3k=, PtName=Main Bedroom Privacy
+1/21/2026 8:03:00 AM	PowerView	Info	  Scene: ID=119, Name=TWFpbiBCZWRyb29tIENsb3Nl, PtName=Main Bedroom Close
+1/21/2026 8:03:00 AM	PowerView	Info	  Scene: ID=103, Name=TGF1bmRyeSAgQ2xvc2U=, PtName=Laundry  Close
+1/21/2026 8:03:00 AM	PowerView	Info	  Scene: ID=101, Name=TGF1bmRyeSAgT3Blbg==, PtName=Laundry  Open
+1/21/2026 8:03:00 AM	PowerView	Info	  Scene: ID=88, Name=R2FtZSBSb29tIENsb3Nl, PtName=Game Room Close
+1/21/2026 8:03:00 AM	PowerView	Info	  Scene: ID=86, Name=R2FtZSBSb29tIE9wZW4=, PtName=Game Room Open
+1/21/2026 8:03:00 AM	PowerView	Info	  Scene: ID=74, Name=UG9vbCBCYXRoIENsb3Nl, PtName=Pool Bath Close
+1/21/2026 8:03:00 AM	PowerView	Info	  Scene: ID=72, Name=UG9vbCBCYXRoIE9wZW4=, PtName=Pool Bath Open
+1/21/2026 8:03:00 AM	PowerView	Info	  Scene: ID=49, Name=SGFsbCBDbG9zZQ==, PtName=Hall Close
+1/21/2026 8:03:00 AM	PowerView	Info	  Scene: ID=47, Name=SGFsbCBPcGVu, PtName=Hall Open
+1/21/2026 8:03:00 AM	PowerView	Info	  Scene: ID=43, Name=R2FyYWdlICBDbG9zZQ==, PtName=Garage  Close
+1/21/2026 8:03:00 AM	PowerView	Info	  Scene: ID=41, Name=R2FyYWdlICBPcGVu, PtName=Garage  Open
+1/21/2026 8:03:00 AM	PowerView	Info	  Scene: ID=19, Name=RGluaW5nIFJvb20gQ2xvc2U=, PtName=Dining Room Close
+1/21/2026 8:03:00 AM	PowerView	Info	  Scene: ID=17, Name=RGluaW5nIFJvb20gT3Blbg==, PtName=Dining Room Open
+1/21/2026 8:03:00 AM	PowerView	Info	  Scene: ID=7, Name=TGl2aW5nIFJvb20gQ2xvc2U=, PtName=Living Room Close
+1/21/2026 8:03:00 AM	PowerView	Info	  Scene: ID=5, Name=TGl2aW5nIFJvb20gT3Blbg==, PtName=Living Room Open
+1/21/2026 8:03:00 AM	PowerView	Info	Syncing 33 scenes from hub 192.168.3.164
+1/21/2026 8:03:00 AM	PowerView	Info	Retrieved 33 scenes from hub
+1/21/2026 8:03:00 AM	PowerView	Info	Fetching scenes from http://192.168.3.164/home/scenes
+1/21/2026 8:03:00 AM	PowerView	Info	DEBUG: SyncScenesAsync START for hub 192.168.3.164
+1/21/2026 8:03:00 AM	PowerView	Info	Step 2: Starting scene sync...
+1/21/2026 8:03:00 AM	PowerView	Info	DEBUG: About to call SyncScenesAsync for hub {_primaryHubIp}
+1/21/2026 8:03:00 AM	PowerView	Info	Step 1 complete: Shades discovered
+1/21/2026 8:03:00 AM	PowerView	Info	DEBUG: DiscoverShadesAsync loop complete, exiting method
+1/21/2026 8:03:00 AM	PowerView	Info	Shade device 168 already exists (ref 4634), polling will update it
+1/21/2026 8:03:00 AM	PowerView	Info	[FindDevice] Found shade 168 (hub 192.168.3.164) via INI mapping (ref 4634)
+1/21/2026 8:03:00 AM	PowerView	Info	DEBUG: Processing shade 168 (Shade 168 - Ron's Office)
+1/21/2026 8:03:00 AM	PowerView	Info	Shade device 156 already exists (ref 4630), polling will update it
+1/21/2026 8:03:00 AM	PowerView	Info	[FindDevice] Found shade 156 (hub 192.168.3.164) via INI mapping (ref 4630)
+1/21/2026 8:03:00 AM	PowerView	Info	DEBUG: Processing shade 156 (Shade 156 - Guest 1)
+1/21/2026 8:03:00 AM	PowerView	Info	Shade device 148 already exists (ref 4677), polling will update it
+1/21/2026 8:02:59 AM	PowerView	Info	PowerView: Calling GET http://192.168.3.164/home
+1/21/2026 8:02:59 AM	PowerView	Info	[POLL-START] PollShadesAndScenesAsync called for hub 192.168.3.164
+1/21/2026 8:02:59 AM	PowerView	Info	[TIMER-FIRED] Timer fired for hub 192.168.3.164 at 08:02:59.987
+1/21/2026 8:02:56 AM	PowerView	Info	[POLL-DONE] Poll complete for hub 192.168.3.164: 21 processed, 0 skipped
+1/21/2026 8:02:56 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:56 AM	PowerView	Info	[POLLING] Updating shade 168: Battery=75%, Signal=48%, Position=0.98
+1/21/2026 8:02:56 AM	PowerView	Info	[FindDevice] Found shade 168 (hub 192.168.3.164) via INI mapping (ref 4634)
+1/21/2026 8:02:55 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:55 AM	PowerView	Info	[POLLING] Updating shade 156: Battery=75%, Signal=36%, Position=0.00
+1/21/2026 8:02:55 AM	PowerView	Info	[FindDevice] Found shade 156 (hub 192.168.3.164) via INI mapping (ref 4630)
+1/21/2026 8:02:55 AM	PowerView	Warning	[POLLING] Could not find device for shade 148 on hub 192.168.3.164
+1/21/2026 8:02:55 AM	PowerView	Info	[POLL-DONE] Poll complete for hub 192.168.3.164: 21 processed, 0 skipped
+1/21/2026 8:02:55 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:55 AM	PowerView	Info	[POLLING] Updating shade 168: Battery=75%, Signal=50%, Position=0.98
+1/21/2026 8:02:55 AM	PowerView	Info	[FindDevice] Found shade 168 (hub 192.168.3.164) via INI mapping (ref 4634)
+1/21/2026 8:02:55 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:55 AM	PowerView	Info	[POLLING] Updating shade 156: Battery=75%, Signal=36%, Position=0.00
+1/21/2026 8:02:55 AM	PowerView	Info	[FindDevice] Found shade 156 (hub 192.168.3.164) via INI mapping (ref 4630)
+1/21/2026 8:02:55 AM	PowerView	Warning	[POLLING] Could not find device for shade 148 on hub 192.168.3.164
+1/21/2026 8:02:51 AM	PowerView	Info	[FindDevice] No INI mapping found for shade 148 (hub 192.168.3.164)
+1/21/2026 8:02:51 AM	PowerView	Info	DEBUG: Processing shade 148 (Shade 148 - Katie 1)
+1/21/2026 8:02:51 AM	PowerView	Info	Shade device 140 already exists (ref 4626), polling will update it
+1/21/2026 8:02:51 AM	PowerView	Info	[FindDevice] Found shade 140 (hub 192.168.3.164) via INI mapping (ref 4626)
+1/21/2026 8:02:51 AM	PowerView	Info	DEBUG: Processing shade 140 (Shade 140 - Liane 1)
+1/21/2026 8:02:51 AM	PowerView	Info	Shade device 132 already exists (ref 4620), polling will update it
+1/21/2026 8:02:51 AM	PowerView	Info	[FindDevice] Found shade 132 (hub 192.168.3.164) via INI mapping (ref 4620)
+1/21/2026 8:02:51 AM	PowerView	Info	DEBUG: Processing shade 132 (Shade 132 - Main Hall 1)
+1/21/2026 8:02:51 AM	PowerView	Info	Shade device 116 already exists (ref 4653), polling will update it
+1/21/2026 8:02:51 AM	PowerView	Info	[FindDevice] Found shade 116 (hub 192.168.3.164) via INI mapping (ref 4653)
+1/21/2026 8:02:51 AM	PowerView	Info	DEBUG: Processing shade 116 (Shade 116 - Main 3)
+1/21/2026 8:02:51 AM	PowerView	Info	Shade device 117 already exists (ref 4644), polling will update it
+1/21/2026 8:02:51 AM	PowerView	Info	[FindDevice] Found shade 117 (hub 192.168.3.164) via INI mapping (ref 4644)
+1/21/2026 8:02:51 AM	PowerView	Info	DEBUG: Processing shade 117 (Shade 117 - Main 2)
+1/21/2026 8:02:51 AM	PowerView	Info	Shade device 118 already exists (ref 4616), polling will update it
+1/21/2026 8:02:51 AM	PowerView	Info	[FindDevice] Found shade 118 (hub 192.168.3.164) via INI mapping (ref 4616)
+1/21/2026 8:02:51 AM	PowerView	Info	DEBUG: Processing shade 118 (Shade 118 - Main 1)
+1/21/2026 8:02:51 AM	PowerView	Info	Shade device 100 already exists (ref 4673), polling will update it
+1/21/2026 8:02:46 AM	PowerView	Info	[FindDevice] No INI mapping found for shade 148 (hub 192.168.3.164)
+1/21/2026 8:02:46 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:46 AM	PowerView	Info	[POLLING] Updating shade 140: Battery=75%, Signal=38%, Position=0.00
+1/21/2026 8:02:46 AM	PowerView	Info	[FindDevice] Found shade 140 (hub 192.168.3.164) via INI mapping (ref 4626)
+1/21/2026 8:02:46 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:46 AM	PowerView	Info	[POLLING] Updating shade 132: Battery=75%, Signal=53%, Position=0.00
+1/21/2026 8:02:46 AM	PowerView	Info	[FindDevice] Found shade 132 (hub 192.168.3.164) via INI mapping (ref 4620)
+1/21/2026 8:02:46 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:46 AM	PowerView	Info	[POLLING] Updating shade 116: Battery=75%, Signal=36%, Position=0.00
+1/21/2026 8:02:46 AM	PowerView	Info	[FindDevice] Found shade 116 (hub 192.168.3.164) via INI mapping (ref 4653)
+1/21/2026 8:02:46 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:46 AM	PowerView	Info	[POLLING] Updating shade 117: Battery=75%, Signal=35%, Position=0.00
+1/21/2026 8:02:46 AM	PowerView	Info	[FindDevice] Found shade 117 (hub 192.168.3.164) via INI mapping (ref 4644)
+1/21/2026 8:02:46 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:46 AM	PowerView	Info	[POLLING] Updating shade 118: Battery=75%, Signal=33%, Position=0.00
+1/21/2026 8:02:46 AM	PowerView	Info	[FindDevice] Found shade 118 (hub 192.168.3.164) via INI mapping (ref 4616)
+1/21/2026 8:02:46 AM	PowerView	Warning	[POLLING] Could not find device for shade 100 on hub 192.168.3.164
+1/21/2026 8:02:45 AM	PowerView	Info	[FindDevice] No INI mapping found for shade 148 (hub 192.168.3.164)
+1/21/2026 8:02:45 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:45 AM	PowerView	Info	[POLLING] Updating shade 140: Battery=75%, Signal=36%, Position=0.00
+1/21/2026 8:02:45 AM	PowerView	Info	[FindDevice] Found shade 140 (hub 192.168.3.164) via INI mapping (ref 4626)
+1/21/2026 8:02:45 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:45 AM	PowerView	Info	[POLLING] Updating shade 132: Battery=75%, Signal=51%, Position=0.00
+1/21/2026 8:02:45 AM	PowerView	Info	[FindDevice] Found shade 132 (hub 192.168.3.164) via INI mapping (ref 4620)
+1/21/2026 8:02:45 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:45 AM	PowerView	Info	[POLLING] Updating shade 116: Battery=75%, Signal=36%, Position=0.00
+1/21/2026 8:02:45 AM	PowerView	Info	[FindDevice] Found shade 116 (hub 192.168.3.164) via INI mapping (ref 4653)
+1/21/2026 8:02:45 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:45 AM	PowerView	Info	[POLLING] Updating shade 117: Battery=75%, Signal=35%, Position=0.00
+1/21/2026 8:02:45 AM	PowerView	Info	[FindDevice] Found shade 117 (hub 192.168.3.164) via INI mapping (ref 4644)
+1/21/2026 8:02:45 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:45 AM	PowerView	Info	[POLLING] Updating shade 118: Battery=75%, Signal=33%, Position=0.00
+1/21/2026 8:02:45 AM	PowerView	Info	[FindDevice] Found shade 118 (hub 192.168.3.164) via INI mapping (ref 4616)
+1/21/2026 8:02:45 AM	PowerView	Warning	[POLLING] Could not find device for shade 100 on hub 192.168.3.164
+1/21/2026 8:02:41 AM	HomeSeer	Web Server	Web Server authorized local login successful from: 192.168.3.139 User: rnicol@1975.usna.com
+1/21/2026 8:02:40 AM	PowerView	Info	[POLL-DONE] Poll complete for hub 192.168.3.164: 21 processed, 0 skipped
+1/21/2026 8:02:40 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:40 AM	PowerView	Info	[POLLING] Updating shade 168: Battery=75%, Signal=50%, Position=0.98
+1/21/2026 8:02:40 AM	PowerView	Info	[FindDevice] Found shade 168 (hub 192.168.3.164) via INI mapping (ref 4634)
+1/21/2026 8:02:40 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:40 AM	PowerView	Info	[POLLING] Updating shade 156: Battery=75%, Signal=43%, Position=0.00
+1/21/2026 8:02:40 AM	PowerView	Info	[FindDevice] Found shade 156 (hub 192.168.3.164) via INI mapping (ref 4630)
+1/21/2026 8:02:40 AM	PowerView	Warning	[POLLING] Could not find device for shade 148 on hub 192.168.3.164
+1/21/2026 8:02:33 AM	PowerView	Info	[FindDevice] No INI mapping found for shade 100 (hub 192.168.3.164)
+1/21/2026 8:02:33 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:33 AM	PowerView	Info	[POLLING] Updating shade 84: Battery=75%, Signal=60%, Position=1.00
+1/21/2026 8:02:33 AM	PowerView	Info	[FindDevice] Found shade 84 (hub 192.168.3.164) via INI mapping (ref 4693)
+1/21/2026 8:02:32 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:32 AM	PowerView	Info	[POLLING] Updating shade 92: Battery=0%, Signal=0%, Position=
+1/21/2026 8:02:32 AM	PowerView	Info	[FindDevice] Found shade 92 (hub 192.168.3.164) via INI mapping (ref 4685)
+1/21/2026 8:02:32 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:32 AM	PowerView	Info	[POLLING] Updating shade 85: Battery=75%, Signal=41%, Position=1.00
+1/21/2026 8:02:32 AM	PowerView	Info	[FindDevice] Found shade 85 (hub 192.168.3.164) via INI mapping (ref 4669)
+1/21/2026 8:02:32 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:32 AM	PowerView	Info	[POLLING] Updating shade 71: Battery=75%, Signal=58%, Position=0.00
+1/21/2026 8:02:32 AM	PowerView	Info	[FindDevice] Found shade 71 (hub 192.168.3.164) via INI mapping (ref 4609)
+1/21/2026 8:02:32 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:32 AM	PowerView	Info	[POLLING] Updating shade 46: Battery=75%, Signal=70%, Position=0.00
+1/21/2026 8:02:32 AM	PowerView	Info	[FindDevice] Found shade 46 (hub 192.168.3.164) via INI mapping (ref 4665)
+1/21/2026 8:02:32 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:32 AM	PowerView	Info	[POLLING] Updating shade 40: Battery=75%, Signal=50%, Position=0.00
+1/21/2026 8:02:32 AM	PowerView	Info	[FindDevice] Found shade 40 (hub 192.168.3.164) via INI mapping (ref 4661)
+1/21/2026 8:02:32 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:31 AM	PowerView	Info	[POLLING] Updating shade 16: Battery=75%, Signal=51%, Position=0.00
+1/21/2026 8:02:31 AM	PowerView	Info	[FindDevice] Found shade 16 (hub 192.168.3.164) via INI mapping (ref 4649)
+1/21/2026 8:02:31 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:31 AM	PowerView	Info	[POLLING] Updating shade 14: Battery=75%, Signal=60%, Position=0.00
+1/21/2026 8:02:31 AM	PowerView	Info	[FindDevice] Found shade 14 (hub 192.168.3.164) via INI mapping (ref 4638)
+1/21/2026 8:02:31 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:31 AM	PowerView	Info	[POLLING] Updating shade 15: Battery=75%, Signal=41%, Position=0.00
+1/21/2026 8:02:31 AM	PowerView	Info	[FindDevice] Found shade 15 (hub 192.168.3.164) via INI mapping (ref 4605)
+1/21/2026 8:02:31 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:31 AM	PowerView	Info	[POLLING] Updating shade 2: Battery=75%, Signal=36%, Position=0.00
+1/21/2026 8:02:31 AM	PowerView	Info	[FindDevice] Found shade 2 (hub 192.168.3.164) via INI mapping (ref 4689)
+1/21/2026 8:02:31 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:31 AM	PowerView	Info	[POLLING] Updating shade 3: Battery=75%, Signal=40%, Position=0.00
+1/21/2026 8:02:31 AM	PowerView	Info	[FindDevice] Found shade 3 (hub 192.168.3.164) via INI mapping (ref 4681)
+1/21/2026 8:02:31 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:31 AM	PowerView	Info	[POLLING] Updating shade 4: Battery=75%, Signal=36%, Position=0.00
+1/21/2026 8:02:31 AM	PowerView	Info	[FindDevice] Found shade 4 (hub 192.168.3.164) via INI mapping (ref 4657)
+1/21/2026 8:02:31 AM	PowerView	Info	[POLL-SHADES] GetShadesAsync returned 21 shades
+1/21/2026 8:02:31 AM	PowerView	Info	GetShadesAsync returning 21 unique shades from /home
+1/21/2026 8:02:31 AM	PowerView	Info	Added shade 168 (Ron's Office) - Battery: 3, Signal: 48, Position: 0.98
+1/21/2026 8:02:31 AM	PowerView	Info	Added shade 156 (Guest 1) - Battery: 3, Signal: 36, Position: 0
+1/21/2026 8:02:31 AM	PowerView	Info	Added shade 148 (Katie 1) - Battery: 3, Signal: 53, Position: 0
+1/21/2026 8:02:31 AM	PowerView	Info	Added shade 140 (Liane 1) - Battery: 3, Signal: 38, Position: 0
+1/21/2026 8:02:31 AM	PowerView	Info	Added shade 132 (Main Hall 1) - Battery: 3, Signal: 53, Position: 0
+1/21/2026 8:02:31 AM	PowerView	Info	Added shade 116 (Main 3) - Battery: 3, Signal: 36, Position: 0
+1/21/2026 8:02:31 AM	PowerView	Info	Added shade 117 (Main 2) - Battery: 3, Signal: 35, Position: 0
+1/21/2026 8:02:31 AM	PowerView	Info	Added shade 118 (Main 1) - Battery: 3, Signal: 33, Position: 0
+1/21/2026 8:02:30 AM	PowerView	Info	Added shade 100 (Laundry 1) - Battery: 3, Signal: 50, Position: 0
+1/21/2026 8:02:30 AM	PowerView	Info	Added shade 84 (Game 3) - Battery: 3, Signal: 60, Position: 1
+1/21/2026 8:02:30 AM	PowerView	Info	Added shade 92 (Game 2) - Battery: 0, Signal: 0, Position: 
+1/21/2026 8:02:30 AM	PowerView	Info	Added shade 85 (Game 1) - Battery: 3, Signal: 41, Position: 1
+1/21/2026 8:02:30 AM	PowerView	Info	Added shade 71 (Pool Bath Shade) - Battery: 3, Signal: 58, Position: 0
+1/21/2026 8:02:30 AM	PowerView	Info	Added shade 46 (Hall 1) - Battery: 3, Signal: 70, Position: 0
+1/21/2026 8:02:30 AM	PowerView	Info	Added shade 40 (Garage 1) - Battery: 3, Signal: 50, Position: 0
+1/21/2026 8:02:30 AM	PowerView	Info	Added shade 16 (Dining 3) - Battery: 3, Signal: 51, Position: 0
+1/21/2026 8:02:30 AM	PowerView	Info	Added shade 14 (Dining 2) - Battery: 3, Signal: 60, Position: 0
+1/21/2026 8:02:30 AM	PowerView	Info	Added shade 15 (Dining 1) - Battery: 3, Signal: 41, Position: 0
+1/21/2026 8:02:30 AM	PowerView	Info	Added shade 2 (Liv 3) - Battery: 3, Signal: 36, Position: 0
+1/21/2026 8:02:30 AM	PowerView	Info	Added shade 3 (Liv 2) - Battery: 3, Signal: 40, Position: 0
+1/21/2026 8:02:30 AM	PowerView	Info	Added shade 4 (Liv 1) - Battery: 3, Signal: 36, Position: 0
+1/21/2026 8:02:30 AM	PowerView	Info	PowerView: Calling GET http://192.168.3.164/home
+1/21/2026 8:02:30 AM	PowerView	Info	[POLL-START] PollShadesAndScenesAsync called for hub 192.168.3.164
+1/21/2026 8:02:30 AM	PowerView	Info	[TIMER-FIRED] Timer fired for hub 192.168.3.164 at 08:02:29.971
+1/21/2026 8:02:29 AM	PowerView	Info	[FindDevice] No INI mapping found for shade 100 (hub 192.168.3.164)
+1/21/2026 8:02:29 AM	PowerView	Info	DEBUG: Processing shade 100 (Shade 100 - Laundry 1)
+1/21/2026 8:02:29 AM	PowerView	Info	Shade device 84 already exists (ref 4693), polling will update it
+1/21/2026 8:02:29 AM	PowerView	Info	[FindDevice] No INI mapping found for shade 100 (hub 192.168.3.164)
+1/21/2026 8:02:29 AM	PowerView	Warning	[POLLING] Could not find device for shade 84 on hub 192.168.3.164
+1/21/2026 8:02:21 AM	PowerView	Info	[FindDevice] No INI mapping found for shade 148 (hub 192.168.3.164)
+1/21/2026 8:02:21 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:20 AM	PowerView	Info	[POLLING] Updating shade 140: Battery=75%, Signal=38%, Position=0.00
+1/21/2026 8:02:20 AM	PowerView	Info	[FindDevice] Found shade 140 (hub 192.168.3.164) via INI mapping (ref 4626)
+1/21/2026 8:02:20 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:20 AM	PowerView	Info	[POLLING] Updating shade 132: Battery=75%, Signal=51%, Position=0.00
+1/21/2026 8:02:20 AM	PowerView	Info	[FindDevice] Found shade 132 (hub 192.168.3.164) via INI mapping (ref 4620)
+1/21/2026 8:02:20 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:20 AM	PowerView	Info	[POLLING] Updating shade 116: Battery=75%, Signal=36%, Position=0.00
+1/21/2026 8:02:20 AM	PowerView	Info	[FindDevice] Found shade 116 (hub 192.168.3.164) via INI mapping (ref 4653)
+1/21/2026 8:02:20 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:20 AM	PowerView	Info	[POLLING] Updating shade 117: Battery=75%, Signal=33%, Position=0.00
+1/21/2026 8:02:20 AM	PowerView	Info	[FindDevice] Found shade 117 (hub 192.168.3.164) via INI mapping (ref 4644)
+1/21/2026 8:02:20 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:20 AM	PowerView	Info	[POLLING] Updating shade 118: Battery=75%, Signal=33%, Position=0.00
+1/21/2026 8:02:20 AM	PowerView	Info	[FindDevice] Found shade 118 (hub 192.168.3.164) via INI mapping (ref 4616)
+1/21/2026 8:02:20 AM	PowerView	Warning	[POLLING] Could not find device for shade 100 on hub 192.168.3.164
+1/21/2026 8:02:16 AM	PowerView	Info	[FindDevice] No INI mapping found for shade 84 (hub 192.168.3.164)
+1/21/2026 8:02:16 AM	PowerView	Warning	[POLLING] Could not find device for shade 92 on hub 192.168.3.164
+1/21/2026 8:02:09 AM	PowerView	Info	[FindDevice] No INI mapping found for shade 84 (hub 192.168.3.164)
+1/21/2026 8:02:09 AM	PowerView	Info	DEBUG: Processing shade 84 (Shade 84 - Game 3)
+1/21/2026 8:02:09 AM	PowerView	Info	Shade device 92 already exists (ref 4685), polling will update it
+1/21/2026 8:02:07 AM	PowerView	Info	[FindDevice] No INI mapping found for shade 100 (hub 192.168.3.164)
+1/21/2026 8:02:07 AM	PowerView	Warning	[POLLING] Could not find device for shade 84 on hub 192.168.3.164
+1/21/2026 8:02:01 AM	PowerView	Info	[FindDevice] No INI mapping found for shade 92 (hub 192.168.3.164)
+1/21/2026 8:02:01 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:01 AM	PowerView	Info	[POLLING] Updating shade 85: Battery=75%, Signal=38%, Position=1.00
+1/21/2026 8:02:01 AM	PowerView	Info	[FindDevice] Found shade 85 (hub 192.168.3.164) via INI mapping (ref 4669)
+1/21/2026 8:02:01 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:01 AM	PowerView	Info	[POLLING] Updating shade 71: Battery=75%, Signal=60%, Position=0.00
+1/21/2026 8:02:01 AM	PowerView	Info	[FindDevice] Found shade 71 (hub 192.168.3.164) via INI mapping (ref 4609)
+1/21/2026 8:02:01 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:01 AM	PowerView	Info	[POLLING] Updating shade 46: Battery=75%, Signal=73%, Position=0.00
+1/21/2026 8:02:01 AM	PowerView	Info	[FindDevice] Found shade 46 (hub 192.168.3.164) via INI mapping (ref 4665)
+1/21/2026 8:02:01 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:01 AM	PowerView	Info	[POLLING] Updating shade 40: Battery=75%, Signal=50%, Position=0.00
+1/21/2026 8:02:01 AM	PowerView	Info	[FindDevice] Found shade 40 (hub 192.168.3.164) via INI mapping (ref 4661)
+1/21/2026 8:02:01 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:01 AM	PowerView	Info	[POLLING] Updating shade 16: Battery=75%, Signal=51%, Position=0.00
+1/21/2026 8:02:01 AM	PowerView	Info	[FindDevice] Found shade 16 (hub 192.168.3.164) via INI mapping (ref 4649)
+1/21/2026 8:02:01 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:01 AM	PowerView	Info	[POLLING] Updating shade 14: Battery=75%, Signal=61%, Position=0.00
+1/21/2026 8:02:01 AM	PowerView	Info	[FindDevice] Found shade 14 (hub 192.168.3.164) via INI mapping (ref 4638)
+1/21/2026 8:02:01 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:01 AM	PowerView	Info	[POLLING] Updating shade 15: Battery=75%, Signal=40%, Position=0.00
+1/21/2026 8:02:01 AM	PowerView	Info	[FindDevice] Found shade 15 (hub 192.168.3.164) via INI mapping (ref 4605)
+1/21/2026 8:02:01 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:01 AM	PowerView	Info	[POLLING] Updating shade 2: Battery=75%, Signal=36%, Position=0.00
+1/21/2026 8:02:01 AM	PowerView	Info	[FindDevice] Found shade 2 (hub 192.168.3.164) via INI mapping (ref 4689)
+1/21/2026 8:02:01 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:01 AM	PowerView	Info	[POLLING] Updating shade 3: Battery=75%, Signal=41%, Position=0.00
+1/21/2026 8:02:01 AM	PowerView	Info	[FindDevice] Found shade 3 (hub 192.168.3.164) via INI mapping (ref 4681)
+1/21/2026 8:02:01 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:02:00 AM	PowerView	Info	[POLLING] Updating shade 4: Battery=75%, Signal=41%, Position=0.00
+1/21/2026 8:02:00 AM	PowerView	Info	[FindDevice] Found shade 4 (hub 192.168.3.164) via INI mapping (ref 4657)
+1/21/2026 8:02:00 AM	PowerView	Info	[POLL-SHADES] GetShadesAsync returned 21 shades
+1/21/2026 8:02:00 AM	PowerView	Info	GetShadesAsync returning 21 unique shades from /home
+1/21/2026 8:02:00 AM	PowerView	Info	Added shade 168 (Ron's Office) - Battery: 3, Signal: 50, Position: 0.98
+1/21/2026 8:02:00 AM	PowerView	Info	Added shade 156 (Guest 1) - Battery: 3, Signal: 36, Position: 0
+1/21/2026 8:02:00 AM	PowerView	Info	Added shade 148 (Katie 1) - Battery: 3, Signal: 53, Position: 0
+1/21/2026 8:02:00 AM	PowerView	Info	Added shade 140 (Liane 1) - Battery: 3, Signal: 36, Position: 0
+1/21/2026 8:02:00 AM	PowerView	Info	Added shade 132 (Main Hall 1) - Battery: 3, Signal: 51, Position: 0
+1/21/2026 8:02:00 AM	PowerView	Info	Added shade 116 (Main 3) - Battery: 3, Signal: 36, Position: 0
+1/21/2026 8:02:00 AM	PowerView	Info	Added shade 117 (Main 2) - Battery: 3, Signal: 35, Position: 0
+1/21/2026 8:02:00 AM	PowerView	Info	Added shade 118 (Main 1) - Battery: 3, Signal: 33, Position: 0
+1/21/2026 8:02:00 AM	PowerView	Info	Added shade 100 (Laundry 1) - Battery: 3, Signal: 48, Position: 0
+1/21/2026 8:02:00 AM	PowerView	Info	Added shade 84 (Game 3) - Battery: 3, Signal: 60, Position: 1
+1/21/2026 8:02:00 AM	PowerView	Info	Added shade 92 (Game 2) - Battery: 0, Signal: 0, Position: 
+1/21/2026 8:02:00 AM	PowerView	Info	Added shade 85 (Game 1) - Battery: 3, Signal: 38, Position: 1
+1/21/2026 8:02:00 AM	PowerView	Info	Added shade 71 (Pool Bath Shade) - Battery: 3, Signal: 60, Position: 0
+1/21/2026 8:02:00 AM	PowerView	Info	Added shade 46 (Hall 1) - Battery: 3, Signal: 73, Position: 0
+1/21/2026 8:02:00 AM	PowerView	Info	Added shade 40 (Garage 1) - Battery: 3, Signal: 50, Position: 0
+1/21/2026 8:02:00 AM	PowerView	Info	Added shade 16 (Dining 3) - Battery: 3, Signal: 51, Position: 0
+1/21/2026 8:02:00 AM	PowerView	Info	Added shade 14 (Dining 2) - Battery: 3, Signal: 61, Position: 0
+1/21/2026 8:02:00 AM	PowerView	Info	Added shade 15 (Dining 1) - Battery: 3, Signal: 40, Position: 0
+1/21/2026 8:02:00 AM	PowerView	Info	Added shade 2 (Liv 3) - Battery: 3, Signal: 36, Position: 0
+1/21/2026 8:02:00 AM	PowerView	Info	Added shade 3 (Liv 2) - Battery: 3, Signal: 41, Position: 0
+1/21/2026 8:02:00 AM	PowerView	Info	Added shade 4 (Liv 1) - Battery: 3, Signal: 41, Position: 0
+1/21/2026 8:01:59 AM	PowerView	Info	PowerView: Calling GET http://192.168.3.164/home
+1/21/2026 8:01:59 AM	PowerView	Info	[POLL-START] PollShadesAndScenesAsync called for hub 192.168.3.164
+1/21/2026 8:01:59 AM	PowerView	Info	[TIMER-FIRED] Timer fired for hub 192.168.3.164 at 08:01:59.883
+1/21/2026 8:01:56 AM	PowerView	Info	[FindDevice] No INI mapping found for shade 84 (hub 192.168.3.164)
+1/21/2026 8:01:56 AM	PowerView	Warning	[POLLING] Could not find device for shade 92 on hub 192.168.3.164
+1/21/2026 8:01:55 AM	PowerView	Info	[FindDevice] No INI mapping found for shade 92 (hub 192.168.3.164)
+1/21/2026 8:01:55 AM	PowerView	Info	DEBUG: Processing shade 92 (Shade 92 - Game 2)
+1/21/2026 8:01:55 AM	PowerView	Info	Shade device 85 already exists (ref 4669), polling will update it
+1/21/2026 8:01:52 AM	PowerView	Info	[FindDevice] No INI mapping found for shade 92 (hub 192.168.3.164)
+1/21/2026 8:01:52 AM	PowerView	Warning	[POLLING] Could not find device for shade 85 on hub 192.168.3.164
+1/21/2026 8:01:48 AM	PowerView	Info	[FindDevice] No INI mapping found for shade 85 (hub 192.168.3.164)
+1/21/2026 8:01:48 AM	PowerView	Info	DEBUG: Processing shade 85 (Shade 85 - Game 1)
+1/21/2026 8:01:48 AM	PowerView	Info	Shade device 71 already exists (ref 4609), polling will update it
+1/21/2026 8:01:48 AM	PowerView	Info	[FindDevice] Found shade 71 (hub 192.168.3.164) via INI mapping (ref 4609)
+1/21/2026 8:01:48 AM	PowerView	Info	DEBUG: Processing shade 71 (Shade 71 - Pool Bath Shade)
+1/21/2026 8:01:48 AM	PowerView	Info	Shade device 46 already exists (ref 4665), polling will update it
+1/21/2026 8:01:47 AM	PowerView	Info	[FindDevice] No INI mapping found for shade 85 (hub 192.168.3.164)
+1/21/2026 8:01:47 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:01:47 AM	PowerView	Info	[POLLING] Updating shade 71: Battery=75%, Signal=58%, Position=0.00
+1/21/2026 8:01:47 AM	PowerView	Info	[FindDevice] Found shade 71 (hub 192.168.3.164) via INI mapping (ref 4609)
+1/21/2026 8:01:47 AM	PowerView	Warning	[POLLING] Could not find device for shade 46 on hub 192.168.3.164
+1/21/2026 8:01:46 AM	HomeSeer	TTS	Speak ():Welcome to Home-Seer
+1/21/2026 8:01:42 AM	Legacy-Plugin	Z-Wave	Starting Z-Wave Polling for Network F8CF3E5F...
+1/21/2026 8:01:42 AM	PowerView	Info	[FindDevice] No INI mapping found for shade 46 (hub 192.168.3.164)
+1/21/2026 8:01:42 AM	PowerView	Warning	[POLLING] Could not find device for shade 40 on hub 192.168.3.164
+1/21/2026 8:01:40 AM	PowerView	Info	[FindDevice] No INI mapping found for shade 46 (hub 192.168.3.164)
+1/21/2026 8:01:40 AM	PowerView	Info	DEBUG: Processing shade 46 (Shade 46 - Hall 1)
+1/21/2026 8:01:40 AM	PowerView	Info	Shade device 40 already exists (ref 4661), polling will update it
+1/21/2026 8:01:37 AM	PowerView	Info	[FindDevice] No INI mapping found for shade 40 (hub 192.168.3.164)
+1/21/2026 8:01:37 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:01:37 AM	PowerView	Info	[POLLING] Updating shade 16: Battery=75%, Signal=51%, Position=0.00
+1/21/2026 8:01:37 AM	PowerView	Info	[FindDevice] Found shade 16 (hub 192.168.3.164) via INI mapping (ref 4649)
+1/21/2026 8:01:37 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:01:37 AM	PowerView	Info	[POLLING] Updating shade 14: Battery=75%, Signal=63%, Position=0.00
+1/21/2026 8:01:37 AM	PowerView	Info	[FindDevice] Found shade 14 (hub 192.168.3.164) via INI mapping (ref 4638)
+1/21/2026 8:01:37 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:01:37 AM	PowerView	Info	[POLLING] Updating shade 15: Battery=75%, Signal=40%, Position=0.00
+1/21/2026 8:01:37 AM	PowerView	Info	[FindDevice] Found shade 15 (hub 192.168.3.164) via INI mapping (ref 4605)
+1/21/2026 8:01:37 AM	PowerView	Warning	[POLLING] Could not find device for shade 2 on hub 192.168.3.164
+1/21/2026 8:01:32 AM	PowerView	Info	[FindDevice] No INI mapping found for shade 40 (hub 192.168.3.164)
+1/21/2026 8:01:32 AM	PowerView	Info	DEBUG: Processing shade 40 (Shade 40 - Garage 1)
+1/21/2026 8:01:32 AM	PowerView	Info	Shade device 16 already exists (ref 4649), polling will update it
+1/21/2026 8:01:32 AM	PowerView	Info	[FindDevice] Found shade 16 (hub 192.168.3.164) via INI mapping (ref 4649)
+1/21/2026 8:01:32 AM	PowerView	Info	DEBUG: Processing shade 16 (Shade 16 - Dining 3)
+1/21/2026 8:01:32 AM	PowerView	Info	Shade device 14 already exists (ref 4638), polling will update it
+1/21/2026 8:01:32 AM	PowerView	Info	[FindDevice] Found shade 14 (hub 192.168.3.164) via INI mapping (ref 4638)
+1/21/2026 8:01:32 AM	PowerView	Info	DEBUG: Processing shade 14 (Shade 14 - Dining 2)
+1/21/2026 8:01:32 AM	PowerView	Info	Shade device 15 already exists (ref 4605), polling will update it
+1/21/2026 8:01:32 AM	PowerView	Info	[FindDevice] Found shade 15 (hub 192.168.3.164) via INI mapping (ref 4605)
+1/21/2026 8:01:32 AM	PowerView	Info	DEBUG: Processing shade 15 (Shade 15 - Dining 1)
+1/21/2026 8:01:32 AM	PowerView	Info	Shade device 2 already exists (ref 4689), polling will update it
+1/21/2026 8:01:32 AM	Sonos4	Error	Error In AddRemovePlayerNamefromSpeakerClientList trying To create a SpeakerClient with isAdd = True and playerName = Outdoor Living
+1/21/2026 8:01:32 AM	Sonos4	Info	Error in SpeakerClient.connect for client = Outdoor Living, Unable to connect speaker client interface with status = Not Authorized
+1/21/2026 8:01:32 AM	HomeSeer	Warning	Speaker host connection refused from 192.168.3.139 User: default User does not exist, does not have adequate rights, or the password is incorrect.
+1/21/2026 8:01:31 AM	Sonos4	Info	DirectConnect called for Zone Outdoor Living with device name = uuid:RINCON_C43875863EC401400 and Model = S16
+1/21/2026 8:01:31 AM	Sonos4	Error	Error In AddRemovePlayerNamefromSpeakerClientList trying To create a SpeakerClient with isAdd = True and playerName = Ron’s Office
+1/21/2026 8:01:31 AM	Sonos4	Info	Error in SpeakerClient.connect for client = Ron’s Office, Unable to connect speaker client interface with status = Not Authorized
+1/21/2026 8:01:31 AM	HomeSeer	Warning	Speaker host connection refused from 192.168.3.139 User: default User does not exist, does not have adequate rights, or the password is incorrect.
+1/21/2026 8:01:31 AM	Sonos4	Info	DirectConnect called for Zone Ron’s Office with device name = uuid:RINCON_C438758637D401400 and Model = S16
+1/21/2026 8:01:31 AM	Sonos4	Error	Error In AddRemovePlayerNamefromSpeakerClientList trying To create a SpeakerClient with isAdd = True and playerName = Bedroom
+1/21/2026 8:01:31 AM	Sonos4	Info	Error in SpeakerClient.connect for client = Bedroom, Unable to connect speaker client interface with status = Not Authorized
+1/21/2026 8:01:31 AM	HomeSeer	Warning	Speaker host connection refused from 192.168.3.139 User: default User does not exist, does not have adequate rights, or the password is incorrect.
+1/21/2026 8:01:30 AM	Sonos4	Info	DirectConnect called for Zone Bedroom with device name = uuid:RINCON_C4387585E38901400 and Model = S16
+1/21/2026 8:01:30 AM	Sonos4	Error	Error In AddRemovePlayerNamefromSpeakerClientList trying To create a SpeakerClient with isAdd = True and playerName = Living Room
+1/21/2026 8:01:30 AM	Sonos4	Info	Error in SpeakerClient.connect for client = Living Room, Unable to connect speaker client interface with status = Not Authorized
+1/21/2026 8:01:30 AM	HomeSeer	Warning	Speaker host connection refused from 192.168.3.139 User: default User does not exist, does not have adequate rights, or the password is incorrect.
+1/21/2026 8:01:30 AM	PowerView	Info	[FindDevice] No INI mapping found for shade 2 (hub 192.168.3.164)
+1/21/2026 8:01:30 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:01:30 AM	PowerView	Info	[POLLING] Updating shade 3: Battery=75%, Signal=40%, Position=0.00
+1/21/2026 8:01:30 AM	PowerView	Info	[FindDevice] Found shade 3 (hub 192.168.3.164) via INI mapping (ref 4681)
+1/21/2026 8:01:30 AM	PowerView	Error	Error updating shade device: Invalid type for property Value
+1/21/2026 8:01:30 AM	Sonos4	Info	DirectConnect called for Zone Living Room with device name = uuid:RINCON_C4387585E36501400 and Model = S16
+1/21/2026 8:01:30 AM	PowerView	Info	[POLLING] Updating shade 4: Battery=75%, Signal=40%, Position=0.00
+1/21/2026 8:01:30 AM	PowerView	Info	[FindDevice] Found shade 4 (hub 192.168.3.164) via INI mapping (ref 4657)
+1/21/2026 8:01:30 AM	PowerView	Info	[POLL-SHADES] GetShadesAsync returned 21 shades
+1/21/2026 8:01:30 AM	PowerView	Info	GetShadesAsync returning 21 unique shades from /home
+1/21/2026 8:01:30 AM	PowerView	Info	Added shade 168 (Ron's Office) - Battery: 3, Signal: 50, Position: 0.98
+1/21/2026 8:01:30 AM	PowerView	Info	Added shade 156 (Guest 1) - Battery: 3, Signal: 43, Position: 0
+1/21/2026 8:01:30 AM	PowerView	Info	Added shade 148 (Katie 1) - Battery: 3, Signal: 53, Position: 0
+1/21/2026 8:01:30 AM	PowerView	Info	Added shade 140 (Liane 1) - Battery: 3, Signal: 38, Position: 0
+1/21/2026 8:01:30 AM	PowerView	Info	Added shade 132 (Main Hall 1) - Battery: 3, Signal: 51, Position: 0
+1/21/2026 8:01:30 AM	PowerView	Info	Added shade 116 (Main 3) - Battery: 3, Signal: 36, Position: 0
+1/21/2026 8:01:30 AM	PowerView	Info	Added shade 117 (Main 2) - Battery: 3, Signal: 33, Position: 0
+1/21/2026 8:01:30 AM	PowerView	Info	Added shade 118 (Main 1) - Battery: 3, Signal: 33, Position: 0
+1/21/2026 8:01:30 AM	PowerView	Info	Added shade 100 (Laundry 1) - Battery: 3, Signal: 48, Position: 0
+1/21/2026 8:01:30 AM	PowerView	Info	Added shade 84 (Game 3) - Battery: 3, Signal: 60, Position: 1
+1/21/2026 8:01:30 AM	PowerView	Info	Added shade 92 (Game 2) - Battery: 0, Signal: 0, Position: 
+1/21/2026 8:01:30 AM	PowerView	Info	Added shade 85 (Game 1) - Battery: 3, Signal: 38, Position: 1
+1/21/2026 8:01:30 AM	PowerView	Info	Added shade 71 (Pool Bath Shade) - Battery: 3, Signal: 58, Position: 0
+1/21/2026 8:01:30 AM	PowerView	Info	Added shade 46 (Hall 1) - Battery: 3, Signal: 71, Position: 0
+1/21/2026 8:01:30 AM	PowerView	Info	Added shade 40 (Garage 1) - Battery: 3, Signal: 50, Position: 0
+1/21/2026 8:01:30 AM	PowerView	Info	Added shade 16 (Dining 3) - Battery: 3, Signal: 51, Position: 0
+1/21/2026 8:01:30 AM	PowerView	Info	Added shade 14 (Dining 2) - Battery: 3, Signal: 63, Position: 0
+1/21/2026 8:01:30 AM	PowerView	Info	Added shade 15 (Dining 1) - Battery: 3, Signal: 40, Position: 0
+1/21/2026 8:01:30 AM	PowerView	Info	Added shade 2 (Liv 3) - Battery: 3, Signal: 36, Position: 0
+1/21/2026 8:01:30 AM	PowerView	Info	Added shade 3 (Liv 2) - Battery: 3, Signal: 40, Position: 0
+1/21/2026 8:01:30 AM	PowerView	Info	Added shade 4 (Liv 1) - Battery: 3, Signal: 40, Position: 0
+1/21/2026 8:01:29 AM	PowerView	Info	PowerView: Calling GET http://192.168.3.164/home
+1/21/2026 8:01:29 AM	PowerView	Info	[POLL-START] PollShadesAndScenesAsync called for hub 192.168.3.164
+1/21/2026 8:01:29 AM	PowerView	Info	[TIMER-FIRED] Timer fired for hub 192.168.3.164 at 08:01:29.820
+1/21/2026 8:01:25 AM	PowerView	Info	[FindDevice] No INI mapping found for shade 2 (hub 192.168.3.164)
+1/21/2026 8:01:25 AM	PowerView	Info	DEBUG: Processing shade 2 (Shade 2 - Liv 3)
+1/21/2026 8:01:25 AM	PowerView	Info	Shade device 3 already exists (ref 4681), polling will update it
+1/21/2026 8:01:21 AM	Legacy-Plugin	Z-Wave	*******************************************************************************
+1/21/2026 8:01:21 AM	Legacy-Plugin	Z-Wave	   STARTUP COMPLETE: All configured interfaces were successfully initialized.
+1/21/2026 8:01:21 AM	Legacy-Plugin	Z-Wave	*******************************************************************************
+1/21/2026 8:01:20 AM	PowerView	Info	[FindDevice] No INI mapping found for shade 3 (hub 192.168.3.164)
+1/21/2026 8:01:20 AM	PowerView	Info	DEBUG: Processing shade 3 (Shade 3 - Liv 2)
+1/21/2026 8:01:20 AM	PowerView	Info	Shade device 4 already exists (ref 4657), polling will update it
+1/21/2026 8:01:18 AM	Legacy-Plugin	Z-Wave	Security S2 Support Is Enabled
+1/21/2026 8:01:18 AM	Legacy-Plugin	Z-Wave	Crosswood: ......................................................................
+1/21/2026 8:01:18 AM	Legacy-Plugin	Z-Wave	Crosswood: .............................. FINISHED ..............................
+1/21/2026 8:01:18 AM	Legacy-Plugin	Z-Wave	Crosswood: ......................................................................
+1/21/2026 8:01:18 AM	Legacy-Plugin	Z-Wave	Crosswood: Controller is a BRIDGE controller
+1/21/2026 8:01:18 AM	Legacy-Plugin	Z-Wave	Crosswood: Found 69 Z-Wave nodes in interface node ID 1 (Crosswood)
+1/21/2026 8:01:18 AM	Legacy-Plugin	Z-Wave	Crosswood: Z-Wave interface node ID: 1, Home ID: F8CF3E5F
+1/21/2026 8:01:18 AM	Legacy-Plugin	Z-Wave	Crosswood: Z-Wave Serial API version: 9
+1/21/2026 8:01:18 AM	Legacy-Plugin	Z-Wave	Crosswood: Z-Wave services for the SECURITY COMMAND CLASS were successfully started.
+1/21/2026 8:01:17 AM	HomeSeer	Info	Done rebuild of device references cache
+1/21/2026 8:01:15 AM	HomeSeer	Info	Starting rebuild of device references cache...
+1/21/2026 8:01:15 AM	Legacy-Plugin	Z-Wave	Crosswood: Controller firmware version: 7.18
+1/21/2026 8:01:14 AM	HomeSeer	Info	System connected to MyHS Service successfully with license ID 716487.
+1/21/2026 8:01:14 AM	HomeSeer	Info	System connected to MyHS Service, waiting for acknowledge...
+1/21/2026 8:01:14 AM	HomeSeer	Startup	Start up complete.
+1/21/2026 8:01:14 AM	HomeSeer	Info	No device issues found
+1/21/2026 8:01:14 AM	HomeSeer	Info	Checking device parent child relationships...
+1/21/2026 8:01:14 AM	HomeSeer	Info	ASCII listener started on port 11000
+1/21/2026 8:01:14 AM	HomeSeer	Startup	Starting Event Scheduler...
+1/21/2026 8:01:14 AM	Script	Startup	(Startup.vb script) No speaker clients detected, waiting up to 30 seconds for any to connect...
+1/21/2026 8:01:14 AM	Script	Startup	(Startup.vb script) Scripting is OK and is now running Startup.vb
+1/21/2026 8:01:14 AM	PowerView	Info	[FindDevice] No INI mapping found for shade 4 (hub 192.168.3.164)
+1/21/2026 8:01:14 AM	PowerView	Info	DEBUG: Processing shade 4 (Shade 4 - Liv 1)
+1/21/2026 8:01:14 AM	PowerView	Info	DEBUG: CleanupDuplicateDevices complete
+1/21/2026 8:01:13 AM	HomeSeer	Startup	Running the startup script Startup.vb
+1/21/2026 8:01:13 AM	HomeSeer	Info	Notification init complete
+1/21/2026 8:01:13 AM	HomeSeer	Startup	HStouch server started, waiting for clients to connect.
+1/21/2026 8:01:13 AM	HomeSeer	HSTouch Server	Server started on port 10200
+1/21/2026 8:01:13 AM	HomeSeer	Plug-In	Finished initializing plug-in Z-Wave
+1/21/2026 8:01:13 AM	HomeSeer	Starting Plug-In	Z-Wave loaded in 4302 milliseconds
+1/21/2026 8:01:13 AM	HomeSeer	Starting Plug-In	Plugin Z-Wave started successfully in 3405 milliseconds
+1/21/2026 8:01:13 AM	Legacy-Plugin	Z-Wave	Crosswood: Getting node information from controller...
+1/21/2026 8:01:13 AM	Legacy-Plugin	Z-Wave	Crosswood: The Z-Wave API Execution Thread was Started or Restarted.
+1/21/2026 8:01:12 AM	Legacy-Plugin	Z-Wave	Crosswood: Z-Wave Ethernet at IP 192.168.3.132, connected to interface ok.
+1/21/2026 8:01:12 AM	Legacy-Plugin	Z-Wave	Crosswood: The Z-Wave Command Execution Thread was Started or Restarted.
+1/21/2026 8:01:12 AM	Legacy-Plugin	Z-Wave	Crosswood: ----------------------------------------------------------------------
+1/21/2026 8:01:12 AM	Legacy-Plugin	Z-Wave	Initializing Z-Wave interface Crosswood (HomeSeer Z-NET Ethernet) at 192.168.3.132, port 2001
+1/21/2026 8:01:12 AM	Legacy-Plugin	Z-Wave	Crosswood: ----------------------------------------------------------------------
+1/21/2026 8:01:12 AM	Legacy-Plugin	Z-Wave	Crosswood: ======================================================================
+1/21/2026 8:01:12 AM	Legacy-Plugin	Z-Wave	465 Simple AV Control Command Class Control Commands have been loaded successfully.
+1/21/2026 8:01:12 AM	Legacy-Plugin	Z-Wave	0 event triggers were loaded from HomeSeer.
+1/21/2026 8:01:12 AM	Legacy-Plugin	Z-Wave	0 event actions were loaded from HomeSeer.
+1/21/2026 8:01:11 AM	Legacy-Plugin	Z-Wave	InitIO called, plug-in version 4.1.6.0 is being initialized...
+1/21/2026 8:01:09 AM	HomeSeer	Starting Plug-In	Initializing plugin Z-Wave ...
+1/21/2026 8:01:09 AM	HomeSeer	Info	Plugin Z-Wave with instance Z-Wave has connected. IP:127.0.0.1:49959
+1/21/2026 8:01:08 AM	HomeSeer	Plug-In	Finished initializing plug-in Honeywell WiFi Thermostat
+1/21/2026 8:01:08 AM	HomeSeer	Starting Plug-In	Honeywell WiFi Thermostat loaded in 3607 milliseconds
+1/21/2026 8:01:08 AM	HomeSeer	Starting Plug-In	Plugin Honeywell WiFi Thermostat started successfully in 1658 milliseconds
+1/21/2026 8:01:08 AM	Honeywell WiFi Thermostat	Info	Honeywell WiFi Thermostat initialized.
+1/21/2026 8:01:07 AM	Honeywell WiFi Thermostat	Info	Honeywell WiFi Thermostat Version: 4.3.2.2
+1/21/2026 8:01:07 AM	Honeywell WiFi Thermostat	Info	Connected successfully!
+1/21/2026 8:01:06 AM	HomeSeer	Starting Plug-In	Initializing plugin Honeywell WiFi Thermostat ...
+1/21/2026 8:01:06 AM	HomeSeer	Info	Plugin WiFiThermostat with instance Honeywell WiFi Thermostat has connected. IP:127.0.0.1:49958
+1/21/2026 8:01:03 AM	HomeSeer	Plug-In	Finished initializing plug-in rnbHydra
+1/21/2026 8:01:03 AM	HomeSeer	Starting Plug-In	rnbHydra loaded in 1428 milliseconds
+1/21/2026 8:01:03 AM	HomeSeer	Starting Plug-In	Plugin rnbHydra started successfully in 122 milliseconds
+1/21/2026 8:01:03 AM	HomeSeer	Starting Plug-In	Initializing plugin rnbHydra ...
+1/21/2026 8:01:03 AM	HomeSeer	Info	Plugin rnbHydra with instance rnbHydra has connected. IP:127.0.0.1:49956
+1/21/2026 8:01:02 AM	PowerView	Info	DEBUG: GetShadesAsync returned 21 shades
+1/21/2026 8:01:02 AM	PowerView	Info	GetShadesAsync returning 21 unique shades from /home
+1/21/2026 8:01:02 AM	PowerView	Info	Added shade 168 (Ron's Office) - Battery: 3, Signal: 51, Position: 0.98
+1/21/2026 8:01:02 AM	PowerView	Info	Added shade 156 (Guest 1) - Battery: 3, Signal: 38, Position: 0
+1/21/2026 8:01:02 AM	PowerView	Info	Added shade 148 (Katie 1) - Battery: 3, Signal: 53, Position: 0
+1/21/2026 8:01:02 AM	PowerView	Info	Added shade 140 (Liane 1) - Battery: 3, Signal: 36, Position: 0
+1/21/2026 8:01:02 AM	PowerView	Info	Added shade 132 (Main Hall 1) - Battery: 3, Signal: 53, Position: 0
+1/21/2026 8:01:02 AM	PowerView	Info	Added shade 116 (Main 3) - Battery: 3, Signal: 36, Position: 0
+1/21/2026 8:01:02 AM	PowerView	Info	Added shade 117 (Main 2) - Battery: 3, Signal: 35, Position: 0
+1/21/2026 8:01:02 AM	PowerView	Info	Added shade 118 (Main 1) - Battery: 3, Signal: 31, Position: 0
+1/21/2026 8:01:02 AM	PowerView	Info	Added shade 100 (Laundry 1) - Battery: 3, Signal: 48, Position: 0
+1/21/2026 8:01:02 AM	PowerView	Info	Added shade 84 (Game 3) - Battery: 3, Signal: 60, Position: 1
+1/21/2026 8:01:02 AM	PowerView	Info	Added shade 92 (Game 2) - Battery: 0, Signal: 0, Position: 
+1/21/2026 8:01:02 AM	PowerView	Info	Added shade 85 (Game 1) - Battery: 3, Signal: 38, Position: 1
+1/21/2026 8:01:02 AM	PowerView	Info	Added shade 71 (Pool Bath Shade) - Battery: 3, Signal: 58, Position: 0
+1/21/2026 8:01:02 AM	PowerView	Info	Added shade 46 (Hall 1) - Battery: 3, Signal: 70, Position: 0
+1/21/2026 8:01:02 AM	PowerView	Info	Added shade 40 (Garage 1) - Battery: 3, Signal: 50, Position: 0
+1/21/2026 8:01:02 AM	PowerView	Info	Added shade 16 (Dining 3) - Battery: 3, Signal: 51, Position: 0
+1/21/2026 8:01:02 AM	PowerView	Info	Added shade 14 (Dining 2) - Battery: 3, Signal: 61, Position: 0
+1/21/2026 8:01:02 AM	PowerView	Info	Added shade 15 (Dining 1) - Battery: 3, Signal: 40, Position: 0
+1/21/2026 8:01:02 AM	PowerView	Info	Added shade 2 (Liv 3) - Battery: 3, Signal: 36, Position: 0
+1/21/2026 8:01:02 AM	PowerView	Info	Added shade 3 (Liv 2) - Battery: 3, Signal: 40, Position: 0
+1/21/2026 8:01:02 AM	PowerView	Info	Added shade 4 (Liv 1) - Battery: 3, Signal: 40, Position: 0
+1/21/2026 8:01:00 AM	Sonos4	Info	MySSDP.StartSSDPDiscovery waiting for an additional 30 seconds while receiving and processing the UPnP Device Info ..... 
+1/21/2026 8:01:00 AM	Sonos4	Info	MySSDP.StartSSDPDiscovery found so far 4 Devices. Still 0 Entries awaiting processing ..... 
+1/21/2026 8:00:59 AM	PowerView	Info	PowerView: Calling GET http://192.168.3.164/home
+1/21/2026 8:00:59 AM	PowerView	Info	Discovering PowerView shades on hub 192.168.3.164...
+1/21/2026 8:00:59 AM	PowerView	Info	Step 1: Discovering shades...
+1/21/2026 8:00:59 AM	PowerView	Info	DEBUG: _primaryHubIp is '192.168.3.164'
+1/21/2026 8:00:59 AM	PowerView	Info	DEBUG: _primaryClient is initialized
+1/21/2026 8:00:59 AM	PowerView	Info	===== INITIAL DISCOVERY STARTING =====
+1/21/2026 8:00:59 AM	HomeSeer	Plug-In	Finished initializing plug-in PowerView
+1/21/2026 8:00:59 AM	HomeSeer	Starting Plug-In	PowerView loaded in 3294 milliseconds
+1/21/2026 8:00:59 AM	HomeSeer	Starting Plug-In	Plugin PowerView started successfully in 271 milliseconds
+1/21/2026 8:00:59 AM	PowerView	Info	Started polling for status updates. Use Settings page to re-discover devices if needed.
+1/21/2026 8:00:59 AM	PowerView	Info	Started polling hub 192.168.3.164 every 30 seconds
+1/21/2026 8:00:59 AM	PowerView	Info	[TIMER-SETUP-DONE] Timer created and stored for hub 192.168.3.164
+1/21/2026 8:00:59 AM	PowerView	Info	[TIMER-SETUP] Creating timer with interval 30s
+1/21/2026 8:00:59 AM	PowerView	Info	[TIMER-SETUP-START] Attempting to start polling for hub 192.168.3.164
+1/21/2026 8:00:59 AM	PowerView	Info	Queueing initial discovery...
+1/21/2026 8:00:59 AM	PowerView	Info	PowerView Hub configured at 192.168.3.165
+1/21/2026 8:00:59 AM	PowerView	Info	PowerView Hub configured at 192.168.3.164
+1/21/2026 8:00:59 AM	PowerView	Info	PowerView Plugin version 1.0.0.0 (file 1.0.0.0) built 2026-01-21 07:52:50
+1/21/2026 8:00:59 AM	PowerView	Info	Initializing PowerView Plugin...
+1/21/2026 8:00:59 AM	HomeSeer	Starting Plug-In	Initializing plugin PowerView ...
+1/21/2026 8:00:59 AM	HomeSeer	Info	Plugin PowerView with instance PowerView has connected. IP:127.0.0.1:49919
+1/21/2026 8:00:58 AM	Ring	Info	TreatWebPNSocketMessage received a new connection from our RingNode app with version = v1.0.5
+1/21/2026 8:00:55 AM	HomeSeer	Plug-In	Finished initializing plug-in HSBuddy
+1/21/2026 8:00:55 AM	HomeSeer	Starting Plug-In	HSBuddy loaded in 6391 milliseconds
+1/21/2026 8:00:55 AM	Ring	Info	StartStopPushReceiver started program = C:\Program Files (x86)\HomeSeer HS4/bin/Ring/RingNode-win.exe 8089 NONE
+1/21/2026 8:00:55 AM	HomeSeer	Starting Plug-In	Plugin HSBuddy started successfully in 4671 milliseconds
+1/21/2026 8:00:51 AM	HomeSeer	Starting Plug-In	Initializing plugin HSBuddy ...
+1/21/2026 8:00:50 AM	Sonos4	Info	MySSDP.StartSSDPDiscovery, waiting for 9 seconds while discovering UPnP Devices ..... 
+1/21/2026 8:00:50 AM	Sonos4	Info	MySSDP.StartEventListener started listening on interface = 192.168.3.139 and port = 49767
+1/21/2026 8:00:50 AM	HomeSeer	Info	Plugin HSBuddy with instance HSBuddy has connected. IP:127.0.0.1:49761
+1/21/2026 8:00:49 AM	HomeSeer	Plug-In	Finished initializing plug-in Sonos4
+1/21/2026 8:00:49 AM	HomeSeer	Starting Plug-In	Sonos4 loaded in 1048 milliseconds
+1/21/2026 8:00:49 AM	HomeSeer	Starting Plug-In	Plugin Sonos4 started successfully in 570 milliseconds
+1/21/2026 8:00:49 AM	Sonos4	Info	Initialize - Done
+1/21/2026 8:00:49 AM	Sonos4	Info	Sonos Plugin Initialized
+1/21/2026 8:00:49 AM	Sonos4	Info	CheckFirewallStatus ---- Action: Allow
+1/21/2026 8:00:49 AM	Sonos4	Info	CheckFirewallStatus found Rule Name: Sonos4 for HomeSeer, Description = Allow HomeSeer pluging acces, App Name = C:\Program Files (x86)\HomeSeer HS4\HSPI_Sonos4.exe, Service Name =  and Enabled = True
+1/21/2026 8:00:49 AM	Sonos4	Info	CheckFirewallStatus ---- Action: Allow
+1/21/2026 8:00:49 AM	Sonos4	Info	CheckFirewallStatus found Rule Name: Sonos4 for HomeSeer, Description = Allow HomeSeer pluging acces, App Name = C:\Program Files (x86)\HomeSeer HS4\HSPI_Sonos4.exe, Service Name =  and Enabled = True
+1/21/2026 8:00:48 AM	Sonos4	Info	InitPlugIn retrieved from HomeSeer Ethernet Interface = 192.168.3.139 and Port = 80
+1/21/2026 8:00:48 AM	HomeSeer	Starting Plug-In	Initializing plugin Sonos4 ...
+1/21/2026 8:00:48 AM	HomeSeer	Info	Plugin Sonos4 with instance Sonos4 has connected. IP:127.0.0.1:49699
+1/21/2026 8:00:48 AM	HomeSeer	Plug-In	Finished initializing plug-in SmartThings
+1/21/2026 8:00:48 AM	HomeSeer	Starting Plug-In	SmartThings loaded in 628 milliseconds
+1/21/2026 8:00:48 AM	HomeSeer	Starting Plug-In	Plugin SmartThings started successfully in 394 milliseconds
+1/21/2026 8:00:48 AM	SmartThings	Info	SmartThings version 4.0.19.0
+1/21/2026 8:00:47 AM	HomeSeer	Starting Plug-In	Initializing plugin SmartThings ...
+1/21/2026 8:00:47 AM	HomeSeer	Info	Plugin SmartThings with instance SmartThings has connected. IP:127.0.0.1:49688
+1/21/2026 8:00:47 AM	HomeSeer	Plug-In	Finished initializing plug-in Ring
+1/21/2026 8:00:47 AM	HomeSeer	Starting Plug-In	Ring loaded in 577 milliseconds
+1/21/2026 8:00:47 AM	HomeSeer	Starting Plug-In	Plugin Ring started successfully in 208 milliseconds
+1/21/2026 8:00:47 AM	Ring	Info	Initialize - Done
+1/21/2026 8:00:47 AM	Ring	Info	Plugin Initialized
+1/21/2026 8:00:47 AM	Ring	Info	CheckFirewallStatus ---- Action: Allow
+1/21/2026 8:00:47 AM	Ring	Info	CheckFirewallStatus found Rule Name: RingNode for HomeSeer, Description = Allow HomeSeer pluging acces, App Name = C:\Program Files (x86)\HomeSeer HS4\bin\Ring\RingNode-win.exe, Service Name =  and Enabled = True
+1/21/2026 8:00:47 AM	Ring	Info	CheckFirewallStatus ---- Action: Allow
+1/21/2026 8:00:47 AM	Ring	Info	CheckFirewallStatus found Rule Name: RingNode for HomeSeer, Description = Allow HomeSeer pluging acces, App Name = C:\Program Files (x86)\HomeSeer HS4\bin\Ring\RingNode-win.exe, Service Name =  and Enabled = True
+1/21/2026 8:00:47 AM	Ring	Info	CheckLocalIPv4Address found IP Address = 192.168.3.139 equal to HS IP address so Plugin is running local
+1/21/2026 8:00:47 AM	Ring	Info	CheckLocalIPv4Address found IP Address = 192.168.3.139 with AddressFamily = InterNetwork
+1/21/2026 8:00:47 AM	Ring	Info	CheckLocalIPv4Address found IP Address = fe80::f0df:3422:fcfc:eae7%23 with AddressFamily = InterNetworkV6
+1/21/2026 8:00:47 AM	Ring	Info	CheckLocalIPv4Address found IP Host = HT-PRO-G1v2
+1/21/2026 8:00:47 AM	Ring	Info	InitPlugIn retrieved from HomeSeer Ethernet Interface = 192.168.3.139 and Port = 80
+1/21/2026 8:00:47 AM	Ring	Info	InitPlugIn found plugin version = 1.0.6.7
+1/21/2026 8:00:47 AM	Ring	Info	InitPlugIn found this plugin running on Linux = False
+1/21/2026 8:00:47 AM	Ring	Info	InitPlugIn called and running on OS = Win32NT
+1/21/2026 8:00:47 AM	Ring	Info	InitPlugIn found HS running on Linux = False
+1/21/2026 8:00:47 AM	Ring	Info	InitPlugIn found CurrentAppPath = C:\Program Files (x86)\HomeSeer HS4
+1/21/2026 8:00:47 AM	Ring	Info	InitPlugIn called - Starting
+1/21/2026 8:00:47 AM	Ring	Info	Initialize called
+1/21/2026 8:00:47 AM	HomeSeer	Starting Plug-In	Initializing plugin Ring ...
+1/21/2026 8:00:47 AM	HomeSeer	Info	Plugin Ring with instance Ring has connected. IP:127.0.0.1:49682
+1/21/2026 8:00:47 AM	HomeSeer	Plug-In	Finished initializing plug-in BLDenon
+1/21/2026 8:00:47 AM	HomeSeer	Starting Plug-In	BLDenon loaded in 339 milliseconds
+1/21/2026 8:00:47 AM	HomeSeer	Starting Plug-In	Plugin BLDenon started successfully in 81 milliseconds
+1/21/2026 8:00:47 AM	BLDenon	Info	BLDenon plugin has been initialized
+1/21/2026 8:00:47 AM	BLDenon	Info	No receivers have been assigned to BLDenon!
+1/21/2026 8:00:46 AM	BLDenon	Info	Loaded configuration successfully
+1/21/2026 8:00:46 AM	BLDenon	Info	BLDenon version is: 4.0.10.0
+1/21/2026 8:00:46 AM	BLDenon	Info	Initializing BLDenon...
+1/21/2026 8:00:46 AM	HomeSeer	Starting Plug-In	Initializing plugin BLDenon ...
+1/21/2026 8:00:46 AM	HomeSeer	Info	Plugin BLDenon with instance BLDenon has connected. IP:127.0.0.1:49678
+1/21/2026 8:00:46 AM	HomeSeer	Startup	Initializing Plug-Ins
+1/21/2026 8:00:46 AM	HomeSeer	Plug-In	Found plug-in: Z-Wave, version: 4.1.6.0
+1/21/2026 8:00:46 AM	HomeSeer	Plug-In	Found plug-in: Sonos4, version: 4.0.1.45
+1/21/2026 8:00:46 AM	HomeSeer	Plug-In	Found plug-in: SmartThings, version: 4.0.19.0
+1/21/2026 8:00:46 AM	HomeSeer	Plug-In	Found plug-in: Honeywell WiFi Thermostat, version: 4.3.2.2
+1/21/2026 8:00:46 AM	HomeSeer	Plug-In	Found plug-in: rnbHydra, version: 4.0.4.1
+1/21/2026 8:00:46 AM	HomeSeer	Plug-In	Found plug-in: Ring, version: 1.0.6.7
+1/21/2026 8:00:46 AM	HomeSeer	Plug-In	Found plug-in: PowerView, version: 1.0.0.0
+1/21/2026 8:00:46 AM	HomeSeer	Plug-In	Found plug-in: HSBuddy, version: 4.53.825.4
+1/21/2026 8:00:46 AM	HomeSeer	Plug-In	Found plug-in: BLDenon, version: 4.0.10.0
+1/21/2026 8:00:46 AM	HomeSeer	Startup	Checking for available plug-ins
+1/21/2026 8:00:46 AM	HomeSeer	Info	Remote plug-in API interface started on port 10400
+1/21/2026 8:00:46 AM	HomeSeer	Startup	Starting Find service...
+1/21/2026 8:00:46 AM	HomeSeer	Startup	Updater services starting...
+1/21/2026 8:00:45 AM	HomeSeer	Database	Opening (Mode=Read/Write) up HomeSeer Energy database C:\Program Files (x86)\HomeSeer HS4\Data\Energy\Energy.hsd
+1/21/2026 8:00:45 AM	HomeSeer	Speech	Listening for remote speaker connections on port 10401
+1/21/2026 8:00:45 AM	HomeSeer	Startup	Initializing Speaker Client Interface
+1/21/2026 8:00:45 AM	HomeSeer	Startup	Start automation engine...
+1/21/2026 8:00:45 AM	HomeSeer	Web Server	Web Server started on port 80
+1/21/2026 8:00:45 AM	HomeSeer	Web Server	Local IP address is: 127.0.0.1
+1/21/2026 8:00:45 AM	HomeSeer	Startup	This version of HomeSeer is registered as a HS4PRO version.
+1/21/2026 8:00:45 AM	HomeSeer	Startup	Creating Speaker Client Interface Object...
+1/21/2026 8:00:45 AM	HomeSeer	Startup	HomeSeer version is: 4.2.22.4
+1/21/2026 8:00:45 AM	HomeSeer	Info	Loaded 0 Timers.
+1/21/2026 8:00:45 AM	HomeSeer	Info	Loaded 0 Counters.
+1/21/2026 8:00:45 AM	HomeSeer	Info	Loaded 9 Events.
+1/21/2026 8:00:45 AM	HomeSeer	Info	Loaded 693 Devices.
+1/21/2026 8:00:44 AM	HomeSeer	Info	Loading configuration: C:\Program Files (x86)\HomeSeer HS4\Data\HS4Data.json
+1/21/2026 8:00:44 AM	HomeSeer	Startup	Local voice recognition class started.
+1/21/2026 8:00:44 AM	HomeSeer	Startup	Plug-In Interface class started.
+1/21/2026 8:00:44 AM	HomeSeer	Startup	E-Mail RECEIVE class started.
+1/21/2026 8:00:44 AM	HomeSeer	Startup	E-Mail SEND class started.
+1/21/2026 8:00:44 AM	HomeSeer	Startup	Web server class started.
+1/21/2026 8:00:44 AM	HomeSeer	Startup	Application interface class started.
+1/21/2026 8:00:44 AM	HomeSeer	Startup	COM port classes started.
+1/21/2026 8:00:44 AM	HomeSeer	Startup	Creating Class Objects...
+1/21/2026 8:00:44 AM	HomeSeer	startup	
+1/21/2026 8:00:44 AM	HomeSeer	startup	********************************************************************************
+1/21/2026 8:00:44 AM	HomeSeer	startup	              HomeSeerVersion 4.2.22.4 Edition: HS4 Pro StartingNow
+1/21/2026 8:00:44 AM	HomeSeer	startup	********************************************************************************
+1/21/2026 8:00:44 AM	HomeSeer	startup	
+1/21/2026 8:00:43 AM	HomeSeer	Startup	Settings Loaded.
+1/21/2026 8:00:43 AM	HomeSeer	Startup	Loading Settings

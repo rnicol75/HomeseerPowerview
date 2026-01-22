@@ -1,0 +1,7 @@
+Sub Main()  
+      
+	' Add commands to this script, but since the
+	' system is shutting down, they must complete quickly.
+	
+End Sub
+ 
