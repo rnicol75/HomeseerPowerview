@@ -3,19 +3,43 @@
 
 param(
     [string]$RemoteHost = "192.168.3.139",
-    # You can change this to C:\ProgramData\Homeseer\Plugins if that's what exists
-    [string]$RemotePluginsPath = "C:\ProgramData\HomeSeer\Plugins",
+    # Default to HomeSeer HS4 installation root (no Plugins subfolder)
+    [string]$RemotePluginsPath = "C:\Program Files (x86)\HomeSeer HS4",
     [string]$LocalBuildDir = "c:\Users\Ron.Nicol\OneDrive - ENS\Thermostats\HSPI_PowerView\bin\Release"
 )
 
-# Plugin files to deploy
-$pluginFiles = @(
-    'HSPI_PowerView.exe',
-    'PluginSdk.dll',
-    'Newtonsoft.Json.dll',
-    'HSCF.dll',
-    'HSPI_PowerView.exe.config'
-)
+# Determine plugin binary type (DLL vs EXE)
+$dllPath = Join-Path $LocalBuildDir 'HSPI_PowerView.dll'
+$exePath = Join-Path $LocalBuildDir 'HSPI_PowerView.exe'
+$isDll = Test-Path $dllPath
+$isExe = Test-Path $exePath
+
+if (-not $isDll -and -not $isExe) {
+    Write-Host "[FAIL] Neither HSPI_PowerView.dll nor HSPI_PowerView.exe found in $LocalBuildDir" -ForegroundColor Red
+    Write-Host "  Build the project first: MSBuild.exe .\\HSPI_PowerView.csproj /t:Build /p:Configuration=Release" -ForegroundColor Yellow
+    exit 1
+}
+
+# Plugin files to deploy based on build output
+if ($isDll) {
+    $pluginFiles = @(
+        'HSPI_PowerView.dll',
+        'HSPI_PowerView.dll.config',
+        'PluginSdk.dll',
+        'Newtonsoft.Json.dll',
+        'HSCF.dll',
+        'PowerView.ini'
+    )
+} else {
+    $pluginFiles = @(
+        'HSPI_PowerView.exe',
+        'HSPI_PowerView.exe.config',
+        'PluginSdk.dll',
+        'Newtonsoft.Json.dll',
+        'HSCF.dll',
+        'PowerView.ini'
+    )
+}
 
 Write-Host "PowerView Plugin Deployment Script"
 Write-Host "===================================" -ForegroundColor Green

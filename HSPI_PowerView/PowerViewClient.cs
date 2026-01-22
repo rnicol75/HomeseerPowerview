@@ -142,17 +142,35 @@ namespace HSPI_PowerView
             var response = await _httpClient.GetStringAsync(url);
             var data = JsonConvert.DeserializeObject<dynamic>(response);
             
+            int batteryStatus = data["batteryStatus"] != null ? (int)data["batteryStatus"] : 0;
+            int batteryStrength = 0;
+            
+            // Gen3 API returns batteryStatus (1-4 code), convert to percentage estimate
+            // batteryStatus: 1=Low, 2=Medium, 3=High, 4=Plugged In
+            if (batteryStatus == 4) batteryStrength = 100; // Plugged in
+            else if (batteryStatus == 3) batteryStrength = 75; // High
+            else if (batteryStatus == 2) batteryStrength = 50; // Medium
+            else if (batteryStatus == 1) batteryStrength = 25; // Low
+            
+            _logger?.Invoke($"Shade {shadeId}: batteryStatus={batteryStatus}, batteryStrength={batteryStrength}");
+            
+            // Convert signal strength from dBm (-100 to -30) to percentage (0-100)
+            int signalStrengthRaw = data["signalStrength"] != null ? (int)data["signalStrength"] : -100;
+            int signalStrengthPercent = Math.Max(0, Math.Min(100, (signalStrengthRaw + 100) * 100 / 70));
+            
+            _logger?.Invoke($"Shade {shadeId}: signalStrengthRaw={signalStrengthRaw} dBm, signalStrengthPercent={signalStrengthPercent}%");
+            
             var shade = new PowerViewShade
             {
                 Id = shadeId,
                 Name = data["ptName"] ?? data["name"] ?? $"Shade {shadeId}",
                 Type = data["type"] != null ? (int)data["type"] : 0,
-                BatteryStatus = data["batteryStatus"] != null ? (int)data["batteryStatus"] : 0,
-                BatteryStrength = data["batteryStrength"] != null ? (int)data["batteryStrength"] : 0,
-                SignalStrength = data["signalStrength"] != null ? (int)data["signalStrength"] : 0
+                BatteryStatus = batteryStatus,
+                BatteryStrength = batteryStrength,
+                SignalStrength = signalStrengthPercent
             };
             
-            // Extract position (0.0-1.0 decimal, convert to 0-65535 range)
+            // Gen3 position is already 0.0-1.0 decimal, convert to 0-65535 range
             if (data["positions"]?["primary"] != null)
             {
                 decimal posDecimal = data["positions"]["primary"];

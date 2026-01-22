@@ -885,7 +885,7 @@ namespace HSPI_PowerView
                     if (existingDevice == null)
                     {
                         HomeSeerSystem.WriteLog(ELogType.Info, $"Creating new shade device for {shade.Id}", Name);
-                        CreateShadeDevice(shade, targetHubIp);
+                        await CreateShadeDevice(shade, targetHubIp);
                     }
                     else
                     {
@@ -1094,7 +1094,7 @@ namespace HSPI_PowerView
             return null;
         }
 
-        private void CreateShadeDevice(PowerViewShade shade, string hubIp)
+        private async Task CreateShadeDevice(PowerViewShade shade, string hubIp)
         {
             try
             {
@@ -1126,6 +1126,12 @@ namespace HSPI_PowerView
                     .WithLocation("PowerView")
                     .WithLocation2("Shades");
                 df.WithFeature(batteryFeature);
+
+                // 4) Signal strength status feature (0-100%)
+                var signalFeature = FeatureFactory.CreateGenericBinaryControl(Id, "Signal", "100%", "0%", 100, 0)
+                    .WithLocation("PowerView")
+                    .WithLocation2("Shades");
+                df.WithFeature(signalFeature);
 
                 // Get the NewDeviceData
                 var deviceData = df.PrepareForHs();
@@ -1166,6 +1172,9 @@ namespace HSPI_PowerView
                     HomeSeerSystem.WriteLog(ELogType.Info, $"Stored ShadeId={shade.Id}, HubIp={hubIp} in feature PlugExtraData for {child.Name} (ref {childRef})", Name);
                 }
 
+                // Link scenes to this shade (Open/Close/Privacy)
+                await LinkScenesToShade(devRef, shade.Id, hubIp);
+                
                 // Persist mapping for future runs to prevent duplicates
                 HomeSeerSystem.SaveINISetting("Devices", $"{hubIp}:{shade.Id}", devRef.ToString(), Id + ".ini");
                 HomeSeerSystem.WriteLog(ELogType.Info, $"Saved INI mapping: {hubIp}:{shade.Id} = {devRef}", Name);
@@ -1189,17 +1198,26 @@ namespace HSPI_PowerView
                         }
                     }
                 }
-                if (shade.BatteryStrength > 0)
+                // Set initial battery and signal strength in one pass
+                if (shade.BatteryStrength > 0 || shade.SignalStrength > 0)
                 {
                     var created = HomeSeerSystem.GetDeviceByRef(devRef);
                     var childRefs2 = created?.AssociatedDevices ?? new HashSet<int>();
+                    HomeSeerSystem.WriteLog(ELogType.Info, $"Shade {shade.Id}: Setting initial battery={shade.BatteryStrength}%, signal={shade.SignalStrength}% on {childRefs2.Count} child devices", Name);
                     foreach (var childRef in childRefs2)
                     {
                         var child = HomeSeerSystem.GetDeviceByRef(childRef);
                         if (child == null) continue;
+                        HomeSeerSystem.WriteLog(ELogType.Info, $"Shade {shade.Id}: Checking child '{child.Name}' (ref {childRef})", Name);
                         if (string.Equals(child.Name, "Battery", StringComparison.OrdinalIgnoreCase))
                         {
-                            HomeSeerSystem.UpdatePropertyByRef(childRef, EProperty.Value, shade.BatteryStrength);
+                            HomeSeerSystem.UpdatePropertyByRef(childRef, EProperty.Value, (double)shade.BatteryStrength);
+                            HomeSeerSystem.WriteLog(ELogType.Info, $"Shade {shade.Id}: Updated Battery child to {shade.BatteryStrength}%", Name);
+                        }
+                        else if (string.Equals(child.Name, "Signal", StringComparison.OrdinalIgnoreCase))
+                        {
+                            HomeSeerSystem.UpdatePropertyByRef(childRef, EProperty.Value, (double)shade.SignalStrength);
+                            HomeSeerSystem.WriteLog(ELogType.Info, $"Shade {shade.Id}: Updated Signal child to {shade.SignalStrength}%", Name);
                         }
                     }
                 }
@@ -1216,43 +1234,46 @@ namespace HSPI_PowerView
         {
             try
             {
-                // Update Position value and child feature if it exists
+                // Calculate position percentage
+                double? percentage = null;
                 if (shade.Positions?.Position1 != null)
                 {
-                    var percentage = (shade.Positions.Position1.Value / 65535.0) * 100;
+                    percentage = (shade.Positions.Position1.Value / 65535.0) * 100;
                     var oldValue = device.Value;
-                    HomeSeerSystem.UpdatePropertyByRef(device.Ref, EProperty.Value, percentage);
+                    HomeSeerSystem.UpdatePropertyByRef(device.Ref, EProperty.Value, percentage.Value);
                     
                     // Log if position changed
-                    if (Math.Abs(oldValue - percentage) > 0.5)
+                    if (Math.Abs(oldValue - percentage.Value) > 0.5)
                     {
-                        HomeSeerSystem.WriteLog(ELogType.Info, $"Shade {shade.Id}: position {oldValue:F1}% → {percentage:F1}%", Name);
-                    }
-
-                    // Update Position child feature if it exists
-                    var childRefs = device.AssociatedDevices ?? new HashSet<int>();
-                    foreach (var childRef in childRefs)
-                    {
-                        var child = HomeSeerSystem.GetDeviceByRef(childRef);
-                        if (child != null && string.Equals(child.Name, "Position", StringComparison.OrdinalIgnoreCase))
-                        {
-                            HomeSeerSystem.UpdatePropertyByRef(childRef, EProperty.Value, percentage);
-                            HomeSeerSystem.UpdatePropertyByRef(childRef, EProperty.StatusString, $"{percentage:F0}%");
-                            break;
-                        }
+                        HomeSeerSystem.WriteLog(ELogType.Info, $"Shade {shade.Id}: position {oldValue:F1}% → {percentage.Value:F1}%", Name);
                     }
                 }
 
-                // Update Battery child feature if it exists
-                var batteryRefs = device.AssociatedDevices ?? new HashSet<int>();
-                foreach (var childRef in batteryRefs)
+                // Single pass through child devices to update all properties (position, battery, signal)
+                // All data comes from one API call, so update efficiently in one loop
+                var childRefs = device.AssociatedDevices ?? new HashSet<int>();
+                foreach (var childRef in childRefs)
                 {
                     var child = HomeSeerSystem.GetDeviceByRef(childRef);
-                    if (child != null && string.Equals(child.Name, "Battery", StringComparison.OrdinalIgnoreCase))
+                    if (child == null) continue;
+
+                    // Update position child
+                    if (percentage.HasValue && string.Equals(child.Name, "Position", StringComparison.OrdinalIgnoreCase))
                     {
-                        HomeSeerSystem.UpdatePropertyByRef(childRef, EProperty.Value, shade.BatteryStrength);
+                        HomeSeerSystem.UpdatePropertyByRef(childRef, EProperty.Value, percentage.Value);
+                        HomeSeerSystem.UpdatePropertyByRef(childRef, EProperty.StatusString, $"{percentage.Value:F0}%");
+                    }
+                    // Update battery child (cast int to double for HomeSeer)
+                    else if (string.Equals(child.Name, "Battery", StringComparison.OrdinalIgnoreCase))
+                    {
+                        HomeSeerSystem.UpdatePropertyByRef(childRef, EProperty.Value, (double)shade.BatteryStrength);
                         HomeSeerSystem.UpdatePropertyByRef(childRef, EProperty.StatusString, $"{shade.BatteryStrength:F0}%");
-                        break;
+                    }
+                    // Update signal strength child (cast int to double for HomeSeer, display as %)
+                    else if (string.Equals(child.Name, "Signal", StringComparison.OrdinalIgnoreCase))
+                    {
+                        HomeSeerSystem.UpdatePropertyByRef(childRef, EProperty.Value, (double)shade.SignalStrength);
+                        HomeSeerSystem.UpdatePropertyByRef(childRef, EProperty.StatusString, $"{shade.SignalStrength:F0}%");
                     }
                 }
 
@@ -1803,6 +1824,69 @@ namespace HSPI_PowerView
             {
                 HomeSeerSystem.WriteLog(ELogType.Error, $"Error syncing scenes on hub {hubIp}: {ex.Message}", Name);
                 HomeSeerSystem.WriteLog(ELogType.Error, $"StackTrace: {ex.StackTrace}", Name);
+            }
+        }
+
+        private async Task LinkScenesToShade(int shadeDeviceRef, int shadeId, string hubIp)
+        {
+            try
+            {
+                var client = GetClientByHubIp(hubIp);
+                if (client == null)
+                {
+                    HomeSeerSystem.WriteLog(ELogType.Warning, $"Cannot link scenes to shade {shadeId}: no client for hub {hubIp}", Name);
+                    return;
+                }
+
+                var scenes = await client.GetScenesAsync();
+                if (scenes == null || scenes.Count == 0)
+                    return;
+
+                // Find scenes that control this shade
+                int? openSceneId = null;
+                int? closeSceneId = null;
+                int? privacySceneId = null;
+
+                foreach (var scene in scenes)
+                {
+                    // Check if this scene controls this shade
+                    if (scene.ShadeIds != null && scene.ShadeIds.Contains(shadeId))
+                    {
+                        // Identify scene type by NetworkNumber: 45057=Open, 45058=Close, 45060=Privacy
+                        if (scene.NetworkNumber == 45057)
+                            openSceneId = scene.Id;
+                        else if (scene.NetworkNumber == 45058)
+                            closeSceneId = scene.Id;
+                        else if (scene.NetworkNumber == 45060)
+                            privacySceneId = scene.Id;
+                    }
+                }
+
+                // Store scene IDs in PlugExtraData
+                var ped = HomeSeerSystem.GetPropertyByRef(shadeDeviceRef, EProperty.PlugExtraData) as PlugExtraData;
+                if (ped != null)
+                {
+                    if (openSceneId.HasValue)
+                    {
+                        ped.AddNamed("SceneOpenId", openSceneId.Value.ToString());
+                        HomeSeerSystem.WriteLog(ELogType.Info, $"Linked Open scene {openSceneId.Value} to shade {shadeId}", Name);
+                    }
+                    if (closeSceneId.HasValue)
+                    {
+                        ped.AddNamed("SceneCloseId", closeSceneId.Value.ToString());
+                        HomeSeerSystem.WriteLog(ELogType.Info, $"Linked Close scene {closeSceneId.Value} to shade {shadeId}", Name);
+                    }
+                    if (privacySceneId.HasValue)
+                    {
+                        ped.AddNamed("ScenePrivacyId", privacySceneId.Value.ToString());
+                        HomeSeerSystem.WriteLog(ELogType.Info, $"Linked Privacy scene {privacySceneId.Value} to shade {shadeId}", Name);
+                    }
+                    HomeSeerSystem.UpdatePropertyByRef(shadeDeviceRef, EProperty.PlugExtraData, ped);
+                }
+            }
+            catch (Exception ex)
+            {
+                HomeSeerSystem.WriteLog(ELogType.Error, $"Error linking scenes to shade {shadeId}: {ex.Message}", Name);
             }
         }
 
