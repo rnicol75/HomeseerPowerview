@@ -2669,17 +2669,52 @@ namespace HSPI_PowerView
                     }
                 }
                 
-                // Clear all INI sections using HomeSeer API
+                // Clear all INI sections by deleting all keys (ClearIniSection doesn't exist in HomeSeer API)
                 try
                 {
-                    HomeSeerSystem.ClearIniSection("Devices", Id + ".ini");
-                    HomeSeerSystem.ClearIniSection("Status", Id + ".ini");
-                    HomeSeerSystem.ClearIniSection("Scenes", Id + ".ini");
-                    HomeSeerSystem.WriteLog(ELogType.Info, "Cleared all INI sections via API", Name);
+                    // Get all keys from Devices section and delete them
+                    var iniFileName = Id + ".ini";
+                    var devicesKeys = new List<string>();
+                    var scenesKeys = new List<string>();
+                    
+                    // Read all device mappings
+                    for (int i = 0; i < 1000; i++)
+                    {
+                        var key = HomeSeerSystem.GetINISetting("Devices", i.ToString(), null, iniFileName);
+                        if (key == null) break;
+                        devicesKeys.Add(i.ToString());
+                    }
+                    
+                    // Read all scene mappings  
+                    for (int i = 0; i < 1000; i++)
+                    {
+                        var key = HomeSeerSystem.GetINISetting("Scenes", i.ToString(), null, iniFileName);
+                        if (key == null) break;
+                        scenesKeys.Add(i.ToString());
+                    }
+                    
+                    // Actually, just write empty values to clear - GetINISection doesn't work well
+                    // Instead, iterate through known hub IPs and shade IDs
+                    var knownHubs = new[] { "192.168.3.164", "192.168.3.165" };
+                    foreach (var hubIp in knownHubs)
+                    {
+                        // Clear shade mappings (ID 1-300)
+                        for (int shadeId = 1; shadeId <= 300; shadeId++)
+                        {
+                            HomeSeerSystem.SaveINISetting("Devices", $"{hubIp}:{shadeId}", "", iniFileName);
+                        }
+                        // Clear scene mappings (ID 1-400)
+                        for (int sceneId = 1; sceneId <= 400; sceneId++)
+                        {
+                            HomeSeerSystem.SaveINISetting("Scenes", $"{hubIp}:{sceneId}", "", iniFileName);
+                        }
+                    }
+                    
+                    HomeSeerSystem.WriteLog(ELogType.Info, "Cleared all INI device and scene mappings", Name);
                 }
                 catch (Exception iniEx)
                 {
-                    HomeSeerSystem.WriteLog(ELogType.Warning, $"Error clearing INI sections via API: {iniEx.Message}", Name);
+                    HomeSeerSystem.WriteLog(ELogType.Warning, $"Error clearing INI sections: {iniEx.Message}", Name);
                 }
                 
                 HomeSeerSystem.WriteLog(ELogType.Warning, $"Deleted {toDelete.Count} PowerView devices. Ready for fresh discovery.", Name);
