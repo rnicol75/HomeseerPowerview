@@ -56,81 +56,108 @@ namespace HSPI_PowerView
         /// </summary>
         public async Task<List<PowerViewShade>> GetShadesAsync()
         {
-            var url = $"{GetBaseUrl()}/home";
-            _logger?.Invoke($"PowerView: Calling GET {url}");
-            var response = await _httpClient.GetStringAsync(url);
-            var homeData = JsonConvert.DeserializeObject<dynamic>(response);
-            
-            var shades = new List<PowerViewShade>();
-            var shadeIdsSeen = new HashSet<int>(); // Track seen shade IDs to prevent duplicates
-            
-            if (homeData?["gateways"] != null)
+            try
             {
-                foreach (var gateway in homeData["gateways"])
+                var url = $"{GetBaseUrl()}/home";
+                _logger?.Invoke($"PowerView: Calling GET {url}");
+                
+                var response = await _httpClient.GetAsync(url);
+                if (!response.IsSuccessStatusCode)
                 {
-                    // Treat gateway as JObject for robust extraction
-                    var gatewayObj = gateway as Newtonsoft.Json.Linq.JObject;
-                    // Parse shade IDs from gateway's shd_Ids - can be string or array
-                    var shadeIdsObj = gatewayObj?["shd_Ids"] ?? gateway["shd_Ids"];
-                    List<string> ids = new List<string>();
-                    
-                    if (shadeIdsObj is string shadeIdsStr)
+                    // Check if this is a secondary hub in multi-gateway setup
+                    if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
                     {
-                        // Space-separated string format
-                        if (!string.IsNullOrWhiteSpace(shadeIdsStr))
+                        var errorContent = await response.Content.ReadAsStringAsync();
+                        if (errorContent.Contains("Multi-Gateway environment") || errorContent.Contains("not the primary gateway"))
                         {
-                            ids.AddRange(shadeIdsStr.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries));
-                        }
-                    }
-                    else if (shadeIdsObj is Newtonsoft.Json.Linq.JArray jarray)
-                    {
-                        // Array format
-                        foreach (var item in jarray)
-                        {
-                            ids.Add(item.ToString());
+                            _logger?.Invoke($"This hub ({_hubIpAddress}) is a secondary hub in a multi-gateway setup. Shade discovery is only available on the primary hub. Skipping shade discovery.");
+                            return new List<PowerViewShade>();
                         }
                     }
                     
-                    // Fetch details for each shade
-                    foreach (var id in ids)
+                    _logger?.Invoke($"Failed to get shades: {response.StatusCode}");
+                    return new List<PowerViewShade>();
+                }
+                
+                var content = await response.Content.ReadAsStringAsync();
+                var homeData = JsonConvert.DeserializeObject<dynamic>(content);
+                
+                var shades = new List<PowerViewShade>();
+                var shadeIdsSeen = new HashSet<int>(); // Track seen shade IDs to prevent duplicates
+                
+                if (homeData?["gateways"] != null)
+                {
+                    foreach (var gateway in homeData["gateways"])
                     {
-                        if (int.TryParse(id, out int shadeId))
+                        // Treat gateway as JObject for robust extraction
+                        var gatewayObj = gateway as Newtonsoft.Json.Linq.JObject;
+                        // Parse shade IDs from gateway's shd_Ids - can be string or array
+                        var shadeIdsObj = gatewayObj?["shd_Ids"] ?? gateway["shd_Ids"];
+                        List<string> ids = new List<string>();
+                        
+                        if (shadeIdsObj is string shadeIdsStr)
                         {
-                            // Skip if we've already seen this shade ID
-                            if (shadeIdsSeen.Contains(shadeId))
+                            // Space-separated string format
+                            if (!string.IsNullOrWhiteSpace(shadeIdsStr))
                             {
-                                _logger?.Invoke($"Skipping duplicate shade {shadeId} (already discovered from another gateway)");
-                                continue;
+                                ids.AddRange(shadeIdsStr.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries));
                             }
-                            
-                            try
+                        }
+                        else if (shadeIdsObj is Newtonsoft.Json.Linq.JArray jarray)
+                        {
+                            // Array format
+                            foreach (var item in jarray)
                             {
-                                var shadeDetail = await GetShadeDetailsAsync(shadeId);
-                                if (shadeDetail != null)
+                                ids.Add(item.ToString());
+                            }
+                        }
+                        
+                        // Fetch details for each shade
+                        foreach (var id in ids)
+                        {
+                            if (int.TryParse(id, out int shadeId))
+                            {
+                                // Skip if we've already seen this shade ID
+                                if (shadeIdsSeen.Contains(shadeId))
                                 {
-                                    // Assign owning gateway IP
-                                    string gatewayIp = gatewayObj?.Value<string>("ip") ?? _hubIpAddress;
-                                    shadeDetail.GatewayIp = gatewayIp;
-                                    shades.Add(shadeDetail);
-                                    shadeIdsSeen.Add(shadeId);
-                                    _logger?.Invoke($"Added shade {shadeId} from gateway {gatewayIp}");
+                                    _logger?.Invoke($"Skipping duplicate shade {shadeId} (already discovered from another gateway)");
+                                    continue;
                                 }
-                            }
-                            catch (Exception ex)
-                            {
-                                _logger?.Invoke($"Failed to fetch shade {shadeId}: {ex.Message}");
+                                
+                                try
+                                {
+                                    var shadeDetail = await GetShadeDetailsAsync(shadeId);
+                                    if (shadeDetail != null)
+                                    {
+                                        // Assign owning gateway IP
+                                        string gatewayIp = gatewayObj?.Value<string>("ip") ?? _hubIpAddress;
+                                        shadeDetail.GatewayIp = gatewayIp;
+                                        shades.Add(shadeDetail);
+                                        shadeIdsSeen.Add(shadeId);
+                                        _logger?.Invoke($"Added shade {shadeId} from gateway {gatewayIp}");
+                                    }
+                                }
+                                catch (Exception ex)
+                                {
+                                    _logger?.Invoke($"Failed to fetch shade {shadeId}: {ex.Message}");
+                                }
                             }
                         }
                     }
                 }
+                
+                if (shadeIdsSeen.Count > 0)
+                {
+                    _logger?.Invoke($"GetShadesAsync returning {shades.Count} unique shades (deduplicated)");
+                }
+                
+                return shades;
             }
-            
-            if (shadeIdsSeen.Count > 0)
+            catch (Exception ex)
             {
-                _logger?.Invoke($"GetShadesAsync returning {shades.Count} unique shades (deduplicated)");
+                _logger?.Invoke($"Error getting shades: {ex.Message}");
+                return new List<PowerViewShade>();
             }
-            
-            return shades;
         }
 
         /// <summary>
@@ -142,42 +169,101 @@ namespace HSPI_PowerView
             var response = await _httpClient.GetStringAsync(url);
             var data = JsonConvert.DeserializeObject<dynamic>(response);
             
-            int batteryStatus = data["batteryStatus"] != null ? (int)data["batteryStatus"] : 0;
-            int batteryStrength = 0;
+            // Handle cases where data might be wrapped in a "shade" property
+            dynamic shadeData = data["shade"] ?? data;
             
-            // Gen3 API returns batteryStatus (1-4 code), convert to percentage estimate
-            // batteryStatus: 1=Low, 2=Medium, 3=High, 4=Plugged In
-            if (batteryStatus == 4) batteryStrength = 100; // Plugged in
-            else if (batteryStatus == 3) batteryStrength = 75; // High
-            else if (batteryStatus == 2) batteryStrength = 50; // Medium
-            else if (batteryStatus == 1) batteryStrength = 25; // Low
+            int batteryStatus = 0;
+            int batteryStrength = 0;
+            try
+            {
+                // Gen3 API returns batteryStatus (1-4 code), convert to percentage estimate
+                // batteryStatus: 1=Low, 2=Medium, 3=High, 4=Plugged In
+                if (shadeData["batteryStatus"] != null)
+                {
+                    batteryStatus = (int)shadeData["batteryStatus"];
+                    if (batteryStatus == 4) batteryStrength = 100; // Plugged in
+                    else if (batteryStatus == 3) batteryStrength = 75; // High
+                    else if (batteryStatus == 2) batteryStrength = 50; // Medium
+                    else if (batteryStatus == 1) batteryStrength = 25; // Low
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger?.Invoke($"Shade {shadeId}: Error parsing battery status: {ex.Message}");
+                batteryStrength = 0;
+            }
             
             _logger?.Invoke($"Shade {shadeId}: batteryStatus={batteryStatus}, batteryStrength={batteryStrength}");
             
             // Convert signal strength from dBm (-100 to -30) to percentage (0-100)
-            int signalStrengthRaw = data["signalStrength"] != null ? (int)data["signalStrength"] : -100;
-            int signalStrengthPercent = Math.Max(0, Math.Min(100, (signalStrengthRaw + 100) * 100 / 70));
+            int signalStrengthRaw = -100;
+            int signalStrengthPercent = 0;
+            try
+            {
+                if (shadeData["signalStrength"] != null)
+                {
+                    signalStrengthRaw = (int)shadeData["signalStrength"];
+                    signalStrengthPercent = Math.Max(0, Math.Min(100, (signalStrengthRaw + 100) * 100 / 70));
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger?.Invoke($"Shade {shadeId}: Error parsing signal strength: {ex.Message}");
+                signalStrengthPercent = 0;
+            }
             
             _logger?.Invoke($"Shade {shadeId}: signalStrengthRaw={signalStrengthRaw} dBm, signalStrengthPercent={signalStrengthPercent}%");
             
             var shade = new PowerViewShade
             {
                 Id = shadeId,
-                Name = data["ptName"] ?? data["name"] ?? $"Shade {shadeId}",
-                Type = data["type"] != null ? (int)data["type"] : 0,
+                Name = shadeData["ptName"] ?? shadeData["name"] ?? $"Shade {shadeId}",
+                Type = shadeData["type"] != null ? (int)shadeData["type"] : 0,
                 BatteryStatus = batteryStatus,
                 BatteryStrength = batteryStrength,
                 SignalStrength = signalStrengthPercent
             };
             
-            // Gen3 position is already 0.0-1.0 decimal, convert to 0-65535 range
-            if (data["positions"]?["primary"] != null)
+            // Parse position - try multiple possible locations in the response
+            try
             {
-                decimal posDecimal = data["positions"]["primary"];
-                shade.Positions = new PowerViewPosition
+                int? positionValue = null;
+                
+                // Try primary position (Gen3 API format: 0.0-1.0 decimal)
+                if (shadeData["positions"]?["primary"] != null)
                 {
-                    Position1 = (int)(posDecimal * 65535)
-                };
+                    decimal posDecimal = shadeData["positions"]["primary"];
+                    positionValue = (int)(posDecimal * 65535);
+                    _logger?.Invoke($"Shade {shadeId}: Found position via positions.primary: {posDecimal:F2} -> {positionValue}");
+                }
+                // Try position1 directly (alternative format)
+                else if (shadeData["position1"] != null)
+                {
+                    positionValue = (int)shadeData["position1"];
+                    _logger?.Invoke($"Shade {shadeId}: Found position via position1: {positionValue}");
+                }
+                // Try position directly (another alternative)
+                else if (shadeData["position"] != null)
+                {
+                    positionValue = (int)shadeData["position"];
+                    _logger?.Invoke($"Shade {shadeId}: Found position via position: {positionValue}");
+                }
+                else
+                {
+                    _logger?.Invoke($"Shade {shadeId}: No position data found in response");
+                }
+                
+                if (positionValue.HasValue)
+                {
+                    shade.Positions = new PowerViewPosition
+                    {
+                        Position1 = positionValue.Value
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger?.Invoke($"Shade {shadeId}: Error parsing position: {ex.Message}");
             }
             
             return shade;
@@ -313,6 +399,17 @@ namespace HSPI_PowerView
                 var response = await _httpClient.GetAsync(url);
                 if (!response.IsSuccessStatusCode)
                 {
+                    // Check if this is a secondary hub in multi-gateway setup
+                    if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
+                    {
+                        var errorContent = await response.Content.ReadAsStringAsync();
+                        if (errorContent.Contains("Multi-Gateway environment") || errorContent.Contains("not the primary gateway"))
+                        {
+                            _logger?.Invoke($"This hub ({_hubIpAddress}) is a secondary hub in a multi-gateway setup. Scene discovery is only available on the primary hub. Skipping scene sync.");
+                            return new List<PowerViewScene>();
+                        }
+                    }
+                    
                     _logger?.Invoke($"Failed to get scenes: {response.StatusCode}");
                     return new List<PowerViewScene>();
                 }
