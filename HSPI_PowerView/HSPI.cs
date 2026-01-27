@@ -32,6 +32,9 @@ namespace HSPI_PowerView
         private string _primaryHubIp;
         private bool _initialDiscoveryDone = false;
         private bool _discoveryInProgress = false;
+        
+        // Discovery cache: maps ShadeId to device ref for quick lookup during discovery
+        private readonly Dictionary<int, int> _discoveryCache = new Dictionary<int, int>();
 
         public override string Id { get; } = "PowerView";
         public override string Name { get; } = "PowerView";
@@ -85,114 +88,116 @@ namespace HSPI_PowerView
                 _primaryClient = _clients.FirstOrDefault();
                 _primaryHubIp = hubIps.FirstOrDefault();
 
-                // Run initial cleanup and discovery on first startup ONLY
-                // Do NOT re-run scene sync on subsequent HomeSeer restarts to preserve scene refIDs
-                if (_primaryClient != null && !_initialDiscoveryDone)
+                // Start polling immediately - no automatic discovery
+                // Users must manually trigger discovery from settings page
+                HomeSeerSystem.WriteLog(ELogType.Info, "Starting polling timers. Use Settings page to discover devices.", Name);
+                foreach (var client in _clients)
                 {
-                    // Use immediate execution with logging instead of Task.Run to ensure it completes
-                    HomeSeerSystem.WriteLog(ELogType.Info, "Queueing initial discovery for all hubs...", Name);
-                    _ = Task.Run(async () =>
-                    {
-                        await Task.Delay(100); // Brief delay to let plugin fully initialize
-                        _discoveryInProgress = true;
-                        
-                        try
-                        {
-                            HomeSeerSystem.WriteLog(ELogType.Info, "Starting initial discovery for all hubs", Name);
-                            
-                            if (_clients.Count == 0)
-                            {
-                                HomeSeerSystem.WriteLog(ELogType.Error, "CRITICAL: No clients configured, cannot proceed with discovery", Name);
-                                return;
-                            }
-                            
-                            // IMPORTANT: Only discover shades from primary hub - secondary hub doesn't return complete information
-                            if (_primaryClient != null)
-                            {
-                                HomeSeerSystem.WriteLog(ELogType.Info, $"Discovering shades from primary hub {_primaryHubIp}", Name);
-                                
-                                try
-                                {
-                                    // Discover shades first (creates status devices)
-                                    await DiscoverShadesAsync(_primaryClient, _primaryHubIp);
-                                    HomeSeerSystem.WriteLog(ELogType.Info, $"Shades discovered from primary hub {_primaryHubIp}", Name);
-                                    
-                                    // Clean up any duplicate shade devices immediately
-                                    await Task.Delay(500); // Brief delay
-                                    GlobalCleanupStatusDevices();
-                                }
-                                catch (Exception shadeEx)
-                                {
-                                    HomeSeerSystem.WriteLog(ELogType.Error, $"Shade discovery failed for primary hub: {shadeEx.Message}", Name);
-                                }
-                            }
-                            
-                            // Sync scenes from PRIMARY HUB ONLY - secondary hub doesn't have complete information
-                            if (_primaryClient != null)
-                            {
-                                HomeSeerSystem.WriteLog(ELogType.Info, $"Syncing scenes from primary hub {_primaryHubIp}", Name);
-                                
-                                try
-                                {
-                                    // Delete ALL scene devices before re-syncing to prevent duplicates
-                                    DeleteAllSceneDevicesForHub(_primaryHubIp);
-                                    
-                                    await SyncScenesAsync(_primaryClient, _primaryHubIp);
-                                    _lastSceneSync[_primaryHubIp] = DateTime.UtcNow;
-                                    HomeSeerSystem.WriteLog(ELogType.Info, $"Scenes synced from primary hub {_primaryHubIp}", Name);
-                                    
-                                    // Re-link scenes to existing shades
-                                    await RelinkScenesToExistingShades(_primaryHubIp);
-                                }
-                                catch (Exception sceneEx)
-                                {
-                                    HomeSeerSystem.WriteLog(ELogType.Error, $"Scene sync failed for primary hub: {sceneEx.Message}", Name);
-                                }
-                            }
-                            
-                            // Clean up duplicates AFTER discovery creates devices
-                            await Task.Delay(2000); // Give devices time to be created
-                            GlobalCleanupStatusDevices();
-                            
-                            _initialDiscoveryDone = true;
-                            _discoveryInProgress = false;
-                            HomeSeerSystem.WriteLog(ELogType.Info, "Initial discovery complete", Name);
-                        }
-                        catch (Exception ex)
-                        {
-                            HomeSeerSystem.WriteLog(ELogType.Error, $"CRITICAL: Error during initial discovery: {ex.Message}", Name);
-                            HomeSeerSystem.WriteLog(ELogType.Error, $"StackTrace: {ex.StackTrace}", Name);
-                            _discoveryInProgress = false;
-                        }
-                    }); // Remove ConfigureAwait to keep Task alive
-
-                    // Start polling AFTER initial discovery completes
-                    // This prevents polling from interfering with scene linking and causing task cancellations
-                    _ = Task.Run(async () =>
-                    {
-                        // Wait for discovery to complete
-                        int maxWaitSeconds = 600; // 10 minute max wait
-                        int elapsedSeconds = 0;
-                        while (_discoveryInProgress && elapsedSeconds < maxWaitSeconds)
-                        {
-                            await Task.Delay(1000);
-                            elapsedSeconds++;
-                        }
-                        
-                        if (_discoveryInProgress)
-                        {
-                            HomeSeerSystem.WriteLog(ELogType.Warning, "Discovery did not complete within 10 minutes, starting polling anyway", Name);
-                            _discoveryInProgress = false;
-                        }
-                        
-                        // Now start polling
-                        foreach (var client in _clients)
-                        {
-                            StartPollingForHub(client.HubIp, client);
-                        }
-                        HomeSeerSystem.WriteLog(ELogType.Info, $"Started polling for all {_clients.Count} hub(s). Use Settings page to re-discover devices if needed.", Name);
-                    });
+                    StartPollingForHub(client.HubIp, client);
                 }
+                HomeSeerSystem.WriteLog(ELogType.Info, $"Started polling for all {_clients.Count} hub(s).", Name);
+            }
+        }
+
+        /// <summary>
+        /// Manual discovery process - deletes all devices and recreates from scratch.
+        /// </summary>
+        private async Task PerformFullDiscovery()
+        {
+            if (_discoveryInProgress)
+            {
+                HomeSeerSystem.WriteLog(ELogType.Warning, "Discovery already in progress, skipping", Name);
+                return;
+            }
+            
+            _discoveryInProgress = true;
+            
+            try
+            {
+                HomeSeerSystem.WriteLog(ELogType.Info, "Manual device discovery started...", Name);
+                
+                if (_clients.Count == 0)
+                {
+                    HomeSeerSystem.WriteLog(ELogType.Error, "CRITICAL: No clients configured, cannot proceed with discovery", Name);
+                    return;
+                }
+                
+                // Delete ALL existing devices to start fresh
+                HomeSeerSystem.WriteLog(ELogType.Info, "Deleting ALL existing PowerView devices...", Name);
+                DeleteAllPowerViewDevices();
+                await Task.Delay(1000); // Wait for deletions
+                
+                // Initialize discovery cache
+                _discoveryCache.Clear();
+                HomeSeerSystem.WriteLog(ELogType.Info, "Discovery cache initialized", Name);
+                
+                // STEP 1: Create SCENES FIRST so they're available when shades are created
+                if (_primaryClient != null)
+                {
+                    HomeSeerSystem.WriteLog(ELogType.Info, $"Syncing scenes from primary hub {_primaryHubIp}...", Name);
+                    
+                    try
+                    {
+                        // Delete scene devices (in case of initial discovery)
+                        DeleteAllSceneDevicesForHub(_primaryHubIp);
+                        
+                        await SyncScenesAsync(_primaryClient, _primaryHubIp);
+                        _lastSceneSync[_primaryHubIp] = DateTime.UtcNow;
+                        HomeSeerSystem.WriteLog(ELogType.Info, $"Scenes synced from primary hub {_primaryHubIp}", Name);
+                    }
+                    catch (Exception sceneEx)
+                    {
+                        HomeSeerSystem.WriteLog(ELogType.Error, $"Scene sync failed: {sceneEx.Message}", Name);
+                        HomeSeerSystem.WriteLog(ELogType.Error, $"StackTrace: {sceneEx.StackTrace}", Name);
+                    }
+                }
+                
+                // STEP 2: Discover shades - scene IDs are now available for linking
+                if (_primaryClient != null)
+                {
+                    HomeSeerSystem.WriteLog(ELogType.Info, $"Discovering shades from primary hub {_primaryHubIp}...", Name);
+                    
+                    try
+                    {
+                        await DiscoverShadesAsync(_primaryClient, _primaryHubIp);
+                        HomeSeerSystem.WriteLog(ELogType.Info, $"Shade discovery API calls complete", Name);
+                        
+                        // Device creation happens synchronously - shades exist now
+                        
+                        // Clean up duplicates
+                        GlobalCleanupStatusDevices();
+                        
+                        // STEP 3: Link scenes to shades (shades are now verified to exist)
+                        HomeSeerSystem.WriteLog(ELogType.Info, "Linking scenes to shades...", Name);
+                        await RelinkScenesToExistingShades(_primaryHubIp);
+                        HomeSeerSystem.WriteLog(ELogType.Info, "Scene linking complete", Name);
+                    }
+                    catch (Exception shadeEx)
+                    {
+                        HomeSeerSystem.WriteLog(ELogType.Error, $"Shade discovery failed: {shadeEx.Message}", Name);
+                        HomeSeerSystem.WriteLog(ELogType.Error, $"StackTrace: {shadeEx.StackTrace}", Name);
+                    }
+                }
+                
+                // Final cleanup
+                await Task.Delay(1000);
+                GlobalCleanupStatusDevices();
+                
+                // Clear and validate discovery cache
+                HomeSeerSystem.WriteLog(ELogType.Info, $"Discovery cache contains {_discoveryCache.Count} shade mappings", Name);
+                _discoveryCache.Clear();
+                HomeSeerSystem.WriteLog(ELogType.Info, "Discovery cache cleared", Name);
+                
+                HomeSeerSystem.WriteLog(ELogType.Info, "Manual discovery complete", Name);
+            }
+            catch (Exception ex)
+            {
+                HomeSeerSystem.WriteLog(ELogType.Error, $"CRITICAL: Error during discovery: {ex.Message}", Name);
+                HomeSeerSystem.WriteLog(ELogType.Error, $"StackTrace: {ex.StackTrace}", Name);
+            }
+            finally
+            {
+                _discoveryInProgress = false;
             }
         }
 
@@ -266,65 +271,15 @@ namespace HSPI_PowerView
                 {
                     try
                     {
-                        _discoveryInProgress = true;
-                        HomeSeerSystem.WriteLog(ELogType.Info, "Manual device discovery started for all hubs...", Name);
-                        
-                        // Stop all polling during manual discovery to avoid interference
+                        // Stop polling during discovery
                         HomeSeerSystem.WriteLog(ELogType.Info, "Stopping polling timers...", Name);
                         StopPolling();
-                        await Task.Delay(1000); // Give polling a moment to stop
-                        
-                        // DELETE ALL existing PowerView devices first to eliminate duplicates and start with a clean slate
-                        DeleteAllPowerViewDevices();
-                        
-                        // Wait a moment for deletions to complete
                         await Task.Delay(1000);
                         
-                        // IMPORTANT: Only discover shades from primary hub - secondary hub doesn't return complete information
-                        // But we still need to sync scenes from all hubs
-                        if (_primaryClient != null)
-                        {
-                            HomeSeerSystem.WriteLog(ELogType.Info, $"Discovering shades from PRIMARY hub {_primaryHubIp}...", Name);
-                            
-                            try
-                            {
-                                HomeSeerSystem.WriteLog(ELogType.Info, "Discovering shades from primary hub...", Name);
-                                await DiscoverShadesAsync(_primaryClient, _primaryHubIp);
-                                HomeSeerSystem.WriteLog(ELogType.Info, "Shade discovery complete from primary hub", Name);
-                            }
-                            catch (Exception ex)
-                            {
-                                HomeSeerSystem.WriteLog(ELogType.Error, $"Error discovering shades from primary hub: {ex.Message}", Name);
-                                HomeSeerSystem.WriteLog(ELogType.Error, $"StackTrace: {ex.StackTrace}", Name);
-                            }
-                        }
+                        // Perform full discovery
+                        await PerformFullDiscovery();
                         
-                        // Sync scenes from PRIMARY HUB ONLY - secondary hub doesn't have complete information
-                        if (_primaryClient != null)
-                        {
-                            HomeSeerSystem.WriteLog(ELogType.Info, $"Syncing scenes from PRIMARY hub {_primaryHubIp}...", Name);
-                            
-                            try
-                            {
-                                // Delete ALL scene devices before re-syncing to prevent duplicates
-                                DeleteAllSceneDevicesForHub(_primaryHubIp);
-                                
-                                HomeSeerSystem.WriteLog(ELogType.Info, "About to sync scenes for primary hub " + _primaryHubIp, Name);
-                                await SyncScenesAsync(_primaryClient, _primaryHubIp);
-                                HomeSeerSystem.WriteLog(ELogType.Info, "Completed scene sync for primary hub " + _primaryHubIp, Name);
-                                _lastSceneSync[_primaryHubIp] = DateTime.UtcNow;
-                            }
-                            catch (Exception ex)
-                            {
-                                HomeSeerSystem.WriteLog(ELogType.Error, $"Error syncing scenes from primary hub: {ex.Message}", Name);
-                                HomeSeerSystem.WriteLog(ELogType.Error, $"StackTrace: {ex.StackTrace}", Name);
-                            }
-                        }
-                        
-                        HomeSeerSystem.WriteLog(ELogType.Info, "Manual device discovery complete.", Name);
-                        _discoveryInProgress = false;
-                        
-                        // Restart polling after discovery is complete (only primary hub)
+                        // Restart polling after discovery
                         HomeSeerSystem.WriteLog(ELogType.Info, "Restarting polling timers...", Name);
                         if (_primaryClient != null)
                         {
@@ -339,14 +294,14 @@ namespace HSPI_PowerView
                         // Ensure polling is restarted even if discovery fails
                         try
                         {
-                            foreach (var client in _clients)
+                            if (_primaryClient != null)
                             {
-                                StartPollingForHub(client.HubIp, client);
+                                StartPollingForHub(_primaryHubIp, _primaryClient);
                             }
                         }
                         catch (Exception ex2)
                         {
-                            HomeSeerSystem.WriteLog(ELogType.Error, $"Error restarting polling after discovery failure: {ex2.Message}", Name);
+                            HomeSeerSystem.WriteLog(ELogType.Error, $"Error restarting polling: {ex2.Message}", Name);
                         }
                     }
                 });
@@ -896,109 +851,59 @@ namespace HSPI_PowerView
             hubIp = null;
             try
             {
-                // NOTE: This method does reverse-lookup (find which shade owns a device ref)
-                // This requires scanning [Devices] section which GetINISetting() doesn't support (key-based only)
-                // This is a low-frequency fallback only called during device recovery if PlugExtraData is missing
-                // It does NOT affect duplicate device creation (which uses FindDeviceByShadeId)
-                var iniPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, SettingsFileName);
-                HomeSeerSystem.WriteLog(ELogType.Info, $"TryPopulateShadeFromIni: Looking for ref {deviceRef} in {iniPath} (exists: {File.Exists(iniPath)})", Name);
+                var recoveryFile = GetRecoveryFilePath();
+                HomeSeerSystem.WriteLog(ELogType.Info, $"Looking for device ref {deviceRef} in recovery file {recoveryFile}", Name);
                 
-                if (!File.Exists(iniPath))
+                if (!File.Exists(recoveryFile))
                 {
-                    HomeSeerSystem.WriteLog(ELogType.Warning, $"INI file not found at {iniPath} for reverse lookup of ref {deviceRef}", Name);
+                    HomeSeerSystem.WriteLog(ELogType.Warning, $"Recovery file not found", Name);
                     return false;
                 }
 
-                var lines = File.ReadAllLines(iniPath);
-                var inDevices = false;
-                var allDeviceLines = new List<string>();
-                int linesChecked = 0;
-                var sectionsFound = new List<string>();
-                
-                foreach (var raw in lines)
+                var lines = File.ReadAllLines(recoveryFile);
+                foreach (var line in lines)
                 {
-                    var line = raw.Trim();
-                    if (string.IsNullOrEmpty(line) || line.StartsWith(";"))
-                        continue;
-                    if (line.StartsWith("["))
-                    {
-                        sectionsFound.Add(line);
-                        inDevices = line.Equals("[Devices]", StringComparison.OrdinalIgnoreCase);
-                        if (inDevices) HomeSeerSystem.WriteLog(ELogType.Info, $"Found [Devices] section in INI", Name);
-                        continue;
-                    }
-                    if (!inDevices)
+                    var parts = line.Split(',');
+                    if (parts.Length < 3)
                         continue;
 
-                    allDeviceLines.Add(line);
-                    linesChecked++;
-                    
-                    var parts = line.Split(new[] { '=' }, 2);
-                    if (parts.Length != 2)
-                        continue;
-                    var key = parts[0].Trim();
-                    var value = parts[1].Trim();
-                    
-                    // Parse ref from value (format: ref:openSceneId:closeSceneId:privacySceneId)
-                    var valueParts = value.Split(':');
-                    if (!int.TryParse(valueParts[0], out int mappedRef))
+                    if (int.TryParse(parts[2], out int mappedRef) && mappedRef == deviceRef)
                     {
-                        HomeSeerSystem.WriteLog(ELogType.Warning, $"Line {linesChecked}: Could not parse ref from '{valueParts[0]}' in value '{value}'", Name);
-                        continue;
+                        hubIp = parts[0];
+                        if (int.TryParse(parts[1], out shadeId))
+                        {
+                            ped.AddNamed("ShadeId", shadeId.ToString());
+                            ped.AddNamed("HubIp", hubIp);
+                            
+                            // Restore scene IDs if present (format: hubIp,shadeId,ref,open,close,privacy,timestamp)
+                            if (parts.Length > 3 && !string.IsNullOrEmpty(parts[3]) && int.TryParse(parts[3], out int openScene))
+                            {
+                                ped.AddNamed("SceneOpenId", openScene.ToString());
+                                HomeSeerSystem.WriteLog(ELogType.Info, $"  Restored Open scene: {openScene}", Name);
+                            }
+                            if (parts.Length > 4 && !string.IsNullOrEmpty(parts[4]) && int.TryParse(parts[4], out int closeScene))
+                            {
+                                ped.AddNamed("SceneCloseId", closeScene.ToString());
+                                HomeSeerSystem.WriteLog(ELogType.Info, $"  Restored Close scene: {closeScene}", Name);
+                            }
+                            if (parts.Length > 5 && !string.IsNullOrEmpty(parts[5]) && int.TryParse(parts[5], out int privacyScene))
+                            {
+                                ped.AddNamed("ScenePrivacyId", privacyScene.ToString());
+                                HomeSeerSystem.WriteLog(ELogType.Info, $"  Restored Privacy scene: {privacyScene}", Name);
+                            }
+                            
+                            HomeSeerSystem.WriteLog(ELogType.Info, $"✓ Recovered from file: ref {deviceRef} → {hubIp}:{shadeId}", Name);
+                            return true;
+                        }
                     }
-                    
-                    HomeSeerSystem.WriteLog(ELogType.Info, $"Line {linesChecked}: Checking '{key}={value}' (mappedRef={mappedRef} vs deviceRef={deviceRef})", Name);
-                    
-                    if (mappedRef != deviceRef)
-                        continue;
-
-                    HomeSeerSystem.WriteLog(ELogType.Info, $"Found matching INI entry: key='{key}', value='{value}'", Name);
-                    var keyParts = key.Split(':');
-                    if (keyParts.Length != 2)
-                    {
-                        HomeSeerSystem.WriteLog(ELogType.Warning, $"INI key '{key}' doesn't have 2 parts (expected hubIp:shadeId)", Name);
-                        continue;
-                    }
-                    hubIp = keyParts[0];
-                    if (!int.TryParse(keyParts[1], out shadeId))
-                    {
-                        HomeSeerSystem.WriteLog(ELogType.Warning, $"Could not parse shadeId from '{keyParts[1]}'", Name);
-                        continue;
-                    }
-
-                    if (!ped.ContainsNamed("ShadeId")) ped.AddNamed("ShadeId", shadeId.ToString());
-                    if (!ped.ContainsNamed("HubIp") && !string.IsNullOrWhiteSpace(hubIp)) ped.AddNamed("HubIp", hubIp);
-                    
-                    // Parse scene IDs from INI value if present (format: ref:openSceneId:closeSceneId:privacySceneId)
-                    if (valueParts.Length > 1 && int.TryParse(valueParts[1], out int openSceneId))
-                    {
-                        ped.AddNamed("SceneOpenId", openSceneId.ToString());
-                    }
-                    if (valueParts.Length > 2 && int.TryParse(valueParts[2], out int closeSceneId))
-                    {
-                        ped.AddNamed("SceneCloseId", closeSceneId.ToString());
-                    }
-                    if (valueParts.Length > 3 && int.TryParse(valueParts[3], out int privacySceneId))
-                    {
-                        ped.AddNamed("ScenePrivacyId", privacySceneId.ToString());
-                    }
-                    
-                    HomeSeerSystem.WriteLog(ELogType.Info, $"Successfully recovered from INI: ShadeId={shadeId}, HubIp={hubIp}", Name);
-                    return true;
                 }
                 
-                HomeSeerSystem.WriteLog(ELogType.Warning, $"No matching entry found in INI for ref {deviceRef} (checked {linesChecked} lines in [Devices] section). Sections found: {string.Join(", ", sectionsFound)}", Name);
-                
-                // If no exact match found, log what we have
-                LogVerbose($"No INI mapping found for device ref {deviceRef}. [Devices] section has {allDeviceLines.Count} entries.");
-                if (allDeviceLines.Count > 0)
-                {
-                    LogVerbose($"Sample INI entries: {string.Join(", ", allDeviceLines.Take(5))}");
-                }
+                HomeSeerSystem.WriteLog(ELogType.Warning, $"No mapping found for ref {deviceRef} (checked {lines.Length} entries)", Name);
+                return false;
             }
             catch (Exception ex)
             {
-                HomeSeerSystem.WriteLog(ELogType.Error, $"Error reverse-looking up device ref {deviceRef} in INI: {ex.Message}", Name);
+                HomeSeerSystem.WriteLog(ELogType.Error, $"Error recovering device ref {deviceRef} from file: {ex.Message}", Name);
             }
             return false;
         }
@@ -1202,7 +1107,7 @@ namespace HSPI_PowerView
                     var mappedDevice = HomeSeerSystem.GetDeviceByRef(mappedRef);
                     if (mappedDevice != null)
                     {
-                        HomeSeerSystem.WriteLog(ELogType.Info, $"Found shade {shadeId} via INI mapping (ref {mappedRef})", Name);
+                        // Removed verbose logging: Found shade X via INI mapping
                         return mappedDevice;
                     }
                     else
@@ -1414,6 +1319,10 @@ namespace HSPI_PowerView
                 var devRef = HomeSeerSystem.CreateDevice(deviceData);
                 HomeSeerSystem.WriteLog(ELogType.Info, $"Device created with ref {devRef}, now storing extra data...", Name);
                 
+                // Add to discovery cache for scene linking
+                _discoveryCache[shade.Id] = devRef;
+                HomeSeerSystem.WriteLog(ELogType.Info, $"Added ShadeId={shade.Id} -> DevRef={devRef} to discovery cache", Name);
+                
                 // After creation, update with extra data
                 var extraData = HomeSeerSystem.GetPropertyByRef(devRef, EProperty.PlugExtraData);
                 if (extraData == null)
@@ -1483,8 +1392,7 @@ namespace HSPI_PowerView
                     }
                 }
 
-                // Link scenes to this shade (Open/Close/Privacy)
-                await LinkScenesToShade(devRef, shade.Id, hubIp);
+                // Scene linking will happen after all shades are created (via RelinkScenesToExistingShades using cache)
                 
                 // Set initial position and battery
                 if (shade.Positions?.Position1 != null)
@@ -1531,18 +1439,8 @@ namespace HSPI_PowerView
 
                 HomeSeerSystem.WriteLog(ELogType.Info, $"Created device {shadeName} with ref {devRef}, initial position {(shade.Positions?.Position1 != null ? ((shade.Positions.Position1.Value / 65535.0) * 100).ToString("F1") + "%" : "unknown")}", Name);
                 
-                // Save mapping to INI as persistent lookup source
-                try
-                {
-                    var iniKey = $"{hubIp}:{shade.Id}";
-                    var iniValue = devRef.ToString();
-                    HomeSeerSystem.SaveINISetting("Devices", iniKey, iniValue, Id + ".ini");
-                    HomeSeerSystem.WriteLog(ELogType.Info, $"Saved shade mapping to INI: {iniKey} = {iniValue}", Name);
-                }
-                catch (Exception ex)
-                {
-                    HomeSeerSystem.WriteLog(ELogType.Error, $"Failed to save shade mapping to INI: {ex.Message}", Name);
-                }
+                // Save mapping to recovery file (HomeSeer's INI API is unreliable)
+                SaveDeviceMapping(hubIp, shade.Id, devRef);
             }
             catch (Exception ex)
             {
@@ -2460,7 +2358,7 @@ namespace HSPI_PowerView
                     {
                         var sceneName = (scene.PtName ?? scene.Name ?? "").ToLowerInvariant();
                         
-                        HomeSeerSystem.WriteLog(ELogType.Info, $"Checking scene '{scene.PtName ?? scene.Name}' (ID: {scene.Id}, NetworkNumber: {scene.NetworkNumber}) for shade {shadeId}", Name);
+                        // Removed verbose logging: Checking scene X for shade Y
                         
                         // First try NetworkNumber identification (for standard PowerView scenes)
                         if (scene.NetworkNumber == 45057)
@@ -2510,6 +2408,10 @@ namespace HSPI_PowerView
                         HomeSeerSystem.WriteLog(ELogType.Info, $"Linked Privacy scene {privacySceneId.Value} to shade {shadeId}", Name);
                     }
                     HomeSeerSystem.UpdatePropertyByRef(shadeDeviceRef, EProperty.PlugExtraData, ped);
+                    
+                    // Update recovery file with scene IDs
+                    UpdateDeviceMappingWithScenes(hubIp, shadeId, openSceneId, closeSceneId, privacySceneId);
+                    
                     // Scene IDs are now stored in PlugExtraData and will be found via device scan in future polls
                 }
             }
@@ -2669,53 +2571,8 @@ namespace HSPI_PowerView
                     }
                 }
                 
-                // Clear all INI sections by deleting all keys (ClearIniSection doesn't exist in HomeSeer API)
-                try
-                {
-                    // Get all keys from Devices section and delete them
-                    var iniFileName = Id + ".ini";
-                    var devicesKeys = new List<string>();
-                    var scenesKeys = new List<string>();
-                    
-                    // Read all device mappings
-                    for (int i = 0; i < 1000; i++)
-                    {
-                        var key = HomeSeerSystem.GetINISetting("Devices", i.ToString(), null, iniFileName);
-                        if (key == null) break;
-                        devicesKeys.Add(i.ToString());
-                    }
-                    
-                    // Read all scene mappings  
-                    for (int i = 0; i < 1000; i++)
-                    {
-                        var key = HomeSeerSystem.GetINISetting("Scenes", i.ToString(), null, iniFileName);
-                        if (key == null) break;
-                        scenesKeys.Add(i.ToString());
-                    }
-                    
-                    // Actually, just write empty values to clear - GetINISection doesn't work well
-                    // Instead, iterate through known hub IPs and shade IDs
-                    var knownHubs = new[] { "192.168.3.164", "192.168.3.165" };
-                    foreach (var hubIp in knownHubs)
-                    {
-                        // Clear shade mappings (ID 1-300)
-                        for (int shadeId = 1; shadeId <= 300; shadeId++)
-                        {
-                            HomeSeerSystem.SaveINISetting("Devices", $"{hubIp}:{shadeId}", "", iniFileName);
-                        }
-                        // Clear scene mappings (ID 1-400)
-                        for (int sceneId = 1; sceneId <= 400; sceneId++)
-                        {
-                            HomeSeerSystem.SaveINISetting("Scenes", $"{hubIp}:{sceneId}", "", iniFileName);
-                        }
-                    }
-                    
-                    HomeSeerSystem.WriteLog(ELogType.Info, "Cleared all INI device and scene mappings", Name);
-                }
-                catch (Exception iniEx)
-                {
-                    HomeSeerSystem.WriteLog(ELogType.Warning, $"Error clearing INI sections: {iniEx.Message}", Name);
-                }
+                // Clear device mappings recovery file for fresh discovery
+                ClearDeviceMappings();
                 
                 HomeSeerSystem.WriteLog(ELogType.Warning, $"Deleted {toDelete.Count} PowerView devices. Ready for fresh discovery.", Name);
             }
@@ -3088,6 +2945,114 @@ namespace HSPI_PowerView
             return ips;
         }
 
+        private string GetRecoveryFilePath()
+        {
+            return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "PowerView_DeviceMappings.txt");
+        }
+
+        private void SaveDeviceMapping(string hubIp, int shadeId, int deviceRef)
+        {
+            try
+            {
+                var recoveryFile = GetRecoveryFilePath();
+                // Format: hubIp,shadeId,deviceRef,openScene,closeScene,privacyScene,timestamp
+                var entry = $"{hubIp},{shadeId},{deviceRef},,,{DateTime.Now:yyyy-MM-dd HH:mm:ss}";
+                
+                // Remove old entry for this shade if it exists
+                var existingLines = File.Exists(recoveryFile) ? File.ReadAllLines(recoveryFile).ToList() : new List<string>();
+                var filteredLines = existingLines.Where(line => !line.StartsWith($"{hubIp},{shadeId},")).ToList();
+                
+                // Add new entry
+                filteredLines.Add(entry);
+                
+                File.WriteAllLines(recoveryFile, filteredLines);
+                HomeSeerSystem.WriteLog(ELogType.Info, $"✓ Saved device mapping: {hubIp}:{shadeId} → ref {deviceRef}", Name);
+            }
+            catch (Exception ex)
+            {
+                HomeSeerSystem.WriteLog(ELogType.Error, $"Failed to save device mapping: {ex.Message}", Name);
+            }
+        }
+
+        private void UpdateDeviceMappingWithScenes(string hubIp, int shadeId, int? openScene, int? closeScene, int? privacyScene)
+        {
+            try
+            {
+                var recoveryFile = GetRecoveryFilePath();
+                if (!File.Exists(recoveryFile))
+                    return;
+
+                var lines = File.ReadAllLines(recoveryFile).ToList();
+                for (int i = 0; i < lines.Count; i++)
+                {
+                    var parts = lines[i].Split(',');
+                    if (parts.Length >= 3 && parts[0] == hubIp && int.TryParse(parts[1], out int mappedShadeId) && mappedShadeId == shadeId)
+                    {
+                        // Update with scene IDs: hubIp,shadeId,deviceRef,openScene,closeScene,privacyScene,timestamp
+                        var deviceRef = parts[2];
+                        lines[i] = $"{hubIp},{shadeId},{deviceRef},{openScene?.ToString() ?? ""},{closeScene?.ToString() ?? ""},{privacyScene?.ToString() ?? ""},{DateTime.Now:yyyy-MM-dd HH:mm:ss}";
+                        File.WriteAllLines(recoveryFile, lines);
+                        HomeSeerSystem.WriteLog(ELogType.Info, $"✓ Updated mapping with scenes: {hubIp}:{shadeId} → Open:{openScene}, Close:{closeScene}, Privacy:{privacyScene}", Name);
+                        return;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                HomeSeerSystem.WriteLog(ELogType.Error, $"Failed to update device mapping with scenes: {ex.Message}", Name);
+            }
+        }
+
+        private bool TryLoadDeviceMapping(string hubIp, int shadeId, out int deviceRef)
+        {
+            deviceRef = 0;
+            try
+            {
+                var recoveryFile = GetRecoveryFilePath();
+                if (!File.Exists(recoveryFile))
+                    return false;
+
+                var lines = File.ReadAllLines(recoveryFile);
+                foreach (var line in lines)
+                {
+                    var parts = line.Split(',');
+                    if (parts.Length < 3)
+                        continue;
+
+                    if (parts[0] == hubIp && int.TryParse(parts[1], out int mappedShadeId) && mappedShadeId == shadeId)
+                    {
+                        if (int.TryParse(parts[2], out deviceRef))
+                        {
+                            HomeSeerSystem.WriteLog(ELogType.Info, $"✓ Loaded device mapping: {hubIp}:{shadeId} → ref {deviceRef}", Name);
+                            return true;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                HomeSeerSystem.WriteLog(ELogType.Error, $"Failed to load device mapping: {ex.Message}", Name);
+            }
+            return false;
+        }
+
+        private void ClearDeviceMappings()
+        {
+            try
+            {
+                var recoveryFile = GetRecoveryFilePath();
+                if (File.Exists(recoveryFile))
+                {
+                    File.Delete(recoveryFile);
+                    HomeSeerSystem.WriteLog(ELogType.Info, "Cleared device mappings recovery file", Name);
+                }
+            }
+            catch (Exception ex)
+            {
+                HomeSeerSystem.WriteLog(ELogType.Error, $"Failed to clear device mappings: {ex.Message}", Name);
+            }
+        }
+
         private PowerViewClient GetClientByHubIp(string hubIp)
         {
             var hubIps = GetHubIps();
@@ -3184,41 +3149,45 @@ namespace HSPI_PowerView
         {
             try
             {
-                HomeSeerSystem.WriteLog(ELogType.Info, $"Re-linking scenes for hub {hubIp}...", Name);
+                HomeSeerSystem.WriteLog(ELogType.Info, $"Linking scenes to shades using discovery cache...", Name);
                 
-                // Get all devices from HomeSeer
-                var allDeviceRefs = HomeSeerSystem.GetRefsByInterface(Id, true);
-                
-                // Filter to shade devices (parent devices with ShadeId in PlugExtraData)
-                foreach (var deviceRef in allDeviceRefs)
+                // Use discovery cache instead of querying all devices
+                if (_discoveryCache.Count == 0)
                 {
+                    HomeSeerSystem.WriteLog(ELogType.Warning, "Discovery cache is empty - cannot link scenes", Name);
+                    return;
+                }
+                
+                HomeSeerSystem.WriteLog(ELogType.Info, $"Discovery cache contains {_discoveryCache.Count} shade devices", Name);
+                
+                // Validate cache entries
+                int validCount = 0;
+                int invalidCount = 0;
+                
+                foreach (var kvp in _discoveryCache)
+                {
+                    var shadeId = kvp.Key;
+                    var deviceRef = kvp.Value;
+                    
+                    // Verify device exists
                     var device = HomeSeerSystem.GetDeviceByRef(deviceRef);
-                    if (device == null || device.Relationship != ERelationship.Device)
-                        continue;
-                    
-                    var ped = HomeSeerSystem.GetPropertyByRef(deviceRef, EProperty.PlugExtraData) as PlugExtraData;
-                    if (ped == null || !ped.ContainsNamed("ShadeId"))
-                        continue;
-                    
-                    // Check if this device belongs to the specified hub
-                    if (ped.ContainsNamed("HubIp"))
+                    if (device == null)
                     {
-                        var deviceHubIp = ped["HubIp"]?.ToString();
-                        if (!string.Equals(deviceHubIp, hubIp, StringComparison.OrdinalIgnoreCase))
-                            continue;
+                        HomeSeerSystem.WriteLog(ELogType.Warning, $"Cache entry invalid: ShadeId={shadeId} -> DevRef={deviceRef} (device not found)", Name);
+                        invalidCount++;
+                        continue;
                     }
                     
-                    // This is a shade device for this hub - re-link its scenes
-                    var shadeId = int.Parse(ped["ShadeId"].ToString());
-                    HomeSeerSystem.WriteLog(ELogType.Info, $"Re-linking scenes for shade {shadeId} ({device.Name})...", Name);
+                    validCount++;
+                    HomeSeerSystem.WriteLog(ELogType.Info, $"Linking scenes for shade {shadeId} ({device.Name})...", Name);
                     await LinkScenesToShade(deviceRef, shadeId, hubIp);
                 }
                 
-                HomeSeerSystem.WriteLog(ELogType.Info, $"Finished re-linking scenes for hub {hubIp}", Name);
+                HomeSeerSystem.WriteLog(ELogType.Info, $"Scene linking complete: {validCount} shades linked, {invalidCount} invalid cache entries", Name);
             }
             catch (Exception ex)
             {
-                HomeSeerSystem.WriteLog(ELogType.Error, $"Error re-linking scenes: {ex.Message}", Name);
+                HomeSeerSystem.WriteLog(ELogType.Error, $"Error linking scenes: {ex.Message}", Name);
             }
         }
     }

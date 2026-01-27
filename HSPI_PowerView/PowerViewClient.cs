@@ -134,7 +134,7 @@ namespace HSPI_PowerView
                                         shadeDetail.GatewayIp = gatewayIp;
                                         shades.Add(shadeDetail);
                                         shadeIdsSeen.Add(shadeId);
-                                        _logger?.Invoke($"Added shade {shadeId} from gateway {gatewayIp}");
+                                        // Removed verbose logging: Added shade X from gateway Y
                                     }
                                 }
                                 catch (Exception ex)
@@ -193,7 +193,7 @@ namespace HSPI_PowerView
                 batteryStrength = 0;
             }
             
-            _logger?.Invoke($"Shade {shadeId}: batteryStatus={batteryStatus}, batteryStrength={batteryStrength}");
+            // Removed verbose logging: batteryStatus, batteryStrength
             
             // Convert signal strength from dBm (-100 to -30) to percentage (0-100)
             int signalStrengthRaw = -100;
@@ -212,7 +212,7 @@ namespace HSPI_PowerView
                 signalStrengthPercent = 0;
             }
             
-            _logger?.Invoke($"Shade {shadeId}: signalStrengthRaw={signalStrengthRaw} dBm, signalStrengthPercent={signalStrengthPercent}%");
+            // Removed verbose logging: signalStrength
             
             var shade = new PowerViewShade
             {
@@ -234,19 +234,17 @@ namespace HSPI_PowerView
                 {
                     decimal posDecimal = shadeData["positions"]["primary"];
                     positionValue = (int)(posDecimal * 65535);
-                    _logger?.Invoke($"Shade {shadeId}: Found position via positions.primary: {posDecimal:F2} -> {positionValue}");
+                    // Removed verbose logging: position parsing
                 }
                 // Try position1 directly (alternative format)
                 else if (shadeData["position1"] != null)
                 {
                     positionValue = (int)shadeData["position1"];
-                    _logger?.Invoke($"Shade {shadeId}: Found position via position1: {positionValue}");
                 }
                 // Try position directly (another alternative)
                 else if (shadeData["position"] != null)
                 {
                     positionValue = (int)shadeData["position"];
-                    _logger?.Invoke($"Shade {shadeId}: Found position via position: {positionValue}");
                 }
                 else
                 {
